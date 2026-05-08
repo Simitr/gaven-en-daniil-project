@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://bc4waybd2ft8u"]
+
+[ext_resource type="Texture2D" uid="uid://bhtuvkstc5o3n" path="res://assets/game/prologue_texture/AnimationSheet_Character2.png" id="1_g1vea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2ggm"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlpyo"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2j54"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dk14"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf8r5"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oirpo"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7o5e"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjo7n"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acol7"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw1nl"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhgkk"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_undu6"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke6lp"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ut4n"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqc0y"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k0ty"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pucs"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t68n"]
+atlas = ExtResource("1_g1vea")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d66dv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2ggm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlpyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2j54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dk14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf8r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oirpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7o5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjo7n")
+}],
+"loop": true,
+"name": &"animationRunningRight",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acol7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mw1nl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhgkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_undu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke6lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ut4n")
+}],
+"loop": true,
+"name": &"animationShift",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqc0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k0ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pucs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t68n")
+}],
+"loop": true,
+"name": &"animationWalkingRight",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1372397156]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2030178958]
+sprite_frames = SubResource("SpriteFrames_d66dv")
+animation = &"animationRunningRight"
+autoplay = "animationRunningRight"
+frame_progress = 0.06677516
