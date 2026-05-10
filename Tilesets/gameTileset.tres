@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bo4j1inaum6k2" path="res://assets/game/prologue_texture/hils4.png" id="4_5m7vb"]
 [ext_resource type="Texture2D" uid="uid://ddy6qo5udr3yu" path="res://assets/game/prologue_texture/decor_16x16.png" id="4_5qpou"]
 [ext_resource type="Texture2D" uid="uid://df6d3qqvcaw8k" path="res://assets/game/prologue_texture/cowboy.png" id="5_hu6gw"]
+[ext_resource type="Texture2D" uid="uid://detbw6uund6fr" path="res://assets/game/prologue_texture/Character/characterV2.png" id="8_sxvix"]
 [ext_resource type="Texture2D" uid="uid://cd6gowfd7hun" path="res://assets/game/prologue_texture/Character/characterWithGun.png" id="8_w1hr8"]
 [ext_resource type="Texture2D" uid="uid://dcpvpwu428562" path="res://assets/game/prologue_texture/Character/characterWithGunInHoslerpng.png" id="9_sxvix"]
+[ext_resource type="Texture2D" uid="uid://dynry1psq7sld" path="res://assets/game/prologue_texture/Free_Desert/Desert1.png" id="11_eeaif"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kqy45"]
 texture = ExtResource("1_ao20k")
@@ -316,6 +318,13 @@ texture = ExtResource("4_5qpou")
 1:4/0 = 0
 0:4/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38h0"]
+texture = ExtResource("8_sxvix")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eeaif"]
 texture = ExtResource("8_w1hr8")
 0:0/0 = 0
@@ -329,6 +338,55 @@ texture = ExtResource("9_sxvix")
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2iq70"]
+texture = ExtResource("11_eeaif")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
 
 [resource]
 terrain_set_0/mode = 0
@@ -345,3 +403,5 @@ sources/13 = SubResource("TileSetAtlasSource_hu6gw")
 sources/2 = SubResource("TileSetAtlasSource_syugu")
 sources/6 = SubResource("TileSetAtlasSource_eeaif")
 sources/7 = SubResource("TileSetAtlasSource_dyo3m")
+sources/5 = SubResource("TileSetAtlasSource_v38h0")
+sources/8 = SubResource("TileSetAtlasSource_2iq70")
