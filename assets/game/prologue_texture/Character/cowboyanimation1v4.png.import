@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buibi12yxxfpm"
-path="res://.godot/imported/characterV3.png-5784b3535e1c0e4a968614ced35b59bb.ctex"
+uid="uid://bg2531yxfcc3r"
+path="res://.godot/imported/cowboyanimation1v4.png-b4d57cb39b06fdc4fdbcb00a2b57e785.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/prologue_texture/Character/characterV3.png"
-dest_files=["res://.godot/imported/characterV3.png-5784b3535e1c0e4a968614ced35b59bb.ctex"]
+source_file="res://assets/game/prologue_texture/Character/cowboyanimation1v4.png"
+dest_files=["res://.godot/imported/cowboyanimation1v4.png-b4d57cb39b06fdc4fdbcb00a2b57e785.ctex"]
 
 [params]
 

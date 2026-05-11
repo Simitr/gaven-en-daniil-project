@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bo4j1inaum6k2" path="res://assets/game/prologue_texture/hils4.png" id="4_5m7vb"]
 [ext_resource type="Texture2D" uid="uid://ddy6qo5udr3yu" path="res://assets/game/prologue_texture/decor_16x16.png" id="4_5qpou"]
 [ext_resource type="Texture2D" uid="uid://df6d3qqvcaw8k" path="res://assets/game/prologue_texture/cowboy.png" id="5_hu6gw"]
-[ext_resource type="Texture2D" uid="uid://detbw6uund6fr" path="res://assets/game/prologue_texture/Character/characterV2.png" id="8_sxvix"]
-[ext_resource type="Texture2D" uid="uid://cd6gowfd7hun" path="res://assets/game/prologue_texture/Character/characterWithGun.png" id="8_w1hr8"]
-[ext_resource type="Texture2D" uid="uid://dcpvpwu428562" path="res://assets/game/prologue_texture/Character/characterWithGunInHoslerpng.png" id="9_sxvix"]
+[ext_resource type="Texture2D" uid="uid://cmrlvgqqmulsq" path="res://assets/game/prologue_texture/Character/characterV2.png" id="8_sxvix"]
+[ext_resource type="Texture2D" uid="uid://dbo08ww4o1c4b" path="res://assets/game/prologue_texture/Character/characterWithGun.png" id="8_w1hr8"]
+[ext_resource type="Texture2D" uid="uid://duuutkk14hlxj" path="res://assets/game/prologue_texture/Character/characterWithGunInHoslerpng.png" id="9_sxvix"]
 [ext_resource type="Texture2D" uid="uid://dynry1psq7sld" path="res://assets/game/prologue_texture/Free_Desert/Desert1.png" id="11_eeaif"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kqy45"]
