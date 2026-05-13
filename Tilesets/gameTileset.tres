@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b1e2flkqj0w0c" path="res://assets/game/prologue_texture/plains2.png" id="3_kqy45"]
 [ext_resource type="Texture2D" uid="uid://bo4j1inaum6k2" path="res://assets/game/prologue_texture/hils4.png" id="4_5m7vb"]
 [ext_resource type="Texture2D" uid="uid://ddy6qo5udr3yu" path="res://assets/game/prologue_texture/decor_16x16.png" id="4_5qpou"]
-[ext_resource type="Texture2D" uid="uid://df6d3qqvcaw8k" path="res://assets/game/prologue_texture/cowboy.png" id="5_hu6gw"]
 [ext_resource type="Texture2D" uid="uid://dynry1psq7sld" path="res://assets/game/prologue_texture/Free_Desert/Desert1.png" id="11_eeaif"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kqy45"]
@@ -203,13 +202,6 @@ texture = ExtResource("4_5m7vb")
 2:2/0 = 0
 3:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syugu"]
-texture = ExtResource("5_hu6gw")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qpou"]
 texture = ExtResource("3_kqy45")
 0:0/0 = 0
@@ -315,24 +307,6 @@ texture = ExtResource("4_5qpou")
 1:4/0 = 0
 0:4/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38h0"]
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eeaif"]
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dyo3m"]
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2iq70"]
 texture = ExtResource("11_eeaif")
 0:0/0 = 0
@@ -394,8 +368,4 @@ sources/3 = SubResource("TileSetAtlasSource_5qpou")
 sources/4 = SubResource("TileSetAtlasSource_1t514")
 sources/10 = SubResource("TileSetAtlasSource_5m7vb")
 sources/13 = SubResource("TileSetAtlasSource_hu6gw")
-sources/2 = SubResource("TileSetAtlasSource_syugu")
-sources/6 = SubResource("TileSetAtlasSource_eeaif")
-sources/7 = SubResource("TileSetAtlasSource_dyo3m")
-sources/5 = SubResource("TileSetAtlasSource_v38h0")
 sources/8 = SubResource("TileSetAtlasSource_2iq70")
