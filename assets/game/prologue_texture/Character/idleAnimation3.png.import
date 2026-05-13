@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckagaqaxyqsya"
-path="res://.godot/imported/cowboyanimation5.png-36d334d36dd118c84170906ef5586d2a.ctex"
+uid="uid://c3xlsidko2bsp"
+path="res://.godot/imported/idleAnimation3.png-8f52678f3cb72a280c8938a71b4562c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/prologue_texture/Character/cowboyanimation5.png"
-dest_files=["res://.godot/imported/cowboyanimation5.png-36d334d36dd118c84170906ef5586d2a.ctex"]
+source_file="res://assets/game/prologue_texture/Character/idleAnimation3.png"
+dest_files=["res://.godot/imported/idleAnimation3.png-8f52678f3cb72a280c8938a71b4562c2.ctex"]
 
 [params]
 

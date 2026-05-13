@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crffk0jeh225l"
-path="res://.godot/imported/cowboyanimation4.png-1c4ab88106f103cbda567eabcba76cf6.ctex"
+uid="uid://ci41v58i2khsr"
+path="res://.godot/imported/characterWithGunInHoslerpng.png-5d3b35376bef76ad3eb7c28671ddb371.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/prologue_texture/Character/cowboyanimation4.png"
-dest_files=["res://.godot/imported/cowboyanimation4.png-1c4ab88106f103cbda567eabcba76cf6.ctex"]
+source_file="res://assets/game/prologue_texture/Character/sprites/characterWithGunInHoslerpng.png"
+dest_files=["res://.godot/imported/characterWithGunInHoslerpng.png-5d3b35376bef76ad3eb7c28671ddb371.ctex"]
 
 [params]
 
