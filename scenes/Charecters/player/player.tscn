@@ -220,7 +220,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking",
-"speed": 4.0
+"speed": 4.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -237,7 +237,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walkingback",
-"speed": 5.0
+"speed": 4.5
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dk14"]
@@ -250,7 +250,7 @@ position = Vector2(-1, -15)
 sprite_frames = SubResource("SpriteFrames_d66dv")
 animation = &"walkingback"
 autoplay = "idle"
-frame_progress = 0.3078641
+frame_progress = 0.80115104
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985997954]
 z_index = 1
