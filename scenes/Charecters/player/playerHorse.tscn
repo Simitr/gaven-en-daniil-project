@@ -22,7 +22,7 @@ size = Vector2(20, 34)
 sprite_frames = SubResource("SpriteFrames_wv0uv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=378860022]
-offset = Vector2(35, -40)
+offset = Vector2(35, -45)
 zoom = Vector2(2, 2)
 
 [node name="Node" type="Node" parent="." unique_id=1964660053]
