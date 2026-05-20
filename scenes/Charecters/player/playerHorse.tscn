@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bot4c7b8vip0s"]
+
+[ext_resource type="Texture2D" uid="uid://c4tp7ca6hqual" path="res://assets/game/prologue_texture/Character/cowboyonhorse.png" id="1_3ibdw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wv0uv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3ibdw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuuaj"]
+size = Vector2(20, 34)
+
+[node name="PlayerHorse" type="CharacterBody2D" unique_id=1861779202]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864297161]
+sprite_frames = SubResource("SpriteFrames_wv0uv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=378860022]
+offset = Vector2(35, -40)
+zoom = Vector2(2, 2)
+
+[node name="Node" type="Node" parent="." unique_id=1964660053]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004712904]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_wuuaj")
