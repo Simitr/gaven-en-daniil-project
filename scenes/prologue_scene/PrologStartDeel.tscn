@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cuqe8qmkkc7o4"]
+
+[ext_resource type="Script" uid="uid://bn7ly0iss0vr" path="res://scripts/PrologStart.cs" id="1_n7mbm"]
+[ext_resource type="Texture2D" uid="uid://wl6yv7qq8wlx" path="res://assets/game/prologue_texture/RadiationCatStudiosPixelTekst.png" id="2_u7epr"]
+
+[node name="PrologStartDeel" type="Node2D" unique_id=2132524170]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=306483325]
+offset_right = 651.0
+offset_bottom = 369.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1878499702]
+offset_left = 561.0
+offset_top = 168.0
+offset_right = 619.0
+offset_bottom = 191.0
+text = "Press D"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=527964636]
+
+[node name="Timer" type="Timer" parent="." unique_id=2051260392]
+wait_time = 3.0
+one_shot = true
+
+[node name="Node" type="Node" parent="." unique_id=1006545102 node_paths=PackedStringArray("timerTest", "Logo", "Label")]
+script = ExtResource("1_n7mbm")
+timerTest = NodePath("../Timer")
+Logo = NodePath("../Sprite2D")
+Label = NodePath("../Label")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=81663505]
+position = Vector2(318, 178)
+texture = ExtResource("2_u7epr")

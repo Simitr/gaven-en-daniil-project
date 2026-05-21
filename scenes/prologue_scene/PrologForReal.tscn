@@ -5,17 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://cqxsnndlvyjwq" path="res://assets/game/prologue_texture/Character/sky.png" id="3_n8mk2"]
 [ext_resource type="Script" uid="uid://d1ypud76ak2jc" path="res://scripts/ParallaxSky.cs" id="3_ncrow"]
 [ext_resource type="Texture2D" uid="uid://d1h2iqlt3m7uv" path="res://assets/game/prologue_texture/Character/back.png" id="5_ncrow"]
+[ext_resource type="Texture2D" uid="uid://l6ss8m8ioe7y" path="res://assets/game/prologue_texture/Character/ground.png" id="6_1gy4g"]
 
 [node name="PrologForReal" type="Node2D" unique_id=1287511674]
 
 [node name="PlayerHorse" parent="." unique_id=1861779202 instance=ExtResource("1_4xe8f")]
 z_index = 1
-position = Vector2(265, 193)
-
-[node name="Grass" type="Sprite2D" parent="." unique_id=1961129789]
-texture_filter = 1
-position = Vector2(297, 153)
-texture = ExtResource("2_3glap")
+position = Vector2(265, 200)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1457906002]
 repeat_size = Vector2(512, 0)
@@ -32,10 +28,27 @@ repeat_size = Vector2(512, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1354804211]
 texture_filter = 1
-position = Vector2(300, 152)
+position = Vector2(300, 142)
 texture = ExtResource("5_ncrow")
 
-[node name="Node" type="Node" parent="." unique_id=1212987585 node_paths=PackedStringArray("Parallax", "Parallax2")]
+[node name="Node" type="Node" parent="." unique_id=1212987585 node_paths=PackedStringArray("Parallax", "Parallax2", "Parallax3", "Parallax4")]
 script = ExtResource("3_ncrow")
 Parallax = NodePath("../Parallax2D")
 Parallax2 = NodePath("../Parallax2D2")
+Parallax3 = NodePath("../Parallax2D3")
+Parallax4 = NodePath("../Parallax2D4")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1786927392]
+repeat_size = Vector2(512, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=1023994776]
+position = Vector2(300, 152)
+texture = ExtResource("6_1gy4g")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=2046396821]
+repeat_size = Vector2(512, 0)
+
+[node name="Grass" type="Sprite2D" parent="Parallax2D4" unique_id=1961129789]
+texture_filter = 1
+position = Vector2(297, 153)
+texture = ExtResource("2_3glap")
