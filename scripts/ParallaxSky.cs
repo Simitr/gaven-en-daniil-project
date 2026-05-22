@@ -15,6 +15,7 @@ public partial class ParallaxSky : Node
     [Export] public AudioStreamPlayer2D Music;
     [Export] public Godot.Timer timer;
     [Export] public AudioStreamPlayer2D horse;
+    [Export] public ColorRect blackBackground;
     public float SkyStartSpeed = 1f;
     public float BackStartSpeed = 0f;
     public float GroundStartSpeed = 0f;
@@ -36,9 +37,14 @@ public partial class ParallaxSky : Node
 
     public override void _Process(double delta)
     {
+        var tween5 = CreateTween();
+        tween5.TweenProperty(blackBackground, "modulate:a", 0f, 2.0f);
+ 
+
         if (!isMoving)
         {
-            horse.Play();
+          
+             
             //horse.Seek(5f);
             if (Player.Position.X < 400)
             {
@@ -53,15 +59,16 @@ public partial class ParallaxSky : Node
             if (Input.IsActionJustReleased("walkRight"))
             {
                 StopPressD.Modulate = new Color(1, 1, 1, 0);
-               
+
                 //animation
-             
-               
-               
+
+
+                horse.Stop();
                 isMoving = true;
                 Music.Play();
 
             }
+           
         }
         if (isMoving)
         {
@@ -71,8 +78,7 @@ public partial class ParallaxSky : Node
           
             if (Input.IsActionPressed("walkRight"))
             {
-                
-                horse.Play();
+             // horse.Play();
                
                 PressD.Modulate = new Color(1, 1, 1, 0);
                 if (Player.Position.X < 281)
@@ -101,9 +107,9 @@ public partial class ParallaxSky : Node
             }
             else
             {
-               
+               horse.Play();
                 
-              horse.Stop();
+          // horse.Stop();
 
                 var tween = CreateTween();
                 tween.TweenProperty(this, "SkyStartSpeed", 1, 1.0f);

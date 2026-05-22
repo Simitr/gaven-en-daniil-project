@@ -8,16 +8,21 @@ public partial class PrologStart : Node
     [Export] public Label Label;
     [Export] public float requiemTime = 10.0f;
     [Export] public AudioStreamPlayer2D Player;
+    [Export] public Sprite2D ProgressBar;
+    [Export] public Sprite2D Horse;
     public string state;
     public bool next = false;
     public float holdTime = 0.0f;
     private Tween volumeTween;
+ 
 
     public override void _Ready()
     {
         timerTest.Timeout += OnTimerTimeout;
         timerTest.Start();
         state = "start";
+        ProgressBar.Modulate = new Color(1, 1, 1, 0); 
+        Horse.Modulate = new Color(1, 1, 1, 0);
         Logo.Modulate = new Color(1,1,1,0);
         Label.Modulate = new Color(1, 1, 1, 0);
         Player.Play();
@@ -27,19 +32,24 @@ public partial class PrologStart : Node
     {
          if (next)
             {
-
+            ProgressBar.Modulate = new Color(1, 1, 1, 1);
+            Horse.Modulate = new Color(1, 1, 1, 1);
             if (Input.IsActionPressed("walkRight"))
                 {
-                
+                if (Horse.Position.X < 607)
+                {
+                    Horse.Position += new Vector2(10 * (float)delta, 0);
+                }
+                else
+                {
+                    GetTree().ChangeSceneToFile("res://scenes/prologue_scene/PrologForReal.tscn");
+                }
                 volumeTween = CreateTween();
                 volumeTween.TweenProperty(Player, "volume_db", -10, 5f);
                 var tween4 = CreateTween();
                 tween4.TweenProperty(Label, "modulate:a", 0.0f, 2.0f);
-                holdTime += (float)delta;
-                if(holdTime >= requiemTime)
-                {
-                    GetTree().ChangeSceneToFile("res://scenes/prologue_scene/PrologForReal.tscn");
-                }
+                
+                
             }
             else
             {

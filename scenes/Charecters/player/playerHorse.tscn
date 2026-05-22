@@ -1,6 +1,32 @@
 [gd_scene format=3 uid="uid://bot4c7b8vip0s"]
 
 [ext_resource type="Texture2D" uid="uid://c4tp7ca6hqual" path="res://assets/game/prologue_texture/Character/cowboyonhorse.png" id="1_3ibdw"]
+[ext_resource type="Texture2D" uid="uid://c7wn5vhji0l32" path="res://assets/64x64_Atlas_Horse_Idle.png" id="2_fh3bg"]
+[ext_resource type="Texture2D" uid="uid://c6u3slh5hf2y6" path="res://assets/game/prologue_texture/Character/horse1.png" id="3_miwnm"]
+[ext_resource type="Texture2D" uid="uid://dblajam766b04" path="res://assets/game/prologue_texture/Character/horse2.png" id="4_e6k7a"]
+[ext_resource type="Texture2D" uid="uid://bwo6iv7w2jhbx" path="res://assets/game/prologue_texture/Character/horse3.png" id="5_uv730"]
+[ext_resource type="Texture2D" uid="uid://cfimwprn6vjgt" path="res://assets/game/prologue_texture/Character/horse4.png" id="6_fvbv0"]
+[ext_resource type="Texture2D" uid="uid://b1k2yxo4t4hba" path="res://assets/game/prologue_texture/Character/horse5.png" id="7_p2m55"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iblbt"]
+atlas = ExtResource("2_fh3bg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi2xw"]
+atlas = ExtResource("2_fh3bg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82fc6"]
+atlas = ExtResource("2_fh3bg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80gqm"]
+atlas = ExtResource("2_fh3bg")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eggk6"]
+atlas = ExtResource("2_fh3bg")
+region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wv0uv"]
 animations = [{
@@ -11,6 +37,46 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iblbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi2xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82fc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80gqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eggk6")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_miwnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e6k7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uv730")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fvbv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p2m55")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuuaj"]
@@ -19,7 +85,10 @@ size = Vector2(20, 34)
 [node name="PlayerHorse" type="CharacterBody2D" unique_id=1861779202]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864297161]
+position = Vector2(114, 51)
 sprite_frames = SubResource("SpriteFrames_wv0uv")
+autoplay = "default"
+frame_progress = 0.3499724
 
 [node name="Node" type="Node" parent="." unique_id=1964660053]
 
