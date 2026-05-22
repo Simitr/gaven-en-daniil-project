@@ -21,10 +21,6 @@ size = Vector2(20, 34)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864297161]
 sprite_frames = SubResource("SpriteFrames_wv0uv")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=378860022]
-offset = Vector2(35, -45)
-zoom = Vector2(2, 2)
-
 [node name="Node" type="Node" parent="." unique_id=1964660053]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004712904]
