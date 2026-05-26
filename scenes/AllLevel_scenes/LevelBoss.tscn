@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://1r51ss5ljpd2"]
 
-[ext_resource type="Texture2D" uid="uid://buqr8sub0snn0" path="res://assets/game/prologue_texture/Dungeon_assets/FG_Cellar.png" id="1_52br5"]
-[ext_resource type="PackedScene" uid="uid://bc4waybd2ft8u" path="res://scenes/Charecters/player/player.tscn" id="2_s3nm4"]
+[ext_resource type="Texture2D" uid="uid://buqr8sub0snn0" path="res://assets/game/prologue_texture/Dungeon_assets/FG_Cellar.png" id="1_6t5fs"]
+[ext_resource type="PackedScene" uid="uid://bc4waybd2ft8u" path="res://scenes/Charecters/player/player.tscn" id="2_odr71"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
-texture = ExtResource("1_52br5")
+texture = ExtResource("1_6t5fs")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -53,7 +53,7 @@ texture = ExtResource("1_52br5")
 6:1/0/y_sort_origin = -15
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 4.78784, -8, 4.613737)
 7:1/0 = 0
-7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -2.8727036, -8, -2.1762905, 8, 8, 8)
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -2.0021877, 8, -8, -0.08705139)
 8:1/0 = 0
 9:1/0 = 0
 10:1/0 = 0
@@ -241,7 +241,9 @@ texture = ExtResource("1_52br5")
 1:6/0/y_sort_origin = -15
 1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -2.8727036, -8, 8, 4.78784)
 2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 2.6986008, 1.4798775, -5.8324585)
 3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 2.6986008, -1.4798775, -5.8324585)
 4:6/0 = 0
 4:6/0/y_sort_origin = -15
 4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 2.8727036, -8, -8, 4.78784)
@@ -1019,5 +1021,5 @@ tile_map_data = PackedByteArray("AAANAAEAAAAGAAEAAAAOAAEAAAAGAAEAAAD//x4AAAAKAAM
 tile_set = SubResource("TileSet_tgalm")
 use_kinematic_bodies = true
 
-[node name="Player" parent="." unique_id=1372397156 instance=ExtResource("2_s3nm4")]
+[node name="Player" parent="." unique_id=1372397156 instance=ExtResource("2_odr71")]
 position = Vector2(327, 116)
