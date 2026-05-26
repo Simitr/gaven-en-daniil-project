@@ -101,8 +101,8 @@ autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=760892023]
 z_index = 10
-offset_left = 73.0
+offset_left = 72.0
 offset_top = -30.0
-offset_right = 673.0
+offset_right = 672.0
 offset_bottom = 370.0
 color = Color(0, 0, 0, 1)
