@@ -46,51 +46,35 @@ public partial class ParallaxSky : Node
           
              
             //horse.Seek(5f);
-            if (Player.Position.X < 400)
+            if (Player.Position.X < 160)
             {
                 Player.Velocity = Vector2.Right * 90;
                 Player.MoveAndSlide();
             }
-            if (Player.Position.X > 150)
+            else
             {
-                StopPressD.Modulate = new Color(1, 1, 1, 1);
-
-            }
-            if (Input.IsActionJustReleased("walkRight"))
-            {
-                StopPressD.Modulate = new Color(1, 1, 1, 0);
-
-                //animation
-
-
                 horse.Stop();
                 isMoving = true;
                 Music.Play();
-
             }
-           
+
+            timer.WaitTime = 5f;
+            state = "start";
+            timer.Start();
         }
         if (isMoving)
         {
            
             var tweenMusic = CreateTween();
            tweenMusic.TweenProperty(Music, "volume_db", -10, 2f);
-          
+           
+
             if (Input.IsActionPressed("walkRight"))
             {
              // horse.Play();
                
                 PressD.Modulate = new Color(1, 1, 1, 0);
-                if (Player.Position.X < 281)
-                {
-                    Player.Velocity = Vector2.Right * 20;
-                    Player.MoveAndSlide();
-                }
-                else if (Player.Position.X > 300)
-                {
-                    Player.Velocity = Vector2.Left * 20;
-                    Player.MoveAndSlide();
-                }
+            
 
                 var tween = CreateTween();
                 tween.TweenProperty(this, "SkyStartSpeed", SkyMaxSpeed, 1.5f);

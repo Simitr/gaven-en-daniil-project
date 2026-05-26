@@ -5,11 +5,10 @@ public partial class PrologStart : Node
 {
     [Export] public Timer timerTest { get; set; }
     [Export] public Sprite2D Logo;
-    [Export] public Label Label;
     [Export] public float requiemTime = 10.0f;
-    [Export] public AudioStreamPlayer2D Player;
-    [Export] public Sprite2D ProgressBar;
-    [Export] public Sprite2D Horse;
+    [Export] public AudioStreamPlayer2D fonMusic;
+    [Export] public Sprite2D progressBar;
+    [Export] public Sprite2D horseprogressBar;
     public string state;
     public bool next = false;
     public float holdTime = 0.0f;
@@ -21,51 +20,34 @@ public partial class PrologStart : Node
         timerTest.Timeout += OnTimerTimeout;
         timerTest.Start();
         state = "start";
-        ProgressBar.Modulate = new Color(1, 1, 1, 0); 
-        Horse.Modulate = new Color(1, 1, 1, 0);
+        progressBar.Modulate = new Color(1, 1, 1, 0); 
+        horseprogressBar.Modulate = new Color(1, 1, 1, 0);
         Logo.Modulate = new Color(1,1,1,0);
-        Label.Modulate = new Color(1, 1, 1, 0);
-        Player.Play();
+
+        fonMusic.Play();
     }
 
     public override void _Process(double delta)
     {
          if (next)
             {
-            ProgressBar.Modulate = new Color(1, 1, 1, 1);
-            Horse.Modulate = new Color(1, 1, 1, 1);
-            if (Input.IsActionPressed("walkRight"))
+     
+            progressBar.Modulate = new Color(1, 1, 1, 1);
+            horseprogressBar.Modulate = new Color(1, 1, 1, 1);
+  
+                if (horseprogressBar.Position.X < 607)
                 {
-                if (Horse.Position.X < 607)
-                {
-                    Horse.Position += new Vector2(10 * (float)delta, 0);
+                    horseprogressBar.Position += new Vector2(6 * (float)delta, 0);
                 }
                 else
                 {
                     GetTree().ChangeSceneToFile("res://scenes/prologue_scene/PrologForReal.tscn");
                 }
-                volumeTween = CreateTween();
-                volumeTween.TweenProperty(Player, "volume_db", -10, 5f);
-                var tween4 = CreateTween();
-                tween4.TweenProperty(Label, "modulate:a", 0.0f, 2.0f);
+              
+                 
                 
-                
-            }
-            else
-            {
-                
-
-                var tween5 = CreateTween();
-                tween5.TweenProperty(Label, "modulate:a", 1.0f, 2.0f);
-            }
-            if (Input.IsActionJustPressed("walkRight"))
-            {
-                Player.Play();
-            }
-            else if (Input.IsActionJustReleased("walkRight"))
-            {
-                Player.Stop();
-            }
+            
+     
             
         }
     }
@@ -78,24 +60,26 @@ public partial class PrologStart : Node
                 var tween = CreateTween();
                 tween.TweenProperty(Logo, "modulate:a", 1.0f, 2.0f);
                 timerTest.WaitTime = 4.0;
-                state = "music";
+                state = "fonMusic";
                 timerTest.Start();
                 break;
-            case "music":
+            case "fonMusic":
                 var tween2 = CreateTween();
                 tween2.TweenProperty(Logo, "modulate:a", 0.0f, 2.0f);
              
                 timerTest.WaitTime = 2.0;
                 state = "next";
                 timerTest.Start();
-                
-                Player.VolumeDb = -30; 
-                Player.Play();
+
+                fonMusic.VolumeDb = -20;
+
+                volumeTween = CreateTween();
+                volumeTween.TweenProperty(fonMusic, "volume_db", -10, 2f);
+                fonMusic.Play();
                 break;
             case "next":
                  next = true;
-                var tween4 = CreateTween();
-                tween4.TweenProperty(Label, "modulate:a", 1.0f, 2.0f);
+                
                 break;
 
         }
