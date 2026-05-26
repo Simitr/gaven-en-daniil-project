@@ -39,7 +39,7 @@ texture_filter = 1
 position = Vector2(300, 148)
 texture = ExtResource("5_ncrow")
 
-[node name="Node" type="Node" parent="." unique_id=1212987585 node_paths=PackedStringArray("Parallax", "Parallax2", "Parallax3", "Parallax4", "Player", "StopPressD", "PressD", "Music", "timer", "horse", "blackBackground")]
+[node name="Node" type="Node" parent="." unique_id=1212987585 node_paths=PackedStringArray("Parallax", "Parallax2", "Parallax3", "Parallax4", "Player", "StopPressD", "PressD", "Music", "timer", "horse")]
 script = ExtResource("3_ncrow")
 Parallax = NodePath("../Parallax2D")
 Parallax2 = NodePath("../Parallax2D2")
@@ -51,7 +51,6 @@ PressD = NodePath("Label2")
 Music = NodePath("../Music")
 timer = NodePath("../Timer")
 horse = NodePath("../AudioStreamPlayer2D")
-blackBackground = NodePath("../ColorRect")
 
 [node name="Label2" type="Label" parent="Node" unique_id=1417801192]
 offset_left = 431.0
