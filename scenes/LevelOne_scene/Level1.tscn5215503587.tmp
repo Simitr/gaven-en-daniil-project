@@ -977,5 +977,5 @@ z_index = 1
 position = Vector2(183, 97)
 collision_layer = 1
 
-[node name="test" parent="." unique_id=2119819285 instance=ExtResource("3_tgalm")]
-position = Vector2(368, 115)
+[node name="enemy" parent="." unique_id=66476961 instance=ExtResource("3_tgalm")]
+position = Vector2(369, 126)

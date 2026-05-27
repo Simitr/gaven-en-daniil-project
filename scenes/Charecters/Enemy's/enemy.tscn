@@ -1,51 +1,39 @@
 [gd_scene format=3 uid="uid://cb61l7x4vqglu"]
 
-[ext_resource type="Texture2D" uid="uid://b7ypwcup3ln7r" path="res://Sprites/EnemyAsset/GuardEnemy.png" id="1_dhcm7"]
+[ext_resource type="Script" uid="uid://dxqtlf2n81hrh" path="res://scenes/Charecters/Enemy's/enemy.gd" id="1_66fwh"]
+[ext_resource type="Texture2D" uid="uid://lyvq158r0eyg" path="res://Sprites/EnemyAsset/GuardMutantEnemy.png" id="1_dhcm7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_66fwh"]
-atlas = ExtResource("1_dhcm7")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7apfe"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"death",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_66fwh")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
+[sub_resource type="CircleShape2D" id="CircleShape2D_66fwh"]
+radius = 45.01111
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dhcm7"]
-radius = 92.086914
+radius = 8.246211
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7apfe"]
-size = Vector2(20, 8)
+[node name="test" type="Node2D" unique_id=2119819285]
 
-[node name="enemy" type="CharacterBody2D" unique_id=66476961]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=827927467]
-sprite_frames = SubResource("SpriteFrames_7apfe")
-animation = &"idle"
-
-[node name="detection_area" type="Area2D" parent="." unique_id=1104963288]
+[node name="testEnemy" type="CharacterBody2D" parent="." unique_id=1618650335]
 collision_layer = 2
-collision_mask = 2
+script = ExtResource("1_66fwh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area" unique_id=1257844022]
+[node name="Sprite2D" type="Sprite2D" parent="testEnemy" unique_id=29427418]
+texture = ExtResource("1_dhcm7")
+
+[node name="DetectionArea" type="Area2D" parent="testEnemy" unique_id=1361605865]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 4
+monitoring = false
+monitorable = false
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testEnemy/DetectionArea" unique_id=589717762]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_66fwh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testEnemy" unique_id=1040683225]
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_dhcm7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=493676923]
-position = Vector2(0, 11)
-shape = SubResource("RectangleShape2D_7apfe")
+[connection signal="body_entered" from="testEnemy/DetectionArea" to="testEnemy" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="testEnemy/DetectionArea" to="testEnemy" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="testEnemy/DetectionArea" to="testEnemy" method="_on_detection_area_body_exited"]

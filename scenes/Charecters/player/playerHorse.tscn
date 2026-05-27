@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dblajam766b04" path="res://assets/game/prologue_texture/Character/horse2.png" id="4_e6k7a"]
 [ext_resource type="Texture2D" uid="uid://bwo6iv7w2jhbx" path="res://assets/game/prologue_texture/Character/horse3.png" id="5_uv730"]
 [ext_resource type="Texture2D" uid="uid://cfimwprn6vjgt" path="res://assets/game/prologue_texture/Character/horse4.png" id="6_fvbv0"]
-[ext_resource type="Texture2D" uid="uid://b1k2yxo4t4hba" path="res://assets/game/prologue_texture/Character/horse5.png" id="7_p2m55"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iblbt"]
 atlas = ExtResource("2_fh3bg")
@@ -70,13 +69,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_fvbv0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_p2m55")
 }],
 "loop": true,
 "name": &"new_animation_1",
-"speed": 5.0
+"speed": 3.5
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuuaj"]
@@ -87,8 +83,9 @@ size = Vector2(20, 34)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864297161]
 position = Vector2(114, 51)
 sprite_frames = SubResource("SpriteFrames_wv0uv")
+animation = &"new_animation_1"
 autoplay = "default"
-frame_progress = 0.3499724
+frame_progress = 0.18681815
 
 [node name="Node" type="Node" parent="." unique_id=1964660053]
 

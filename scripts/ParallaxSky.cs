@@ -12,9 +12,9 @@ public partial class ParallaxSky : Node
     [Export] public CharacterBody2D Player;
     [Export] public Label StopPressD;
     [Export] public Label PressD;
-    [Export] public AudioStreamPlayer2D Music;
+    [Export] public AudioStreamPlayer2D music;
     [Export] public Godot.Timer timer;
-    [Export] public AudioStreamPlayer2D horse;
+    [Export] public AudioStreamPlayer2D horseAudio;
     [Export] public ColorRect blackBackground;
     public float SkyStartSpeed = 1f;
     public float BackStartSpeed = 0f;
@@ -32,7 +32,7 @@ public partial class ParallaxSky : Node
         StopPressD.Modulate = new Color(1, 1, 1, 0);
         PressD.Modulate = new Color(1, 1, 1, 0);
         timer.Timeout += OnTimerTimeout;
-        horse.Play();
+        horseAudio.Play();
     }
 
     public override void _Process(double delta)
@@ -45,7 +45,7 @@ public partial class ParallaxSky : Node
         {
           
              
-            //horse.Seek(5f);
+            //horseAudio.Seek(5f);
             if (Player.Position.X < 160)
             {
                 Player.Velocity = Vector2.Right * 90;
@@ -53,9 +53,9 @@ public partial class ParallaxSky : Node
             }
             else
             {
-                horse.Stop();
+                horseAudio.Stop();
                 isMoving = true;
-                Music.Play();
+                music.Play();
             }
 
             timer.WaitTime = 5f;
@@ -65,13 +65,13 @@ public partial class ParallaxSky : Node
         if (isMoving)
         {
            
-            var tweenMusic = CreateTween();
-           tweenMusic.TweenProperty(Music, "volume_db", -10, 2f);
+            var tweenmusic = CreateTween();
+           tweenmusic.TweenProperty(music, "volume_db", -10, 2f);
            
 
             if (Input.IsActionPressed("walkRight"))
             {
-             // horse.Play();
+             // horseAudio.Play();
                
                 PressD.Modulate = new Color(1, 1, 1, 0);
             
@@ -91,9 +91,9 @@ public partial class ParallaxSky : Node
             }
             else
             {
-               horse.Play();
+               horseAudio.Play();
                 
-          // horse.Stop();
+          // horseAudio.Stop();
 
                 var tween = CreateTween();
                 tween.TweenProperty(this, "SkyStartSpeed", 1, 1.0f);
