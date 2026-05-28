@@ -166,7 +166,6 @@ size = Vector2(21, 6)
 [node name="Player" type="CharacterBody2D" unique_id=1372397156 groups=["player"]]
 visibility_layer = 6
 y_sort_enabled = true
-collision_mask = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2030178958]
 visibility_layer = 6
@@ -176,7 +175,6 @@ animation = &"walking"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985997954]
-visibility_layer = 6
 z_index = 1
 position = Vector2(-0.5, -3)
 shape = SubResource("RectangleShape2D_8pucs")
