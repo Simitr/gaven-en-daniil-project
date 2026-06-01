@@ -1,11 +1,85 @@
 [gd_scene format=4 uid="uid://ck2qck88abja5"]
 
 [ext_resource type="PackedScene" uid="uid://bot4c7b8vip0s" path="res://scenes/Charecters/player/playerHorse.tscn" id="1_4xe8f"]
+[ext_resource type="Texture2D" uid="uid://c4tp7ca6hqual" path="res://assets/game/prologue_texture/Character/cowboyonhorse.png" id="2_7tfef"]
+[ext_resource type="Texture2D" uid="uid://c6u3slh5hf2y6" path="res://assets/game/prologue_texture/Character/horse1.png" id="3_6gqm1"]
 [ext_resource type="Texture2D" uid="uid://cqxsnndlvyjwq" path="res://assets/game/prologue_texture/Character/sky.png" id="3_n8mk2"]
 [ext_resource type="Script" uid="uid://d1ypud76ak2jc" path="res://scripts/ParallaxSky.cs" id="3_ncrow"]
+[ext_resource type="Texture2D" uid="uid://dblajam766b04" path="res://assets/game/prologue_texture/Character/horse2.png" id="4_8tkle"]
 [ext_resource type="Texture2D" uid="uid://d1h2iqlt3m7uv" path="res://assets/game/prologue_texture/Character/back.png" id="5_ncrow"]
+[ext_resource type="Texture2D" uid="uid://bwo6iv7w2jhbx" path="res://assets/game/prologue_texture/Character/horse3.png" id="5_ywb8p"]
 [ext_resource type="Texture2D" uid="uid://l6ss8m8ioe7y" path="res://assets/game/prologue_texture/Character/ground.png" id="6_1gy4g"]
+[ext_resource type="Texture2D" uid="uid://cfimwprn6vjgt" path="res://assets/game/prologue_texture/Character/horse4.png" id="6_yjyr0"]
+[ext_resource type="Texture2D" uid="uid://c7wn5vhji0l32" path="res://assets/64x64_Atlas_Horse_Idle.png" id="7_gut3q"]
 [ext_resource type="AudioStream" uid="uid://b33aptopw111c" path="res://music/Dust Trail Horizon.mp3" id="7_h2ubk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iblbt"]
+atlas = ExtResource("7_gut3q")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi2xw"]
+atlas = ExtResource("7_gut3q")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82fc6"]
+atlas = ExtResource("7_gut3q")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80gqm"]
+atlas = ExtResource("7_gut3q")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eggk6"]
+atlas = ExtResource("7_gut3q")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5kxdj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7tfef")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6gqm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8tkle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ywb8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yjyr0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iblbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi2xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82fc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80gqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eggk6")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ncrow"]
 resource_local_to_scene = true
@@ -20,6 +94,12 @@ loop = true
 [node name="PlayerHorse" parent="." unique_id=1861779202 instance=ExtResource("1_4xe8f")]
 z_index = 1
 position = Vector2(0, 154)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="PlayerHorse" unique_id=441933934]
+position = Vector2(114, 51)
+sprite_frames = SubResource("SpriteFrames_5kxdj")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1457906002]
 repeat_size = Vector2(512, 0)
@@ -39,18 +119,19 @@ texture_filter = 1
 position = Vector2(300, 148)
 texture = ExtResource("5_ncrow")
 
-[node name="Node" type="Node" parent="." unique_id=1212987585 node_paths=PackedStringArray("Parallax", "Parallax2", "Parallax3", "Parallax4", "Player", "StopPressD", "PressD", "Music", "timer", "horse", "blackBackground")]
+[node name="Node" type="Node" parent="." unique_id=1212987585 node_paths=PackedStringArray("Parallax", "Parallax2", "Parallax3", "Parallax4", "Player", "animatieCharacter", "StopPressD", "PressD", "music", "timer", "horseAudio", "blackBackground")]
 script = ExtResource("3_ncrow")
 Parallax = NodePath("../Parallax2D")
 Parallax2 = NodePath("../Parallax2D2")
 Parallax3 = NodePath("../Parallax2D3")
 Parallax4 = NodePath("../Parallax2D4")
 Player = NodePath("../PlayerHorse")
+animatieCharacter = NodePath("../PlayerHorse/AnimatedSprite2D2")
 StopPressD = NodePath("../Label")
 PressD = NodePath("Label2")
-Music = NodePath("../Music")
+music = NodePath("../Music")
 timer = NodePath("../Timer")
-horse = NodePath("../AudioStreamPlayer2D")
+horseAudio = NodePath("../AudioStreamPlayer2D")
 blackBackground = NodePath("../ColorRect")
 
 [node name="Label2" type="Label" parent="Node" unique_id=1417801192]

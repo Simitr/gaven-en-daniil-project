@@ -10,6 +10,7 @@ public partial class ParallaxSky : Node
     [Export] public Parallax2D Parallax3;
     [Export] public Parallax2D Parallax4;
     [Export] public CharacterBody2D Player;
+    [Export] public AnimatedSprite2D animatieCharacter;
     [Export] public Label StopPressD;
     [Export] public Label PressD;
     [Export] public AudioStreamPlayer2D music;
@@ -91,7 +92,8 @@ public partial class ParallaxSky : Node
             }
             else
             {
-               horseAudio.Play();
+                animatieCharacter.Play("idle");
+                horseAudio.Play();
                 
           // horseAudio.Stop();
 
