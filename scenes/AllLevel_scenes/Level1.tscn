@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://bsggw0c7e4xt2"]
 
 [ext_resource type="Texture2D" uid="uid://buqr8sub0snn0" path="res://assets/game/prologue_texture/Dungeon_assets/FG_Cellar.png" id="1_7vu5a"]
+[ext_resource type="Script" uid="uid://270i44b4hkyr" path="res://scenes/AllLevel_scenes/Room.gd" id="1_gslef"]
+[ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Door.gd" id="1_tmxtc"]
 [ext_resource type="PackedScene" uid="uid://bc4waybd2ft8u" path="res://scenes/Charecters/player/player.tscn" id="2_veiaw"]
-[ext_resource type="PackedScene" uid="uid://cb61l7x4vqglu" path="res://scenes/Charecters/Enemy's/enemy.tscn" id="3_tgalm"]
+[ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/global.gd" id="6_gslef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
 texture = ExtResource("1_7vu5a")
@@ -935,8 +937,12 @@ texture = ExtResource("1_7vu5a")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_veiaw")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey6jb"]
+size = Vector2(66, 38)
+
 [node name="Node2D" type="Node2D" unique_id=2130533778]
 y_sort_enabled = true
+script = ExtResource("1_gslef")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=58600368]
 y_sort_enabled = true
@@ -975,7 +981,24 @@ use_kinematic_bodies = true
 [node name="Player" parent="." unique_id=1372397156 instance=ExtResource("2_veiaw")]
 z_index = 1
 position = Vector2(183, 97)
-collision_layer = 1
+collision_mask = 7
 
-[node name="test" parent="." unique_id=2119819285 instance=ExtResource("3_tgalm")]
-position = Vector2(368, 115)
+[node name="DoortoRoom2" type="Area2D" parent="." unique_id=2036692786]
+script = ExtResource("1_tmxtc")
+next_scene = "uid://wqerkhgxpo0k"
+target_spawn = "SpawnTop"
+
+[node name="DoortoRoom2" type="CollisionShape2D" parent="DoortoRoom2" unique_id=795491993]
+z_index = 2
+position = Vector2(343, 376)
+shape = SubResource("RectangleShape2D_ey6jb")
+
+[node name="SpawnLeft" type="Marker2D" parent="." unique_id=2094508336]
+position = Vector2(219, 274)
+script = ExtResource("6_gslef")
+
+[node name="SpawnRight" type="Marker2D" parent="." unique_id=672166369]
+position = Vector2(343, 300)
+script = ExtResource("6_gslef")
+
+[connection signal="body_entered" from="DoortoRoom2" to="DoortoRoom2" method="_on_body_entered"]
