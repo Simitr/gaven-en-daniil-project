@@ -990,7 +990,7 @@ sources/0 = SubResource("TileSetAtlasSource_veiaw")
 size = Vector2(62, 57)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlvkq"]
-size = Vector2(60.5, 59.5)
+size = Vector2(67, 59.5)
 
 [node name="Room2" type="Node2D" unique_id=2130533778]
 y_sort_enabled = true
@@ -1046,12 +1046,23 @@ shape = SubResource("RectangleShape2D_wivl7")
 [node name="DoortoRoom3" type="Area2D" parent="." unique_id=1149778713]
 position = Vector2(1, -1)
 script = ExtResource("3_4onql")
-next_scene = "uid://corjyke0ukqhy"
+next_scene = "uid://b58xkhywvlmmw"
 target_spawn = "SpawnTop"
 
 [node name="DoortoRoom3" type="CollisionShape2D" parent="DoortoRoom3" unique_id=598241705]
 z_index = 1
-position = Vector2(186.75, 416)
+position = Vector2(183.5, 416)
+shape = SubResource("RectangleShape2D_wlvkq")
+
+[node name="DoortoRoom4" type="Area2D" parent="." unique_id=251057713]
+position = Vector2(1, -1)
+script = ExtResource("3_4onql")
+next_scene = "uid://corjyke0ukqhy"
+target_spawn = "SpawnTop"
+
+[node name="DoortoRoom4" type="CollisionShape2D" parent="DoortoRoom4" unique_id=2099161056]
+z_index = 2
+position = Vector2(-124, 137)
 shape = SubResource("RectangleShape2D_wlvkq")
 
 [node name="SpawnBottom" type="Marker2D" parent="." unique_id=1460348348]
@@ -1072,3 +1083,4 @@ script = ExtResource("4_4onql")
 
 [connection signal="body_entered" from="DoortoRoom1" to="DoortoRoom1" method="_on_body_entered"]
 [connection signal="body_entered" from="DoortoRoom3" to="DoortoRoom3" method="_on_body_entered"]
+[connection signal="body_entered" from="DoortoRoom4" to="DoortoRoom4" method="_on_body_entered"]

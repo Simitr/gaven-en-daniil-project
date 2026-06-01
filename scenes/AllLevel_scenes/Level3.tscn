@@ -1,13 +1,13 @@
-[gd_scene format=4 uid="uid://corjyke0ukqhy"]
+[gd_scene format=4 uid="uid://b58xkhywvlmmw"]
 
-[ext_resource type="Texture2D" uid="uid://buqr8sub0snn0" path="res://assets/game/prologue_texture/Dungeon_assets/FG_Cellar.png" id="1_hmscp"]
-[ext_resource type="Script" uid="uid://270i44b4hkyr" path="res://scenes/AllLevel_scenes/Room.gd" id="1_li3ca"]
-[ext_resource type="PackedScene" uid="uid://bc4waybd2ft8u" path="res://scenes/Charecters/player/player.tscn" id="2_l7ukn"]
-[ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/global.gd" id="3_wio24"]
-[ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Door.gd" id="3_wugqc"]
+[ext_resource type="Script" uid="uid://270i44b4hkyr" path="res://scenes/AllLevel_scenes/Room.gd" id="1_dfk3p"]
+[ext_resource type="Texture2D" uid="uid://buqr8sub0snn0" path="res://assets/game/prologue_texture/Dungeon_assets/FG_Cellar.png" id="2_fc61m"]
+[ext_resource type="PackedScene" uid="uid://bc4waybd2ft8u" path="res://scenes/Charecters/player/player.tscn" id="3_dsk3o"]
+[ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Door.gd" id="4_sa74c"]
+[ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/global.gd" id="5_458l2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
-texture = ExtResource("1_hmscp")
+texture = ExtResource("2_fc61m")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -990,9 +990,12 @@ sources/0 = SubResource("TileSetAtlasSource_veiaw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li3ca"]
 size = Vector2(65.75, 63)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ml3pu"]
+size = Vector2(62, 49)
+
 [node name="Node2D" type="Node2D" unique_id=2130533778]
 y_sort_enabled = true
-script = ExtResource("1_li3ca")
+script = ExtResource("1_dfk3p")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=58600368]
 y_sort_enabled = true
@@ -1028,12 +1031,12 @@ tile_map_data = PackedByteArray("AAAPACAAAAAKAAsAAAAPAB8AAAAKAAsAAAAOAB8AAAAKAAs
 tile_set = SubResource("TileSet_tgalm")
 use_kinematic_bodies = true
 
-[node name="Player" parent="." unique_id=1372397156 instance=ExtResource("2_l7ukn")]
+[node name="Player" parent="." unique_id=1372397156 instance=ExtResource("3_dsk3o")]
 position = Vector2(325, 117)
 
 [node name="DoortoRoom2" type="Area2D" parent="." unique_id=1046542701]
 position = Vector2(322, 15)
-script = ExtResource("3_wugqc")
+script = ExtResource("4_sa74c")
 next_scene = "uid://wqerkhgxpo0k"
 target_spawn = "SpawnBottom"
 
@@ -1042,8 +1045,24 @@ z_index = 1
 position = Vector2(7, -72)
 shape = SubResource("RectangleShape2D_li3ca")
 
+[node name="DoortoRoom4" type="Area2D" parent="." unique_id=1751444659]
+position = Vector2(21, 161)
+script = ExtResource("4_sa74c")
+next_scene = "uid://corjyke0ukqhy"
+target_spawn = "SpawnBottom"
+
+[node name="DoortoRoom4" type="CollisionShape2D" parent="DoortoRoom4" unique_id=1026189564]
+z_index = 1
+position = Vector2(-95, -5.5)
+shape = SubResource("RectangleShape2D_ml3pu")
+
 [node name="SpawnTop" type="Marker2D" parent="." unique_id=817269149]
 position = Vector2(322, 19)
-script = ExtResource("3_wio24")
+script = ExtResource("5_458l2")
+
+[node name="SpawnLeft" type="Marker2D" parent="." unique_id=1751806234]
+position = Vector2(21, 161)
+script = ExtResource("5_458l2")
 
 [connection signal="body_entered" from="DoortoRoom2" to="DoortoRoom2" method="_on_body_entered"]
+[connection signal="body_entered" from="DoortoRoom4" to="DoortoRoom4" method="_on_body_entered"]

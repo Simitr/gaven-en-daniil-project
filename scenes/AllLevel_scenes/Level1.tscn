@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://270i44b4hkyr" path="res://scenes/AllLevel_scenes/Room.gd" id="1_gslef"]
 [ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Door.gd" id="1_tmxtc"]
 [ext_resource type="PackedScene" uid="uid://bc4waybd2ft8u" path="res://scenes/Charecters/player/player.tscn" id="2_veiaw"]
-[ext_resource type="PackedScene" uid="uid://cb61l7x4vqglu" path="res://scenes/Charecters/Enemy's/enemy.tscn" id="3_tgalm"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/global.gd" id="6_gslef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
@@ -983,9 +982,6 @@ use_kinematic_bodies = true
 z_index = 1
 position = Vector2(183, 97)
 collision_mask = 7
-
-[node name="test" parent="." unique_id=2119819285 instance=ExtResource("3_tgalm")]
-position = Vector2(368, 115)
 
 [node name="DoortoRoom2" type="Area2D" parent="." unique_id=2036692786]
 script = ExtResource("1_tmxtc")
