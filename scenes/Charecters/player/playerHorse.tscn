@@ -39,6 +39,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_miwnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e6k7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uv730")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fvbv0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_iblbt")
 }, {
 "duration": 1.0,
@@ -56,23 +73,6 @@ animations = [{
 "loop": true,
 "name": &"new_animation",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_miwnm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_e6k7a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_uv730")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_fvbv0")
-}],
-"loop": true,
-"name": &"new_animation_1",
-"speed": 3.5
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuuaj"]
@@ -81,11 +81,12 @@ size = Vector2(20, 34)
 [node name="PlayerHorse" type="CharacterBody2D" unique_id=1861779202]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864297161]
+visible = false
 position = Vector2(114, 51)
 sprite_frames = SubResource("SpriteFrames_wv0uv")
-animation = &"new_animation_1"
-autoplay = "default"
-frame_progress = 0.18681815
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.38902625
 
 [node name="Node" type="Node" parent="." unique_id=1964660053]
 
