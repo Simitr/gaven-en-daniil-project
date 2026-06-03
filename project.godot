@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*uid://bbie7s8obk5v0"
 TransitionLayer="*uid://t50fjkox2y4y"
+UI="*uid://bxkro1qbvgf6d"
 
 [display]
 

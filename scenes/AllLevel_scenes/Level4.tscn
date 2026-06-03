@@ -988,10 +988,10 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_veiaw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li3ca"]
-size = Vector2(65.75, 63)
+size = Vector2(65.75, 79.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfk3p"]
-size = Vector2(68.5, 62)
+size = Vector2(68.5, 71)
 
 [node name="Node2D" type="Node2D" unique_id=2130533778]
 y_sort_enabled = true
@@ -1042,7 +1042,7 @@ target_spawn = "SpawnLeft"
 
 [node name="DoortoRoom2" type="CollisionShape2D" parent="DoortoRoom2" unique_id=273751503]
 z_index = 1
-position = Vector2(-424, 13)
+position = Vector2(-465, 16.75)
 shape = SubResource("RectangleShape2D_li3ca")
 
 [node name="DoortoRoom3" type="Area2D" parent="." unique_id=2031763066]
@@ -1053,7 +1053,7 @@ target_spawn = "SpawnLeft"
 
 [node name="DoortoRoom3" type="CollisionShape2D" parent="DoortoRoom3" unique_id=1353175543]
 z_index = 1
-position = Vector2(-424, 563)
+position = Vector2(-465, 558.5)
 shape = SubResource("RectangleShape2D_dfk3p")
 
 [node name="SpawnTop" type="Marker2D" parent="." unique_id=817269149]

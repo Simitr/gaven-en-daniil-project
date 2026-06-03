@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsolmel58rdyp"
-path="res://.godot/imported/Heart_Red_1.png-40ab80bf8307ea999c36bbc2ccab26df.ctex"
+uid="uid://bxppxekjknman"
+path="res://.godot/imported/Ammunition.png-936221c77526b6cf95060ae0458ab63e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/InventoryAsset/Retro Inventory/Original/Heart_Red_1.png"
-dest_files=["res://.godot/imported/Heart_Red_1.png-40ab80bf8307ea999c36bbc2ccab26df.ctex"]
+source_file="res://Sprites/InventoryAsset/Retro Inventory/Original/Ammunition.png"
+dest_files=["res://.godot/imported/Ammunition.png-936221c77526b6cf95060ae0458ab63e.ctex"]
 
 [params]
 

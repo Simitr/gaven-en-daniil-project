@@ -1040,7 +1040,7 @@ target_spawn = "SpawnRight"
 
 [node name="DoortoRoom1" type="CollisionShape2D" parent="DoortoRoom1" unique_id=2138219873]
 z_index = 1
-position = Vector2(185, -67)
+position = Vector2(184, -31)
 shape = SubResource("RectangleShape2D_wivl7")
 
 [node name="DoortoRoom3" type="Area2D" parent="." unique_id=1149778713]
@@ -1051,7 +1051,7 @@ target_spawn = "SpawnTop"
 
 [node name="DoortoRoom3" type="CollisionShape2D" parent="DoortoRoom3" unique_id=598241705]
 z_index = 1
-position = Vector2(183.5, 416)
+position = Vector2(184, 387)
 shape = SubResource("RectangleShape2D_wlvkq")
 
 [node name="DoortoRoom4" type="Area2D" parent="." unique_id=251057713]
@@ -1062,7 +1062,7 @@ target_spawn = "SpawnTop"
 
 [node name="DoortoRoom4" type="CollisionShape2D" parent="DoortoRoom4" unique_id=2099161056]
 z_index = 2
-position = Vector2(-124, 137)
+position = Vector2(-84, 138)
 shape = SubResource("RectangleShape2D_wlvkq")
 
 [node name="SpawnBottom" type="Marker2D" parent="." unique_id=1460348348]
