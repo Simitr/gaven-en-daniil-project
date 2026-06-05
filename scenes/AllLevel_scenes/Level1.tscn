@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://270i44b4hkyr" path="res://scenes/AllLevel_scenes/Room.gd" id="1_gslef"]
 [ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Door.gd" id="1_tmxtc"]
 [ext_resource type="PackedScene" uid="uid://bc4waybd2ft8u" path="res://scenes/Charecters/player/player.tscn" id="2_veiaw"]
+[ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="6_3ydi7"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/global.gd" id="6_gslef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
@@ -1000,5 +1001,11 @@ script = ExtResource("6_gslef")
 [node name="SpawnRight" type="Marker2D" parent="." unique_id=672166369]
 position = Vector2(343, 300)
 script = ExtResource("6_gslef")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1818539965]
+color = Color(0.17211533, 0.1721153, 0.1721153, 1)
+
+[node name="Torch" parent="." unique_id=1800784889 instance=ExtResource("6_3ydi7")]
+position = Vector2(130, 20)
 
 [connection signal="body_entered" from="DoortoRoom2" to="DoortoRoom2" method="_on_body_entered"]

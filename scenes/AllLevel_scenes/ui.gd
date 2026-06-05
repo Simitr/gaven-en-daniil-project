@@ -2,6 +2,12 @@ extends CanvasLayer
 
 var ammo := 6
 
+@onready var ammo_label = $"Ammo/AmmoLabel"
+
+
+func update_ammo_ui():
+	ammo_label.text = str(ammo)
+	
 func add_ammo(amount: int):
 	ammo += amount
 	update_ammo_ui()
@@ -9,17 +15,10 @@ func add_ammo(amount: int):
 func use_ammo():
 	if ammo > 0:
 		ammo -= 1
-		update_ammo_ui()
+		
+	update_ammo_ui()
 
-@onready var ammo_label = $CanvasLayer/AmmoLabel
+func _process(delta):
 
-func update_ammo_ui():
-	ammo_label.text = str(ammo)
-	
-	
-func _ready() -> void:
-	pass
-
-
-func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("ui_accept"):
+		add_ammo(1)

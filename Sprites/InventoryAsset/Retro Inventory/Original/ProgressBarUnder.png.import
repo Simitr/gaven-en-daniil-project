@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq5fk81pjq1mn"
-path="res://.godot/imported/RadiationCatStudios.png-9b852ad2522da2fd7d9d34584501abc5.ctex"
+uid="uid://cnm80fl6vstn2"
+path="res://.godot/imported/ProgressBarUnder.png-5f6d85b9da23993830b79b7e3802907d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/RadiationCatStudios.png"
-dest_files=["res://.godot/imported/RadiationCatStudios.png-9b852ad2522da2fd7d9d34584501abc5.ctex"]
+source_file="res://Sprites/InventoryAsset/Retro Inventory/Original/ProgressBarUnder.png"
+dest_files=["res://.godot/imported/ProgressBarUnder.png-5f6d85b9da23993830b79b7e3802907d.ctex"]
 
 [params]
 

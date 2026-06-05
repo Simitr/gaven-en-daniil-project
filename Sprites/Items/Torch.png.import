@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq5fk81pjq1mn"
-path="res://.godot/imported/RadiationCatStudios.png-9b852ad2522da2fd7d9d34584501abc5.ctex"
+uid="uid://bi715dyxsf4tw"
+path="res://.godot/imported/Torch.png-5f0eb43d0dc154cb5d77ffc36a99abf5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/RadiationCatStudios.png"
-dest_files=["res://.godot/imported/RadiationCatStudios.png-9b852ad2522da2fd7d9d34584501abc5.ctex"]
+source_file="res://Sprites/Items/Torch.png"
+dest_files=["res://.godot/imported/Torch.png-5f0eb43d0dc154cb5d77ffc36a99abf5.ctex"]
 
 [params]
 
