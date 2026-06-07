@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://buuhkqt0g3ea0"]
+
+[ext_resource type="PackedScene" uid="uid://ck2qck88abja5" path="res://scenes/prologue_scene/PrologForReal.tscn" id="1_ci7g7"]
+
+[node name="Main" type="Node2D" unique_id=1729496351]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=425388241]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1094575345]
+
+[node name="PrologForReal" parent="SubViewportContainer/SubViewport" unique_id=1287511674 instance=ExtResource("1_ci7g7")]

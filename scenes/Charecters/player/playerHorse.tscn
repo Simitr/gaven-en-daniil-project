@@ -1,42 +1,21 @@
 [gd_scene format=3 uid="uid://bot4c7b8vip0s"]
 
 [ext_resource type="Texture2D" uid="uid://c4tp7ca6hqual" path="res://assets/game/prologue_texture/Character/cowboyonhorse.png" id="1_3ibdw"]
-[ext_resource type="Texture2D" uid="uid://c7wn5vhji0l32" path="res://assets/64x64_Atlas_Horse_Idle.png" id="2_fh3bg"]
 [ext_resource type="Texture2D" uid="uid://c6u3slh5hf2y6" path="res://assets/game/prologue_texture/Character/horse1.png" id="3_miwnm"]
 [ext_resource type="Texture2D" uid="uid://dblajam766b04" path="res://assets/game/prologue_texture/Character/horse2.png" id="4_e6k7a"]
 [ext_resource type="Texture2D" uid="uid://bwo6iv7w2jhbx" path="res://assets/game/prologue_texture/Character/horse3.png" id="5_uv730"]
+[ext_resource type="Texture2D" uid="uid://cui3skgna13yb" path="res://assets/game/prologue_texture/Character/koni1.png" id="6_e6k7a"]
 [ext_resource type="Texture2D" uid="uid://cfimwprn6vjgt" path="res://assets/game/prologue_texture/Character/horse4.png" id="6_fvbv0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iblbt"]
-atlas = ExtResource("2_fh3bg")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wi2xw"]
-atlas = ExtResource("2_fh3bg")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_82fc6"]
-atlas = ExtResource("2_fh3bg")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_80gqm"]
-atlas = ExtResource("2_fh3bg")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eggk6"]
-atlas = ExtResource("2_fh3bg")
-region = Rect2(64, 64, 64, 64)
+[ext_resource type="Texture2D" uid="uid://bd0a18memsl10" path="res://assets/game/prologue_texture/Character/koni2.png" id="7_uv730"]
+[ext_resource type="Texture2D" uid="uid://d1c6i37b56ywn" path="res://assets/game/prologue_texture/Character/koni3.png" id="8_fvbv0"]
+[ext_resource type="Texture2D" uid="uid://d2ymkq228qqo0" path="res://assets/game/prologue_texture/Character/koni4.png" id="9_iblbt"]
+[ext_resource type="Texture2D" uid="uid://cexjxamusaxor" path="res://assets/game/prologue_texture/Character/koni5.png" id="9_p2m55"]
+[ext_resource type="Texture2D" uid="uid://ks8n7wpbpanr" path="res://assets/game/prologue_texture/Character/koni6.png" id="11_wi2xw"]
+[ext_resource type="Texture2D" uid="uid://c74r3d2e5lry0" path="res://assets/game/prologue_texture/Character/koni7.png" id="12_82fc6"]
+[ext_resource type="Texture2D" uid="uid://cc581k8c3joxs" path="res://assets/game/prologue_texture/Character/koni8.png" id="13_80gqm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wv0uv"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_3ibdw")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_miwnm")
@@ -51,28 +30,45 @@ animations = [{
 "texture": ExtResource("6_fvbv0")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"1",
 "speed": 3.5
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iblbt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wi2xw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_82fc6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_80gqm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eggk6")
+"texture": ExtResource("1_3ibdw")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_e6k7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uv730")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fvbv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iblbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p2m55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wi2xw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_82fc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_80gqm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuuaj"]
@@ -86,7 +82,7 @@ position = Vector2(114, 51)
 sprite_frames = SubResource("SpriteFrames_wv0uv")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.38902625
+frame_progress = 0.8494869
 
 [node name="Node" type="Node" parent="." unique_id=1964660053]
 

@@ -52,9 +52,11 @@ texture_over = ExtResource("4_dj15v")
 texture_progress = ExtResource("5_w33vx")
 
 [node name="Linebar" type="Sprite2D" parent="." unique_id=157471847]
+visible = false
 position = Vector2(590, 216)
 texture = ExtResource("6_w33vx")
 
 [node name="Horse" type="Sprite2D" parent="." unique_id=2107253]
+visible = false
 position = Vector2(590, 216)
 texture = ExtResource("7_ock5q")

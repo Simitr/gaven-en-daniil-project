@@ -40,12 +40,12 @@ public partial class ParallaxSky : Node
     {
         var tween5 = CreateTween();
         tween5.TweenProperty(blackBackground, "modulate:a", 0f, 2.0f);
- 
+
 
         if (!isMoving)
         {
-          
-             
+            animatieCharacter.Play("walking");
+
             //horseAudio.Seek(5f);
             if (Player.Position.X < 160)
             {
@@ -65,17 +65,17 @@ public partial class ParallaxSky : Node
         }
         if (isMoving)
         {
-           
+
             var tweenmusic = CreateTween();
-           tweenmusic.TweenProperty(music, "volume_db", -10, 2f);
-           
+            tweenmusic.TweenProperty(music, "volume_db", -10, 2f);
+
 
             if (Input.IsActionPressed("walkRight"))
             {
-             // horseAudio.Play();
-               
+                // horseAudio.Play();
+
                 PressD.Modulate = new Color(1, 1, 1, 0);
-            
+                animatieCharacter.Play("walking");
 
                 var tween = CreateTween();
                 tween.TweenProperty(this, "SkyStartSpeed", SkyMaxSpeed, 1.5f);
@@ -94,8 +94,8 @@ public partial class ParallaxSky : Node
             {
                 animatieCharacter.Play("idle");
                 horseAudio.Play();
-                
-          // horseAudio.Stop();
+
+                // horseAudio.Stop();
 
                 var tween = CreateTween();
                 tween.TweenProperty(this, "SkyStartSpeed", 1, 1.0f);
@@ -130,7 +130,7 @@ public partial class ParallaxSky : Node
                 state = "start";
                 timer.Start();
             }
-            }
+        }
 
 
     }
@@ -143,13 +143,11 @@ public partial class ParallaxSky : Node
                 {
                     PressD.Modulate = new Color(1, 1, 1, 1);
                 }
-  
+
 
                 break;
-            
+
 
         }
     }
 }
-
-
