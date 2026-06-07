@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsolmel58rdyp"
-path="res://.godot/imported/Heart_Red_1.png-40ab80bf8307ea999c36bbc2ccab26df.ctex"
+uid="uid://cnm80fl6vstn2"
+path="res://.godot/imported/ProgressBarUnder.png-5f6d85b9da23993830b79b7e3802907d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/InventoryAsset/Retro Inventory/Original/Heart_Red_1.png"
-dest_files=["res://.godot/imported/Heart_Red_1.png-40ab80bf8307ea999c36bbc2ccab26df.ctex"]
+source_file="res://Sprites/InventoryAsset/Retro Inventory/Original/ProgressBarUnder.png"
+dest_files=["res://.godot/imported/ProgressBarUnder.png-5f6d85b9da23993830b79b7e3802907d.ctex"]
 
 [params]
 

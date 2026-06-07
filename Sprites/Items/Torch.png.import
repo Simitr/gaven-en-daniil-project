@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsolmel58rdyp"
-path="res://.godot/imported/Heart_Red_1.png-40ab80bf8307ea999c36bbc2ccab26df.ctex"
+uid="uid://bi715dyxsf4tw"
+path="res://.godot/imported/Torch.png-5f0eb43d0dc154cb5d77ffc36a99abf5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/InventoryAsset/Retro Inventory/Original/Heart_Red_1.png"
-dest_files=["res://.godot/imported/Heart_Red_1.png-40ab80bf8307ea999c36bbc2ccab26df.ctex"]
+source_file="res://Sprites/Items/Torch.png"
+dest_files=["res://.godot/imported/Torch.png-5f0eb43d0dc154cb5d77ffc36a99abf5.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsolmel58rdyp"
-path="res://.godot/imported/Heart_Red_1.png-40ab80bf8307ea999c36bbc2ccab26df.ctex"
+uid="uid://csgq0t765mowg"
+path="res://.godot/imported/HealthBarTest.png-d6bfc9f01f649be616a5774eff8415ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/InventoryAsset/Retro Inventory/Original/Heart_Red_1.png"
-dest_files=["res://.godot/imported/Heart_Red_1.png-40ab80bf8307ea999c36bbc2ccab26df.ctex"]
+source_file="res://Sprites/InventoryAsset/Retro Inventory/Original/HealthBarTest.png"
+dest_files=["res://.godot/imported/HealthBarTest.png-d6bfc9f01f649be616a5774eff8415ab.ctex"]
 
 [params]
 
