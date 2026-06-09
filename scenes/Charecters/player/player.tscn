@@ -6,8 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bg1svrn6l35jg" path="res://assets/game/prologue_texture/Character/cowboyanimation1v4.png" id="3_xhgkk"]
 [ext_resource type="Texture2D" uid="uid://c3l3u85abn7yx" path="res://assets/game/prologue_texture/Character/cowboyanimation1v5.png" id="4_undu6"]
 [ext_resource type="Texture2D" uid="uid://diland2t041ch" path="res://Sprites/Player/Dash.png" id="5_8pucs"]
-[ext_resource type="Texture2D" uid="uid://d1dd0lfj7b432" path="res://assets/game/prologue_texture/Character/idleAnimation1.png" id="6_ke6lp"]
-[ext_resource type="Texture2D" uid="uid://5rddffsij2jq" path="res://assets/game/prologue_texture/Character/idleAnimation2.png" id="7_4ut4n"]
+[ext_resource type="Texture2D" uid="uid://ggsk6cstcyxi" path="res://assets/game/prologue_texture/Character/w.png" id="8_4dh3i"]
 [ext_resource type="Texture2D" uid="uid://dgcirik2mrbkd" path="res://assets/game/prologue_texture/Character/sprites/cowboyanimation1.png" id="8_undu6"]
 [ext_resource type="Texture2D" uid="uid://dsv3rabt5tapg" path="res://assets/game/prologue_texture/Character/sprites/cowboyanimation2.png" id="9_ke6lp"]
 [ext_resource type="Texture2D" uid="uid://b11py0iyqyque" path="res://assets/game/prologue_texture/Character/sprites/cowboyanimation3.png" id="10_4ut4n"]
@@ -19,6 +18,16 @@
 [ext_resource type="Script" uid="uid://cbx3vksq6rj3n" path="res://scripts/WalkingState.cs" id="14_ke6lp"]
 [ext_resource type="Script" uid="uid://b11a3nsqxo0ji" path="res://scripts/IdleState.cs" id="14_uqc0y"]
 [ext_resource type="Texture2D" uid="uid://da34yr1cnjdfd" path="res://assets/game/prologue_texture/Character/cowboyanimation4back.png" id="15_4dh3i"]
+[ext_resource type="Texture2D" uid="uid://cqnecs346xeul" path="res://assets/game/prologue_texture/Character/handswilroll/w1.png" id="19_d66dv"]
+[ext_resource type="Texture2D" uid="uid://bhb7wgrfcq5lp" path="res://assets/game/prologue_texture/Character/handswilroll/w4.png" id="20_4dh3i"]
+[ext_resource type="Texture2D" uid="uid://cygtxmgaakc2d" path="res://assets/game/prologue_texture/Character/handswilroll/w2.png" id="20_6ebgs"]
+[ext_resource type="Script" uid="uid://c3yinyuocopki" path="res://scenes/Charecters/player/Lefthand.cs" id="21_csvd8"]
+[ext_resource type="Texture2D" uid="uid://cmj2e83d2ysyl" path="res://assets/game/prologue_texture/Character/handswilroll/w3.png" id="21_u5mp3"]
+[ext_resource type="Texture2D" uid="uid://c4fkhv6pcyy4m" path="res://assets/game/prologue_texture/Character/handswilroll/w5.png" id="23_4y1f5"]
+[ext_resource type="Texture2D" uid="uid://ucx6sbua4fp3" path="res://assets/game/prologue_texture/Character/handswilroll/w6.png" id="24_ertor"]
+[ext_resource type="Texture2D" uid="uid://b0jff40bfqjx1" path="res://assets/game/prologue_texture/Character/handswilroll/w7.png" id="25_5xjl3"]
+[ext_resource type="Texture2D" uid="uid://0nv5ye53xqn7" path="res://assets/game/prologue_texture/Character/handswilroll/w8.png" id="26_ha1fw"]
+[ext_resource type="Texture2D" uid="uid://dookohc0r687u" path="res://assets/game/prologue_texture/Character/handswilroll/wLampR1.png" id="27_ertor"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t68n"]
 atlas = ExtResource("5_8pucs")
@@ -102,29 +111,11 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_ke6lp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ke6lp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ke6lp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ke6lp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_4ut4n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_4ut4n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_4ut4n")
+"texture": ExtResource("8_4dh3i")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 4.0
+"name": &"w_pose",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -164,6 +155,49 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pucs"]
 size = Vector2(21, 6)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ebgs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_d66dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6ebgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_u5mp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4dh3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ha1fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5xjl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ertor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4y1f5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5xjl3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_ertor")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=1372397156 groups=["player"]]
 visibility_layer = 6
 y_sort_enabled = true
@@ -171,10 +205,10 @@ script = ExtResource("1_8t68n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2030178958]
 visibility_layer = 6
-position = Vector2(-1, -15)
+position = Vector2(-2, -15)
 sprite_frames = SubResource("SpriteFrames_d66dv")
-animation = &"walking"
-autoplay = "idle"
+animation = &"w_pose"
+autoplay = "w_pose"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985997954]
 z_index = 1
@@ -196,3 +230,21 @@ character = NodePath("../..")
 animatedSprite = NodePath("../../AnimatedSprite2D")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=34049318]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=634772376 node_paths=PackedStringArray("an")]
+z_index = 8
+position = Vector2(-3, -13)
+script = ExtResource("21_csvd8")
+an = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D" unique_id=357965397]
+z_index = 6
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_6ebgs")
+autoplay = "default"
+frame_progress = 0.0864702
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D" unique_id=73712683]
+z_index = -4
+position = Vector2(-1, -1)
+sprite_frames = SubResource("SpriteFrames_5xjl3")
