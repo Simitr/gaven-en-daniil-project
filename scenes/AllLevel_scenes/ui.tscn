@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bxkro1qbvgf6d"]
 
-[ext_resource type="Script" uid="uid://d1btker455gcy" path="res://scenes/AllLevel_scenes/ui.gd" id="1_yn0fj"]
+[ext_resource type="Script" uid="uid://d1btker455gcy" path="res://scenes/AllLevel_scenes/Scipts/ui.gd" id="1_yn0fj"]
 [ext_resource type="Texture2D" uid="uid://cd3yalow8kh8" path="res://Sprites/InventoryAsset/Retro Inventory/Scaled 2x/HealthBar.png" id="2_vio35"]
 [ext_resource type="Texture2D" uid="uid://d1o2384lahi3j" path="res://Sprites/InventoryAsset/Retro Inventory/Scaled 2x/HealthBarProgress.png" id="4_lb3l4"]
 [ext_resource type="Texture2D" uid="uid://bxppxekjknman" path="res://Sprites/InventoryAsset/Retro Inventory/Original/Ammunition.png" id="4_yn0fj"]
@@ -41,7 +41,6 @@ theme = SubResource("Theme_yn0fj")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 3
 theme_override_constants/paragraph_spacing = 0
-theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 1
 theme_override_fonts/font = ExtResource("6_vio35")
 theme_override_font_sizes/font_size = 24

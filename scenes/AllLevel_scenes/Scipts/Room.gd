@@ -1,6 +1,16 @@
 extends Node2D
 
+@onready var canvas_modulate = get_node_or_null("CanvasModulate")
+@onready var torches = get_node_or_null("Props")
+
 func _ready():
+	
+	if canvas_modulate:
+		canvas_modulate.activate_darkness()
+		
+	if torches:
+		for Torch in torches.get_children():
+			Torch.activate()
 
 	if Global.spawn_point == "":
 		return
