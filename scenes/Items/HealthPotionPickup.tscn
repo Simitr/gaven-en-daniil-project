@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cx7i1iqyhaa0c"]
+
+[ext_resource type="Texture2D" uid="uid://c4vuwbystgk8v" path="res://Sprites/Items/HealthPotionPickup.png" id="1_o8m58"]
+[ext_resource type="Script" uid="uid://dtlh6sbctd1vs" path="res://scenes/Items/ItemScripts/HealthPotionPickup.gd" id="2_k7nra"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7nra"]
+atlas = ExtResource("1_o8m58")
+region = Rect2(48, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddmus"]
+atlas = ExtResource("1_o8m58")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_425e1"]
+atlas = ExtResource("1_o8m58")
+region = Rect2(32, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxdqa"]
+atlas = ExtResource("1_o8m58")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1has5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7nra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddmus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_425e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxdqa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8m58"]
+size = Vector2(15, 20)
+
+[node name="Node2D" type="Node2D" unique_id=918011205]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1836670800]
+sprite_frames = SubResource("SpriteFrames_1has5")
+autoplay = "default"
+frame_progress = 0.015776085
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1684721725]
+script = ExtResource("2_k7nra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=883826581]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_o8m58")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
