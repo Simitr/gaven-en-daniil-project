@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://do0nv0bqiolh7"]
+[gd_scene format=3 uid="uid://dwgrqou34lil0"]
 
-[ext_resource type="Script" uid="uid://vltob7ej022e" path="res://scenes/Items/ItemScripts/LightFlicker.gd" id="1_rdfia"]
-[ext_resource type="Texture2D" uid="uid://dqlm1jbyg3mkk" path="res://Sprites/Items/LightTexture.png" id="1_x2o3u"]
-[ext_resource type="Texture2D" uid="uid://bi715dyxsf4tw" path="res://Sprites/Items/Torch.png" id="2_rdfia"]
-[ext_resource type="Texture2D" uid="uid://w6fd3lpmaxdr" path="res://Sprites/Items/Smoke.png" id="4_fpwkm"]
+[ext_resource type="Script" uid="uid://vltob7ej022e" path="res://scenes/Items/ItemScripts/LightFlicker.gd" id="1_ksdvt"]
+[ext_resource type="Texture2D" uid="uid://dqlm1jbyg3mkk" path="res://Sprites/Items/LightTexture.png" id="2_gohj1"]
+[ext_resource type="Texture2D" uid="uid://dfgdpipoix14u" path="res://Sprites/Items/Campfire.png" id="4_ksdvt"]
+[ext_resource type="Texture2D" uid="uid://w6fd3lpmaxdr" path="res://Sprites/Items/Smoke.png" id="4_niyna"]
 
 [sub_resource type="Curve" id="Curve_rdfia"]
 _limits = [-360.0, 360.0, 0.0, 1.0]
@@ -53,67 +53,67 @@ scale_min = 0.0
 scale_curve = SubResource("CurveTexture_7l2j1")
 color_ramp = SubResource("GradientTexture1D_mu8cx")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fpwkm"]
-atlas = ExtResource("2_rdfia")
-region = Rect2(48, 0, 16, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gohj1"]
+atlas = ExtResource("4_ksdvt")
+region = Rect2(16, 0, 16, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jqmfr"]
-atlas = ExtResource("2_rdfia")
-region = Rect2(32, 0, 16, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsnvs"]
+atlas = ExtResource("4_ksdvt")
+region = Rect2(32, 0, 16, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mu8cx"]
-atlas = ExtResource("2_rdfia")
-region = Rect2(16, 0, 16, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_niyna"]
+atlas = ExtResource("4_ksdvt")
+region = Rect2(48, 0, 16, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bdobl"]
-atlas = ExtResource("2_rdfia")
-region = Rect2(0, 0, 16, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgs0l"]
+atlas = ExtResource("4_ksdvt")
+region = Rect2(0, 0, 16, 15)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7l2j1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7qcc5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fpwkm")
+"texture": SubResource("AtlasTexture_gohj1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jqmfr")
+"texture": SubResource("AtlasTexture_nsnvs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mu8cx")
+"texture": SubResource("AtlasTexture_niyna")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bdobl")
+"texture": SubResource("AtlasTexture_rgs0l")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Torch" type="Node2D" unique_id=1800784889]
-script = ExtResource("1_rdfia")
+[node name="Campfire" type="Node2D" unique_id=1800784889]
+script = ExtResource("1_ksdvt")
 
 [node name="LightTexture" type="PointLight2D" parent="." unique_id=842360511]
 y_sort_enabled = true
-position = Vector2(1, 0)
-scale = Vector2(0.23437501, 0.21508789)
+position = Vector2(3, 7)
+scale = Vector2(0.38476565, 0.35559082)
 color = Color(0.96219605, 0.6768721, 0.38177067, 1)
 energy = 1.5
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("1_x2o3u")
+texture = ExtResource("2_gohj1")
 
 [node name="Smoke" type="GPUParticles2D" parent="." unique_id=1436962051]
 modulate = Color(1, 1, 1, 0.22745098)
 z_index = -1
 texture_filter = 1
 amount = 100
-texture = ExtResource("4_fpwkm")
+texture = ExtResource("4_niyna")
 speed_scale = 0.4
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_654jp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=745895682]
-position = Vector2(4, 7)
-sprite_frames = SubResource("SpriteFrames_7l2j1")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1431449715]
+position = Vector2(3, 4)
+sprite_frames = SubResource("SpriteFrames_7qcc5")
 autoplay = "default"
-frame_progress = 0.35466486
+frame_progress = 0.11096684

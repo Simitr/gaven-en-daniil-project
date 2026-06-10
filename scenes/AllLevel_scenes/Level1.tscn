@@ -1,11 +1,13 @@
 [gd_scene format=4 uid="uid://bsggw0c7e4xt2"]
 
 [ext_resource type="Texture2D" uid="uid://buqr8sub0snn0" path="res://assets/game/prologue_texture/Dungeon_assets/FG_Cellar.png" id="1_7vu5a"]
-[ext_resource type="Script" uid="uid://270i44b4hkyr" path="res://scenes/AllLevel_scenes/Room.gd" id="1_gslef"]
-[ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Door.gd" id="1_tmxtc"]
+[ext_resource type="Script" uid="uid://270i44b4hkyr" path="res://scenes/AllLevel_scenes/Scipts/Room.gd" id="1_gslef"]
+[ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Scipts/Door.gd" id="1_tmxtc"]
 [ext_resource type="PackedScene" uid="uid://bc4waybd2ft8u" path="res://scenes/Charecters/player/player.tscn" id="2_veiaw"]
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="6_3ydi7"]
-[ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/global.gd" id="6_gslef"]
+[ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="6_gslef"]
+[ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="6_ij5e7"]
+[ext_resource type="PackedScene" uid="uid://ctsy80vdmpfef" path="res://scenes/Items/AmmoPickup.tscn" id="8_ij5e7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
 texture = ExtResource("1_7vu5a")
@@ -1003,9 +1005,24 @@ position = Vector2(343, 300)
 script = ExtResource("6_gslef")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1818539965]
-color = Color(0.17211533, 0.1721153, 0.1721153, 1)
+script = ExtResource("6_ij5e7")
+dark_color = Color(0.050980393, 0.050980393, 0.0627451, 1)
 
-[node name="Torch" parent="." unique_id=1800784889 instance=ExtResource("6_3ydi7")]
-position = Vector2(130, 20)
+[node name="Props" type="CanvasGroup" parent="." unique_id=1939667008]
+
+[node name="Torch" parent="Props" unique_id=1800784889 instance=ExtResource("6_3ydi7")]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(227, 162)
+
+[node name="Torch2" parent="Props" unique_id=1307193123 instance=ExtResource("6_3ydi7")]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(165, 240)
+
+[node name="Pickups" type="CanvasGroup" parent="." unique_id=1750312984]
+
+[node name="AmmoPickup" parent="Pickups" unique_id=1134325876 instance=ExtResource("8_ij5e7")]
+position = Vector2(234, 191)
 
 [connection signal="body_entered" from="DoortoRoom2" to="DoortoRoom2" method="_on_body_entered"]
