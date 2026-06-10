@@ -1,32 +1,60 @@
 [gd_scene format=3 uid="uid://bc4waybd2ft8u"]
 
+[ext_resource type="Script" uid="uid://ckkhq2sd1vlnr" path="res://scenes/Charecters/player/Test.cs" id="1_4nkv2"]
 [ext_resource type="Texture2D" uid="uid://b8fp2p0orfjmq" path="res://assets/game/prologue_texture/Character/cowboyanimation1v2.png" id="1_acol7"]
 [ext_resource type="Texture2D" uid="uid://deuiboii0i1l3" path="res://assets/game/prologue_texture/Character/cowboyanimation1v3.png" id="2_mw1nl"]
 [ext_resource type="Texture2D" uid="uid://bg1svrn6l35jg" path="res://assets/game/prologue_texture/Character/cowboyanimation1v4.png" id="3_xhgkk"]
 [ext_resource type="Texture2D" uid="uid://c3l3u85abn7yx" path="res://assets/game/prologue_texture/Character/cowboyanimation1v5.png" id="4_undu6"]
 [ext_resource type="Texture2D" uid="uid://diland2t041ch" path="res://Sprites/Player/Dash.png" id="5_8pucs"]
+[ext_resource type="Texture2D" uid="uid://d1dd0lfj7b432" path="res://assets/game/prologue_texture/Character/idleAnimation1.png" id="6_0db3b"]
+[ext_resource type="Texture2D" uid="uid://5rddffsij2jq" path="res://assets/game/prologue_texture/Character/idleAnimation2.png" id="7_sk4vv"]
+[ext_resource type="Texture2D" uid="uid://ce503svoquqmd" path="res://assets/game/prologue_texture/Character/widle.png" id="8_2jlw7"]
 [ext_resource type="Texture2D" uid="uid://ggsk6cstcyxi" path="res://assets/game/prologue_texture/Character/w.png" id="8_4dh3i"]
+[ext_resource type="Texture2D" uid="uid://bva58h2wbwhcd" path="res://assets/game/prologue_texture/Character/w2.png" id="8_sk4vv"]
 [ext_resource type="Texture2D" uid="uid://dgcirik2mrbkd" path="res://assets/game/prologue_texture/Character/sprites/cowboyanimation1.png" id="8_undu6"]
+[ext_resource type="Texture2D" uid="uid://dgo8tuywdi4p2" path="res://assets/game/prologue_texture/Character/w3.png" id="9_2jlw7"]
+[ext_resource type="Texture2D" uid="uid://b7d2f5rdsq414" path="res://assets/game/prologue_texture/Character/idleAnimationLeft1.png" id="9_g72r7"]
 [ext_resource type="Texture2D" uid="uid://dsv3rabt5tapg" path="res://assets/game/prologue_texture/Character/sprites/cowboyanimation2.png" id="9_ke6lp"]
 [ext_resource type="Texture2D" uid="uid://b11py0iyqyque" path="res://assets/game/prologue_texture/Character/sprites/cowboyanimation3.png" id="10_4ut4n"]
+[ext_resource type="Texture2D" uid="uid://bsaoy0dvqbnie" path="res://assets/game/prologue_texture/Character/cowboyanimation1V1Gun.png" id="10_8mjg4"]
 [ext_resource type="Script" uid="uid://bluefqlme4tko" path="res://scripts/StateMachine.cs" id="10_mw1nl"]
+[ext_resource type="Texture2D" uid="uid://coeiwbu6buyt" path="res://assets/game/prologue_texture/Character/cowboyanimation1v2BackGun.png" id="10_xktao"]
+[ext_resource type="Texture2D" uid="uid://d1t6vtkeqycxm" path="res://assets/game/prologue_texture/Character/w5.png" id="11_r4kbv"]
 [ext_resource type="Texture2D" uid="uid://cx6cxbtlkoqrx" path="res://assets/game/prologue_texture/Character/sprites/cowboyanimation4.png" id="11_uqc0y"]
 [ext_resource type="Texture2D" uid="uid://bnu43hutk2ym2" path="res://assets/game/prologue_texture/Character/cowboyanimation1back.png" id="12_8pucs"]
+[ext_resource type="Texture2D" uid="uid://cjdc5ffycnw5w" path="res://assets/game/prologue_texture/Character/cowboyanimation1v3BackGun.png" id="12_21r4g"]
+[ext_resource type="Texture2D" uid="uid://chvvsirjsfydq" path="res://assets/game/prologue_texture/Character/cowboyanimation3backGun.png" id="13_8mjg4"]
 [ext_resource type="Texture2D" uid="uid://dxkpw5kumapil" path="res://assets/game/prologue_texture/Character/cowboyanimation2back.png" id="13_8t68n"]
+[ext_resource type="Texture2D" uid="uid://c0xc4g2t8w754" path="res://assets/game/prologue_texture/Character/cowboyanimation1v5backGun.png" id="14_21r4g"]
 [ext_resource type="Texture2D" uid="uid://du24reptq6e81" path="res://assets/game/prologue_texture/Character/cowboyanimation3back.png" id="14_d66dv"]
 [ext_resource type="Script" uid="uid://cbx3vksq6rj3n" path="res://scripts/WalkingState.cs" id="14_ke6lp"]
 [ext_resource type="Script" uid="uid://b11a3nsqxo0ji" path="res://scripts/IdleState.cs" id="14_uqc0y"]
 [ext_resource type="Texture2D" uid="uid://da34yr1cnjdfd" path="res://assets/game/prologue_texture/Character/cowboyanimation4back.png" id="15_4dh3i"]
+[ext_resource type="Texture2D" uid="uid://dtyarahm2y1r6" path="res://assets/game/prologue_texture/Character/cowboyanimation1v2Gun.png" id="18_gw5dy"]
 [ext_resource type="Texture2D" uid="uid://cqnecs346xeul" path="res://assets/game/prologue_texture/Character/handswilroll/w1.png" id="19_d66dv"]
+[ext_resource type="Texture2D" uid="uid://kkm1hxa6thlk" path="res://assets/game/prologue_texture/Character/cowboyanimation1v3Gun.png" id="19_lyth7"]
 [ext_resource type="Texture2D" uid="uid://bhb7wgrfcq5lp" path="res://assets/game/prologue_texture/Character/handswilroll/w4.png" id="20_4dh3i"]
 [ext_resource type="Texture2D" uid="uid://cygtxmgaakc2d" path="res://assets/game/prologue_texture/Character/handswilroll/w2.png" id="20_6ebgs"]
-[ext_resource type="Script" uid="uid://c3yinyuocopki" path="res://scenes/Charecters/player/Lefthand.cs" id="21_csvd8"]
+[ext_resource type="Texture2D" uid="uid://b8vbr1f5c6rnb" path="res://assets/game/prologue_texture/Character/cowboyanimation1v4Gun.png" id="20_lecy0"]
+[ext_resource type="Texture2D" uid="uid://c4q5aypbfnpw5" path="res://assets/game/prologue_texture/Character/cowboyanimation1v5Gun.png" id="21_4i3iv"]
 [ext_resource type="Texture2D" uid="uid://cmj2e83d2ysyl" path="res://assets/game/prologue_texture/Character/handswilroll/w3.png" id="21_u5mp3"]
 [ext_resource type="Texture2D" uid="uid://c4fkhv6pcyy4m" path="res://assets/game/prologue_texture/Character/handswilroll/w5.png" id="23_4y1f5"]
 [ext_resource type="Texture2D" uid="uid://ucx6sbua4fp3" path="res://assets/game/prologue_texture/Character/handswilroll/w6.png" id="24_ertor"]
 [ext_resource type="Texture2D" uid="uid://b0jff40bfqjx1" path="res://assets/game/prologue_texture/Character/handswilroll/w7.png" id="25_5xjl3"]
 [ext_resource type="Texture2D" uid="uid://0nv5ye53xqn7" path="res://assets/game/prologue_texture/Character/handswilroll/w8.png" id="26_ha1fw"]
 [ext_resource type="Texture2D" uid="uid://dookohc0r687u" path="res://assets/game/prologue_texture/Character/handswilroll/wLampR1.png" id="27_ertor"]
+[ext_resource type="Texture2D" uid="uid://bh1t5umwacvu7" path="res://assets/game/prologue_texture/Character/handswilroll/wLampR2.png" id="28_5xjl3"]
+[ext_resource type="Script" uid="uid://blc0cq020x507" path="res://scenes/Charecters/player/walkArmed.cs" id="34_21r4g"]
+[ext_resource type="Texture2D" uid="uid://dya4j3irmewic" path="res://assets/game/prologue_texture/Character/handswilroll/R0.png" id="38_vcpmc"]
+[ext_resource type="Texture2D" uid="uid://x8k4ci3i6boj" path="res://assets/game/prologue_texture/Character/handswilroll/L0.png" id="39_4nkv2"]
+[ext_resource type="Texture2D" uid="uid://bmv8bjkwqejmd" path="res://assets/game/prologue_texture/Character/handswilroll/R1.png" id="39_qhtry"]
+[ext_resource type="Texture2D" uid="uid://dtwhfut1o0ogo" path="res://assets/game/prologue_texture/Character/handswilroll/R2.png" id="40_hwx62"]
+[ext_resource type="Texture2D" uid="uid://bxmryfgq6jxhx" path="res://assets/game/prologue_texture/Character/handswilroll/L1.png" id="40_ppg20"]
+[ext_resource type="Texture2D" uid="uid://ytgokn47dd8k" path="res://assets/game/prologue_texture/Character/handswilroll/L2.png" id="41_im48v"]
+[ext_resource type="Texture2D" uid="uid://nijnmnuydon8" path="res://assets/game/prologue_texture/Character/handswilroll/R3.png" id="41_xktao"]
+[ext_resource type="Texture2D" uid="uid://6nx7ded368vt" path="res://assets/game/prologue_texture/Character/handswilroll/L3.png" id="42_21r4g"]
+[ext_resource type="Texture2D" uid="uid://blbcfubkasobi" path="res://assets/game/prologue_texture/Character/handswilroll/RLampR2.png" id="43_lyth7"]
+[ext_resource type="Texture2D" uid="uid://bryposfybvmqo" path="res://assets/game/prologue_texture/Character/handswilroll/LLampL2.png" id="47_8mjg4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t68n"]
 atlas = ExtResource("5_8pucs")
@@ -110,11 +138,55 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_4dh3i")
+"texture": ExtResource("6_0db3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sk4vv")
 }],
 "loop": true,
-"name": &"w_pose",
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2jlw7")
+}],
+"loop": true,
+"name": &"idleDown",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8mjg4")
+}],
+"loop": true,
+"name": &"idleGun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_g72r7")
+}],
+"loop": true,
+"name": &"idleLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_xktao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_21r4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8mjg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_21r4g")
+}],
+"loop": true,
+"name": &"walkinLeftGun",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -132,6 +204,46 @@ animations = [{
 "loop": true,
 "name": &"walking",
 "speed": 4.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4dh3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sk4vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sk4vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2jlw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r4kbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r4kbv")
+}],
+"loop": true,
+"name": &"walkingDown",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_gw5dy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lyth7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lecy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_4i3iv")
+}],
+"loop": true,
+"name": &"walkingGun",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -182,7 +294,41 @@ animations = [{
 "texture": ExtResource("23_4y1f5")
 }],
 "loop": true,
-"name": &"default",
+"name": &"handsWalkingDown",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_4nkv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ppg20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_im48v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_21r4g")
+}],
+"loop": true,
+"name": &"handsWalkingLeft",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_vcpmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_qhtry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hwx62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_xktao")
+}],
+"loop": true,
+"name": &"handsWalkingRight",
 "speed": 0.0
 }]
 
@@ -190,23 +336,53 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("47_8mjg4")
+}],
+"loop": true,
+"name": &"LampLeftWalking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_5xjl3")
+}],
+"loop": true,
+"name": &"LampLeftWalkingDown",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ha1fw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_lyth7")
+}],
+"loop": true,
+"name": &"LampRightWalking",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("27_ertor")
 }],
 "loop": true,
-"name": &"default",
+"name": &"LampRightWalkingDown",
 "speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1372397156 groups=["player"]]
 visibility_layer = 6
 y_sort_enabled = true
+script = ExtResource("1_4nkv2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2030178958]
 visibility_layer = 6
+z_index = 1
+z_as_relative = false
 position = Vector2(-2, -15)
 sprite_frames = SubResource("SpriteFrames_d66dv")
-animation = &"w_pose"
-autoplay = "w_pose"
+animation = &"idleGun"
+autoplay = "walkingDown"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985997954]
 z_index = 1
@@ -217,32 +393,51 @@ shape = SubResource("RectangleShape2D_8pucs")
 script = ExtResource("10_mw1nl")
 initialState = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="FSM" unique_id=1102053152 node_paths=PackedStringArray("character", "animatedSprite")]
+[node name="Idle" type="Node" parent="FSM" unique_id=1102053152 node_paths=PackedStringArray("character", "animatedSprite", "LampL", "LampR", "HandsAnimation")]
 script = ExtResource("14_uqc0y")
 character = NodePath("../..")
 animatedSprite = NodePath("../../AnimatedSprite2D")
+LampL = NodePath("../../Node2D/LampL")
+LampR = NodePath("../../Node2D/LampR")
+HandsAnimation = NodePath("../../Node2D/Hands")
 
 [node name="Walk" type="Node" parent="FSM" unique_id=1382341779 node_paths=PackedStringArray("character", "animatedSprite")]
 script = ExtResource("14_ke6lp")
 character = NodePath("../..")
 animatedSprite = NodePath("../../AnimatedSprite2D")
 
+[node name="WalkAremd" type="Node" parent="FSM" unique_id=2017531734 node_paths=PackedStringArray("character", "animatedSprite", "LampL", "LampR", "HandsAnimation")]
+script = ExtResource("34_21r4g")
+character = NodePath("../..")
+animatedSprite = NodePath("../../AnimatedSprite2D")
+LampL = NodePath("../../Node2D/LampL")
+LampR = NodePath("../../Node2D/LampR")
+HandsAnimation = NodePath("../../Node2D/Hands")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=34049318]
 
-[node name="Node2D" type="Node2D" parent="." unique_id=634772376 node_paths=PackedStringArray("an")]
+[node name="Node2D" type="Node2D" parent="." unique_id=634772376]
 z_index = 8
 position = Vector2(-3, -13)
-script = ExtResource("21_csvd8")
-an = NodePath("AnimatedSprite2D")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D" unique_id=357965397]
-z_index = 6
-position = Vector2(0, -2)
+[node name="Hands" type="AnimatedSprite2D" parent="Node2D" unique_id=357965397]
+visible = false
+z_index = 8
+position = Vector2(1, -3)
 sprite_frames = SubResource("SpriteFrames_6ebgs")
-autoplay = "default"
-frame_progress = 0.0864702
+animation = &"handsWalkingDown"
+autoplay = "handsWalkingDown"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D" unique_id=73712683]
+[node name="LampL" type="AnimatedSprite2D" parent="Node2D" unique_id=73712683]
+visible = false
 z_index = -4
-position = Vector2(-1, -1)
+position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_5xjl3")
+animation = &"LampLeftWalkingDown"
+
+[node name="LampR" type="AnimatedSprite2D" parent="Node2D" unique_id=220809154]
+visible = false
+position = Vector2(1, -3)
+sprite_frames = SubResource("SpriteFrames_ha1fw")
+animation = &"LampRightWalkingDown"
+autoplay = "LampRightWalkingDown"

@@ -9,7 +9,8 @@ public partial class StateMachine : Node
 	private Dictionary<string, State> _states;
 	private State _currentState;
 
-	public override void _Ready()
+    public State CurrentState => _currentState; // ← ДОБАВИЛИ
+    public override void _Ready()
 	{
 		_states = new Dictionary<string, State>();
 
