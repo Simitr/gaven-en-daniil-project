@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="6_3ydi7"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="6_gslef"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="6_ij5e7"]
-[ext_resource type="PackedScene" path="res://scenes/Items/HealthPotionPickup.tscn" id="8_iist4"]
+[ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/HealthPotionPickup.tscn" id="8_iist4"]
 [ext_resource type="PackedScene" uid="uid://ctsy80vdmpfef" path="res://scenes/Items/AmmoPickup.tscn" id="8_ij5e7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
@@ -982,10 +982,30 @@ tile_map_data = PackedByteArray("AAAAAAIAAAAKAAsAAAABAAIAAAAKAAsAAAACAAIAAAAKAAs
 tile_set = SubResource("TileSet_tgalm")
 use_kinematic_bodies = true
 
-[node name="Player" parent="." unique_id=1372397156 instance=ExtResource("2_veiaw")]
+[node name="WorldObjects" type="CanvasGroup" parent="." unique_id=1571222164]
 z_index = 1
-position = Vector2(157, 107)
-collision_mask = 7
+y_sort_enabled = true
+position = Vector2(339, 107)
+
+[node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_veiaw")]
+position = Vector2(-185, 38)
+
+[node name="HealthPotionPickup" parent="WorldObjects" unique_id=918011205 instance=ExtResource("8_iist4")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-142, 69)
+
+[node name="AmmoPickup" parent="WorldObjects" unique_id=1134325876 instance=ExtResource("8_ij5e7")]
+y_sort_enabled = true
+position = Vector2(-93, 75)
+
+[node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("6_3ydi7")]
+y_sort_enabled = true
+position = Vector2(-114, 58)
+
+[node name="Torch2" parent="WorldObjects" unique_id=1307193123 instance=ExtResource("6_3ydi7")]
+y_sort_enabled = true
+position = Vector2(-176, 142)
 
 [node name="DoortoRoom2" type="Area2D" parent="." unique_id=2036692786]
 script = ExtResource("1_tmxtc")
@@ -1008,27 +1028,5 @@ script = ExtResource("6_gslef")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1818539965]
 script = ExtResource("6_ij5e7")
 dark_color = Color(0.050980393, 0.050980393, 0.0627451, 1)
-
-[node name="Props" type="CanvasGroup" parent="." unique_id=1939667008]
-
-[node name="Torch" parent="Props" unique_id=1800784889 instance=ExtResource("6_3ydi7")]
-z_index = 3
-y_sort_enabled = true
-position = Vector2(227, 162)
-
-[node name="Torch2" parent="Props" unique_id=1307193123 instance=ExtResource("6_3ydi7")]
-z_index = 3
-y_sort_enabled = true
-position = Vector2(165, 240)
-
-[node name="Pickups" type="CanvasGroup" parent="." unique_id=1750312984]
-
-[node name="HealthPotionPickup" parent="Pickups" unique_id=918011205 instance=ExtResource("8_iist4")]
-z_index = 3
-position = Vector2(206, 179)
-
-[node name="AmmoPickup" parent="Pickups" unique_id=1134325876 instance=ExtResource("8_ij5e7")]
-z_index = 3
-position = Vector2(242, 181)
 
 [connection signal="body_entered" from="DoortoRoom2" to="DoortoRoom2" method="_on_body_entered"]

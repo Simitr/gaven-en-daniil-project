@@ -1,5 +1,6 @@
 extends Node2D
 
+class_name Torch
 @onready var light = $LightTexture
 
 func _ready():
