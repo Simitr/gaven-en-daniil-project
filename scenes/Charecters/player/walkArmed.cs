@@ -9,8 +9,10 @@ public partial class walkArmed : State
     [Export] AnimatedSprite2D LampL;
     [Export] AnimatedSprite2D LampR;
     [Export] AnimatedSprite2D HandsAnimation;
+    [Export] AnimatedSprite2D Legs;
     public bool position;
-
+    public bool down = false;
+    public bool up = false;
     public enum Side { Left, Right }
 
 
@@ -31,11 +33,14 @@ public partial class walkArmed : State
 
     public override void _Process(double delta)
     {
+        animatedSprite.Position = new Vector2(-2, -15);
+        Legs.Visible = false;
         if (!Global.Aremd)
         {
             LampL.Visible = false;
             LampR.Visible = false;
             HandsAnimation.Visible = false;
+            fsm.ChangeState("Walk");
             return;
         }
 
@@ -71,8 +76,9 @@ public partial class walkArmed : State
         // -----------------------------
         // 2) АНИМАЦИЯ ВНИЗ (по движению)
         // -----------------------------
-        if (move.Y > 0 && move.X == 0)
+        if (angle >= 50  && angle < 130)
         {
+            down = true;
             if (animatedSprite.Frame == 1 || animatedSprite.Frame == 4)
             {
                 HandsAnimation.Position = new Vector2(1, -2);
@@ -85,18 +91,20 @@ public partial class walkArmed : State
                 LampL.Position = new Vector2(1, -3);
                 LampR.Position = new Vector2(1, -3);
             }
-            animatedSprite.Play("walkingDown");
+            animatedSprite.Play("walkingDownGun");
             HandsAnimation.Play("handsWalkingDown");
 
             // твои углы ↓
-            if (angle >= 40 && angle < 90) HandsAnimation.Frame = 7;
-            else if (angle >= 90 && angle < 130) HandsAnimation.Frame = 0;
+            if (side == Side.Right) HandsAnimation.Frame = 7;
+            else if (side == Side.Left) HandsAnimation.Frame = 0;
+            /*
             else if (angle >= 130 && angle < 170) HandsAnimation.Frame = 1;
             else if (angle >= 170 && angle < 200) HandsAnimation.Frame = 2;
             else if (angle >= 200 && angle < 280) HandsAnimation.Frame = 3;
             else if (angle >= 280 && angle < 350) HandsAnimation.Frame = 4;
             else if (angle >= 335) HandsAnimation.Frame = 5;
             else if (angle >= 15 && angle < 40) HandsAnimation.Frame = 6;
+            */
 
             // лампа строго по стороне
             if (side == Side.Left)
@@ -116,16 +124,47 @@ public partial class walkArmed : State
 
             return;
         }
+        else
+        {
+            down = false;
+        }
+        if (angle >= 240 && angle < 320)
+        {
+            LampL.Visible = false;
+            LampR.Visible = false;
+            HandsAnimation.Visible = false;
+            Legs.Visible = true;
+            Legs.Play("walkingUp");
+            if (Legs.Frame == 1 || Legs.Frame == 4)
+            {
+                animatedSprite.Position = new Vector2(-2, -14);
+               
+            }
+            else
+            {
+                animatedSprite.Position = new Vector2(-2, -15);
+                
+            }
+            if (side == Side.Right) animatedSprite.Frame = 1;
+            else if (side == Side.Left) animatedSprite.Frame = 0;
+            animatedSprite.Play("walkingUpGun");
+            up = true;
+        }
+        else
+        {
+            Legs.Visible = false;
+            up = false;
+        }
 
         // -----------------------------
         // 3) ВЛЕВО / ВПРАВО (по углу мыши)
         // -----------------------------
-        if (side == Side.Left)
+        if (side == Side.Left && !down && !up)
         {
             animatedSprite.Play("walkinLeftGun");
             HandsAnimation.Play("handsWalkingLeft");
-
-            if (animatedSprite.Frame == 2 )
+            /*
+            if (animatedSprite.Frame == 1 && animatedSprite.Frame == 3)
             {
                 HandsAnimation.Position = new Vector2(1, -2);
                 LampL.Position = new Vector2(1, -2);
@@ -137,7 +176,7 @@ public partial class walkArmed : State
                 LampL.Position = new Vector2(1, -3);
                 LampR.Position = new Vector2(1, -3);
             }
-
+            */
             // твои углы ↓
             if (angle >= 90 && angle < 130) HandsAnimation.Frame = 0;
             else if (angle >= 130 && angle < 170) HandsAnimation.Frame = 1;
@@ -148,13 +187,13 @@ public partial class walkArmed : State
             LampR.Visible = false;
             LampL.Play("LampLeftWalking");
         }
-        else
+        else if (side == Side.Right && !down && !up)
         {
             animatedSprite.Play("walkingGun");
             HandsAnimation.Play("handsWalkingRight");
 
 
-            if (animatedSprite.Frame == 2 )
+            if (animatedSprite.Frame == 1 && animatedSprite.Frame == 3)
             {
                 HandsAnimation.Position = new Vector2(1, -2);
                 LampL.Position = new Vector2(1, -2);

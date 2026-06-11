@@ -1,16 +1,13 @@
 using Godot;
-using System;
 
-public partial class Test : Node2D
+public partial class InputManager : Node
 {
-
-    public override void _PhysicsProcess(double delta) {
-
+    public override void _Process(double delta)
+    {
         if (Input.IsActionJustPressed("armed"))
         {
             Global.Aremd = !Global.Aremd;
         }
     }
-
-    
 }
+
