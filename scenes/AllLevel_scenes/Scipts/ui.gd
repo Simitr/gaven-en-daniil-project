@@ -19,10 +19,15 @@ func _ready():
 	
 
 func _process(delta):
+	
+	if player == null or not is_instance_valid(player):
+		player = get_tree().get_first_node_in_group("player")
+		
 	if player:
 		update_ammo_ui()
 		update_HealthPotions_ui()
 		update_health_ui()
+
 
 func update_health_ui():
 	health_bar.value = player.health
@@ -31,4 +36,4 @@ func update_ammo_ui():
 	ammo_label.text = str(player.ammo)
 	
 func update_HealthPotions_ui():
-	potion_label.text = str(player.HealthPotions)
+	potion_label.text = str(player.health_potions)

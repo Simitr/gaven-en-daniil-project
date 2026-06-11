@@ -29,7 +29,7 @@ point_count = 2
 curve = SubResource("Curve_7l2j1")
 
 [sub_resource type="Curve" id="Curve_bdobl"]
-_data = [Vector2(0.016129032, 0.4451902), 0.0, -0.46037412, 0, 0, Vector2(0.50537634, 0.49888146), -2.0071063, -2.0071063, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.5357143), 0.0, -0.49553582, 0, 0, Vector2(0.50537634, 0.49888146), 0.6005007, 0.6005007, 0, 0, Vector2(1, 0.029513836), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_7l2j1"]
@@ -55,19 +55,19 @@ color_ramp = SubResource("GradientTexture1D_mu8cx")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpwkm"]
 atlas = ExtResource("2_rdfia")
-region = Rect2(48, 0, 16, 20)
+region = Rect2(16, 0, 16, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqmfr"]
 atlas = ExtResource("2_rdfia")
-region = Rect2(32, 0, 16, 20)
+region = Rect2(32, 0, 16, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mu8cx"]
 atlas = ExtResource("2_rdfia")
-region = Rect2(16, 0, 16, 20)
+region = Rect2(48, 0, 16, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdobl"]
 atlas = ExtResource("2_rdfia")
-region = Rect2(0, 0, 16, 20)
+region = Rect2(0, 0, 16, 12)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7l2j1"]
 animations = [{
@@ -94,7 +94,7 @@ script = ExtResource("1_rdfia")
 
 [node name="LightTexture" type="PointLight2D" parent="." unique_id=842360511]
 y_sort_enabled = true
-position = Vector2(1, 0)
+position = Vector2(0, -3.9999924)
 scale = Vector2(0.23437501, 0.21508789)
 color = Color(0.96219605, 0.6768721, 0.38177067, 1)
 energy = 1.5
@@ -104,8 +104,9 @@ texture = ExtResource("1_x2o3u")
 
 [node name="Smoke" type="GPUParticles2D" parent="." unique_id=1436962051]
 modulate = Color(1, 1, 1, 0.22745098)
-z_index = -1
+z_index = 1
 texture_filter = 1
+position = Vector2(-1, -6)
 amount = 100
 texture = ExtResource("4_fpwkm")
 speed_scale = 0.4
@@ -113,7 +114,9 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_654jp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=745895682]
-position = Vector2(4, 7)
+z_index = 1
+position = Vector2(4, -5)
+scale = Vector2(1.0625, 1)
 sprite_frames = SubResource("SpriteFrames_7l2j1")
 autoplay = "default"
-frame_progress = 0.35466486
+frame_progress = 0.23255792

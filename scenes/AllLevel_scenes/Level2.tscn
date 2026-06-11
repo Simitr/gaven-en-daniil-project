@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Scipts/Door.gd" id="3_4onql"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="4_4onql"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="6_bu1on"]
+[ext_resource type="PackedScene" uid="uid://ctsy80vdmpfef" path="res://scenes/Items/AmmoPickup.tscn" id="6_bvl68"]
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="7_33fcf"]
 [ext_resource type="PackedScene" uid="uid://dwgrqou34lil0" path="res://scenes/Items/Campfire.tscn" id="8_33fcf"]
 
@@ -1033,8 +1034,26 @@ tile_map_data = PackedByteArray("AAANAAsAAAAKAAsAAAAMAAsAAAAKAAsAAAAMAAwAAAAKAAs
 tile_set = SubResource("TileSet_tgalm")
 use_kinematic_bodies = true
 
-[node name="Player" parent="." unique_id=1372397156 instance=ExtResource("2_af1sh")]
+[node name="WorldObjects" type="CanvasGroup" parent="." unique_id=1387647873]
+
+[node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("7_33fcf")]
+y_sort_enabled = true
+position = Vector2(274, 85)
+
+[node name="Torch2" parent="WorldObjects" unique_id=392271381 instance=ExtResource("7_33fcf")]
+y_sort_enabled = true
+position = Vector2(97, 82)
+
+[node name="Campfire" parent="WorldObjects" unique_id=115467166 instance=ExtResource("8_33fcf")]
+y_sort_enabled = true
+position = Vector2(391, 260)
+
+[node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_af1sh")]
 position = Vector2(192, 174)
+
+[node name="AmmoPickup" parent="WorldObjects" unique_id=1134325876 instance=ExtResource("6_bvl68")]
+y_sort_enabled = true
+position = Vector2(270, 119)
 
 [node name="DoortoRoom1" type="Area2D" parent="." unique_id=509133972]
 script = ExtResource("3_4onql")
@@ -1087,21 +1106,6 @@ script = ExtResource("4_4onql")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=484801838]
 script = ExtResource("6_bu1on")
 dark_color = Color(0.050980393, 0.050980393, 0.0627451, 1)
-
-[node name="Props" type="CanvasGroup" parent="." unique_id=2065571153]
-
-[node name="Light" parent="Props" unique_id=1800784889 instance=ExtResource("7_33fcf")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(274, 85)
-
-[node name="Light2" parent="Props" unique_id=392271381 instance=ExtResource("7_33fcf")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(97, 82)
-
-[node name="Light3" parent="Props" unique_id=115467166 instance=ExtResource("8_33fcf")]
-position = Vector2(384, 250)
 
 [connection signal="body_entered" from="DoortoRoom1" to="DoortoRoom1" method="_on_body_entered"]
 [connection signal="body_entered" from="DoortoRoom3" to="DoortoRoom3" method="_on_body_entered"]

@@ -1,3 +1,11 @@
 extends Node
 
 var spawn_point = ""
+
+var collected_pickups = []
+
+var ammo := 6
+var health_potions := 0
+
+var max_health := 100
+var health := 75
