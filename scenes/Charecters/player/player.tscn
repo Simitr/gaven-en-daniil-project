@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bc4waybd2ft8u"]
 
+[ext_resource type="Script" uid="uid://bwaob4v6tnegi" path="res://scenes/Charecters/player/player.gd" id="1_7h4xu"]
 [ext_resource type="Texture2D" uid="uid://d1dd0lfj7b432" path="res://assets/game/prologue_texture/Character/idleAnimation1.png" id="6_0db3b"]
 [ext_resource type="Texture2D" uid="uid://5rddffsij2jq" path="res://assets/game/prologue_texture/Character/idleAnimation2.png" id="7_sk4vv"]
 [ext_resource type="Texture2D" uid="uid://ce503svoquqmd" path="res://assets/game/prologue_texture/Character/widle.png" id="8_2jlw7"]
@@ -390,6 +391,7 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=1372397156 groups=["player"]]
 visibility_layer = 6
 y_sort_enabled = true
+script = ExtResource("1_7h4xu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2030178958]
 visibility_layer = 6
@@ -397,7 +399,7 @@ z_index = 1
 z_as_relative = false
 position = Vector2(-2, -15)
 sprite_frames = SubResource("SpriteFrames_d66dv")
-animation = &"walkingUpGun"
+animation = &"walking"
 autoplay = "walkingDownGun"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985997954]
@@ -463,4 +465,4 @@ autoplay = "LampRightWalkingDown"
 position = Vector2(1, -2)
 sprite_frames = SubResource("SpriteFrames_08db6")
 animation = &"walkingUp"
-frame_progress = 0.27335072
+frame_progress = 0.77664244

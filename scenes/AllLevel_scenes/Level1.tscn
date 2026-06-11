@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="6_3ydi7"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="6_gslef"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="6_ij5e7"]
-[ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/HealthPotionPickup.tscn" id="8_iist4"]
+[ext_resource type="PackedScene" path="res://scenes/Items/HealthPotionPickup.tscn" id="8_iist4"]
 [ext_resource type="PackedScene" uid="uid://ctsy80vdmpfef" path="res://scenes/Items/AmmoPickup.tscn" id="8_ij5e7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
@@ -984,7 +984,7 @@ use_kinematic_bodies = true
 
 [node name="Player" parent="." unique_id=1372397156 instance=ExtResource("2_veiaw")]
 z_index = 1
-position = Vector2(183, 97)
+position = Vector2(157, 107)
 collision_mask = 7
 
 [node name="DoortoRoom2" type="Area2D" parent="." unique_id=2036692786]
@@ -1025,10 +1025,10 @@ position = Vector2(165, 240)
 
 [node name="HealthPotionPickup" parent="Pickups" unique_id=918011205 instance=ExtResource("8_iist4")]
 z_index = 3
-position = Vector2(315, 150)
+position = Vector2(206, 179)
 
 [node name="AmmoPickup" parent="Pickups" unique_id=1134325876 instance=ExtResource("8_ij5e7")]
 z_index = 3
-position = Vector2(339, 107)
+position = Vector2(242, 181)
 
 [connection signal="body_entered" from="DoortoRoom2" to="DoortoRoom2" method="_on_body_entered"]
