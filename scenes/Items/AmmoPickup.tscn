@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://ctsy80vdmpfef"]
 
 [ext_resource type="Texture2D" uid="uid://b4q6li3j5l5fr" path="res://Sprites/Items/AmmoPickup.png" id="1_sol71"]
-[ext_resource type="Script" uid="uid://dk7s3dbqk8c2o" path="res://scenes/Items/AmmoPickup.gd" id="2_d5tfq"]
+[ext_resource type="Script" uid="uid://dk7s3dbqk8c2o" path="res://scenes/Items/ItemScripts/AmmoPickup.gd" id="2_d5tfq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5tfq"]
 atlas = ExtResource("1_sol71")
-region = Rect2(0, 0, 31, 35)
+region = Rect2(84, 0, 28, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oair6"]
 atlas = ExtResource("1_sol71")
-region = Rect2(31, 0, 31, 35)
+region = Rect2(28, 0, 28, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_duerm"]
 atlas = ExtResource("1_sol71")
-region = Rect2(62, 0, 31, 35)
+region = Rect2(56, 0, 28, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1gau"]
 atlas = ExtResource("1_sol71")
-region = Rect2(93, 0, 31, 35)
+region = Rect2(0, 0, 28, 35)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n7rhw"]
 animations = [{
@@ -40,17 +40,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oair6"]
-size = Vector2(21.25, 19.875)
+size = Vector2(22.3125, 28.96875)
 
 [node name="Node2D" type="Node2D" unique_id=1134325876]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1226716960]
-position = Vector2(5.875002, -6.3750005)
-scale = Vector2(0.7822582, 0.7214286)
+position = Vector2(9.582661, -7.5)
+scale = Vector2(1.02981, 1)
 sprite_frames = SubResource("SpriteFrames_n7rhw")
 animation = &"Default"
 autoplay = "Default"
-frame_progress = 0.5768157
+frame_progress = 0.25274652
 
 [node name="Area2D" type="Area2D" parent="." unique_id=366131519]
 position = Vector2(13, -2)
@@ -58,7 +58,7 @@ script = ExtResource("2_d5tfq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1270147266]
 texture_filter = 1
-position = Vector2(-7, -3)
+position = Vector2(-7, -0.484375)
 shape = SubResource("RectangleShape2D_oair6")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
