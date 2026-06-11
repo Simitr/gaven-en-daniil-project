@@ -21,3 +21,4 @@ public static class GameInput
 		return dir.Normalized();
 	}
 }
+	

@@ -1,9 +1,8 @@
 using Godot;
 using System;
 
-public partial class Test : CharacterBody2D
+public partial class Test : Node2D
 {
-	 
 
 	public override void _PhysicsProcess(double delta) {
 
