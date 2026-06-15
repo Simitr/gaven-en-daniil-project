@@ -7,14 +7,14 @@
 
 [sub_resource type="Curve" id="Curve_rdfia"]
 _limits = [-360.0, 360.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.24193549, 360), 0.0, 0.0, 0, 0, Vector2(0.49999997, -0.8054199), 0.0, 0.0, 0, 0, Vector2(0.7311828, 360), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 17.142853), 0.0, 0.0, 0, 0, Vector2(0.23723727, 360), 0.0, 0.0, 0, 0, Vector2(0.49698794, -14.141937), 0.0, 0.0, 0, 0, Vector2(0.75975984, 360), 0.0, 0.0, 0, 0, Vector2(1, -12.857147), 0.0, 0.0, 0, 0]
 point_count = 5
 
 [sub_resource type="CurveTexture" id="CurveTexture_fpwkm"]
 curve = SubResource("Curve_rdfia")
 
 [sub_resource type="Gradient" id="Gradient_jqmfr"]
-offsets = PackedFloat32Array(0, 0.23856209, 0.89215684, 1)
+offsets = PackedFloat32Array(0, 0.83444816, 0.92140466, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.6652343, 0.6652343, 0.6652343, 1, 0.2789908, 0.27899083, 0.27899078, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_mu8cx"]
@@ -22,15 +22,15 @@ gradient = SubResource("Gradient_jqmfr")
 
 [sub_resource type="Curve" id="Curve_7l2j1"]
 _limits = [-2.0, 2.0, 0.0, 1.0]
-_data = [Vector2(0, -0.18344522), 0.0, 0.0, 0, 0, Vector2(0.9892473, 2), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(0.50301206, 0.7098553), 3.2033083, 3.2033083, 0, 0, Vector2(1, 0.49483132), 0.20864584, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_654jp"]
 curve = SubResource("Curve_7l2j1")
 
 [sub_resource type="Curve" id="Curve_bdobl"]
-_data = [Vector2(0, 0), 0.0, 0.4891087, 0, 0, Vector2(0.5107527, 0.5436242), 0.8069964, 0.8069964, 0, 0, Vector2(0.983871, 0.5883669), 2.1304698, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 0.4891087, 0, 0, Vector2(0.49396592, 0.49827713), 0.050841585, 0.050841585, 0, 0, Vector2(0.49397594, 0.48633134), 0.7254877, 0.7254877, 0, 0, Vector2(1, 1), 2.1304698, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_7l2j1"]
 curve = SubResource("Curve_bdobl")
@@ -38,7 +38,7 @@ curve = SubResource("Curve_bdobl")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_654jp"]
 particle_flag_disable_z = true
 emission_shape = 1
-emission_sphere_radius = 3.0
+emission_sphere_radius = 4.0
 direction = Vector3(0, -1, 0)
 spread = 0.0
 initial_velocity_max = 1.0
@@ -94,7 +94,7 @@ script = ExtResource("1_ksdvt")
 
 [node name="LightTexture" type="PointLight2D" parent="." unique_id=842360511]
 y_sort_enabled = true
-position = Vector2(3, 7)
+position = Vector2(2.3841858e-07, -2.3841858e-07)
 scale = Vector2(0.38476565, 0.35559082)
 color = Color(0.96219605, 0.6768721, 0.38177067, 1)
 energy = 1.5
@@ -104,16 +104,19 @@ texture = ExtResource("2_gohj1")
 
 [node name="Smoke" type="GPUParticles2D" parent="." unique_id=1436962051]
 modulate = Color(1, 1, 1, 0.22745098)
-z_index = -1
+z_index = 1
 texture_filter = 1
-amount = 100
+amount = 250
 texture = ExtResource("4_niyna")
+lifetime = 1.4000000000000001
 speed_scale = 0.4
 randomness = 1.0
+collision_base_size = 0.0
 process_material = SubResource("ParticleProcessMaterial_654jp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1431449715]
-position = Vector2(3, 4)
+position = Vector2(1.9999981, 1.8750001)
+scale = Vector2(1.1875, 1.2166667)
 sprite_frames = SubResource("SpriteFrames_7qcc5")
 autoplay = "default"
 frame_progress = 0.68865573

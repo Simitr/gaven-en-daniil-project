@@ -1,21 +1,21 @@
 extends Node2D
 
 @onready var canvas_modulate = get_node_or_null("CanvasModulate")
-@onready var torches = get_node_or_null("Props")
+@onready var world_objects = get_node_or_null("WorldObjects")
 
 func _ready():
-	
 	if canvas_modulate:
 		canvas_modulate.activate_darkness()
 		
-	if torches:
-		for Torch in torches.get_children():
-			Torch.activate()
+	if world_objects:
+		for child in world_objects.get_children():
+			if child is Torch:
+				child.activate()
 
 	if Global.spawn_point == "":
 		return
 
-	var player = $Player
+	var player = $WorldObjects/Player
 
 	var spawn = get_node_or_null(Global.spawn_point)
 
