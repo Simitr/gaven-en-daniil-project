@@ -11,7 +11,7 @@ func activate():
 
 var target_energy: float = 1.5
 var amplitude: float = 0.1
-var flicker_speed: float = 9.0
+var flicker_speed: float = randi_range(8.0, 9.0)
 var time: float = 0.0
 
 func _process(delta):

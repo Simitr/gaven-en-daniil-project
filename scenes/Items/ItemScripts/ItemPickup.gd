@@ -14,7 +14,7 @@ func _ready():
 	
 	match type:
 		PickupType.AMMO:
-			amount = randi_range(1, 4)
+			amount = randi_range(1, 2)
 			
 		PickupType.HEALTH_POTION:
 			amount = randi_range(1, 2)

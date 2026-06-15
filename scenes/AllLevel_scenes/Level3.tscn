@@ -1013,6 +1013,9 @@ size = Vector2(84.875, 63)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ml3pu"]
 size = Vector2(62, 62.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnq0f"]
+size = Vector2(40, 36)
+
 [node name="Node2D" type="Node2D" unique_id=2130533778]
 y_sort_enabled = true
 script = ExtResource("1_dfk3p")
@@ -1051,7 +1054,9 @@ tile_map_data = PackedByteArray("AAAPACAAAAAKAAsAAAAPAB8AAAAKAAsAAAAOAB8AAAAKAAs
 tile_set = SubResource("TileSet_tgalm")
 use_kinematic_bodies = true
 
-[node name="Player" parent="." unique_id=1372397156 instance=ExtResource("3_dsk3o")]
+[node name="WorldObjects" type="CanvasGroup" parent="." unique_id=853354745]
+
+[node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("3_dsk3o")]
 position = Vector2(325, 117)
 
 [node name="DoortoRoom2" type="Area2D" parent="." unique_id=1046542701]
@@ -1076,6 +1081,17 @@ z_index = 1
 position = Vector2(-59, -6.75)
 shape = SubResource("RectangleShape2D_ml3pu")
 
+[node name="DoortoBoss" type="Area2D" parent="." unique_id=165061913]
+position = Vector2(208, 442)
+script = ExtResource("4_sa74c")
+next_scene = "uid://1r51ss5ljpd2"
+target_spawn = "SpawnTop"
+
+[node name="DoortoBoss" type="CollisionShape2D" parent="DoortoBoss" unique_id=544604991]
+z_index = 1
+position = Vector2(0, -39)
+shape = SubResource("RectangleShape2D_nnq0f")
+
 [node name="SpawnTop" type="Marker2D" parent="." unique_id=817269149]
 position = Vector2(322, 19)
 script = ExtResource("5_458l2")
@@ -1084,5 +1100,10 @@ script = ExtResource("5_458l2")
 position = Vector2(21, 161)
 script = ExtResource("5_458l2")
 
+[node name="SpawnBottom" type="Marker2D" parent="." unique_id=417826358]
+position = Vector2(208, 434)
+script = ExtResource("5_458l2")
+
 [connection signal="body_entered" from="DoortoRoom2" to="DoortoRoom2" method="_on_body_entered"]
 [connection signal="body_entered" from="DoortoRoom4" to="DoortoRoom4" method="_on_body_entered"]
+[connection signal="body_entered" from="DoortoBoss" to="DoortoBoss" method="_on_body_entered"]

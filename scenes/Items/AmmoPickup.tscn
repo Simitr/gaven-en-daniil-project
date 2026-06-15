@@ -45,20 +45,19 @@ size = Vector2(28.15625, 44.96875)
 [node name="Node2D" type="Node2D" unique_id=1134325876]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1226716960]
-position = Vector2(9.582661, -7.5)
-scale = Vector2(1.02981, 1)
+position = Vector2(3, 0.99999905)
+scale = Vector2(1.02981, 1.0142857)
 sprite_frames = SubResource("SpriteFrames_n7rhw")
 animation = &"Default"
 autoplay = "Default"
 frame_progress = 0.25274652
 
 [node name="Area2D" type="Area2D" parent="." unique_id=366131519]
-position = Vector2(13, -2)
 script = ExtResource("2_d5tfq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1270147266]
 texture_filter = 1
-position = Vector2(-7, 3)
+position = Vector2(1, 6)
 shape = SubResource("RectangleShape2D_oair6")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,7 +1,10 @@
 [gd_scene format=4 uid="uid://1r51ss5ljpd2"]
 
 [ext_resource type="Texture2D" uid="uid://buqr8sub0snn0" path="res://assets/game/prologue_texture/Dungeon_assets/FG_Cellar.png" id="1_6t5fs"]
+[ext_resource type="Script" uid="uid://270i44b4hkyr" path="res://scenes/AllLevel_scenes/Scipts/Room.gd" id="1_xtbjn"]
 [ext_resource type="PackedScene" uid="uid://bc4waybd2ft8u" path="res://scenes/Charecters/player/player.tscn" id="2_odr71"]
+[ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="3_odr71"]
+[ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Scipts/Door.gd" id="3_wi8hq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
 texture = ExtResource("1_6t5fs")
@@ -984,8 +987,12 @@ texture = ExtResource("1_6t5fs")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_veiaw")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi8hq"]
+size = Vector2(38, 20)
+
 [node name="Node2D" type="Node2D" unique_id=2130533778]
 y_sort_enabled = true
+script = ExtResource("1_xtbjn")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=58600368]
 y_sort_enabled = true
@@ -1021,5 +1028,24 @@ tile_map_data = PackedByteArray("AAANAAEAAAAGAAEAAAAOAAEAAAAGAAEAAAD//x4AAAAKAAM
 tile_set = SubResource("TileSet_tgalm")
 use_kinematic_bodies = true
 
-[node name="Player" parent="." unique_id=1372397156 instance=ExtResource("2_odr71")]
-position = Vector2(327, 116)
+[node name="WorldObjects" type="CanvasGroup" parent="." unique_id=1638877552]
+position = Vector2(224, 66)
+
+[node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_odr71")]
+position = Vector2(103, 50)
+
+[node name="DoortoRoom3" type="Area2D" parent="." unique_id=197177838]
+position = Vector2(224, 66)
+script = ExtResource("3_wi8hq")
+next_scene = "uid://b58xkhywvlmmw"
+target_spawn = "SpawnBottom"
+
+[node name="DoortoRoom3" type="CollisionShape2D" parent="DoortoRoom3" unique_id=630083851]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_wi8hq")
+
+[node name="SpawnTop" type="Marker2D" parent="." unique_id=1172747839]
+position = Vector2(224, 66)
+script = ExtResource("3_odr71")
+
+[connection signal="body_entered" from="DoortoRoom3" to="DoortoRoom3" method="_on_body_entered"]
