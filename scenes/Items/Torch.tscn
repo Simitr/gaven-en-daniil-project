@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqlm1jbyg3mkk" path="res://Sprites/Items/LightTexture.png" id="1_x2o3u"]
 [ext_resource type="Texture2D" uid="uid://bi715dyxsf4tw" path="res://Sprites/Items/Torch.png" id="2_rdfia"]
 [ext_resource type="Texture2D" uid="uid://w6fd3lpmaxdr" path="res://Sprites/Items/Smoke.png" id="4_fpwkm"]
+[ext_resource type="Texture2D" uid="uid://cmcdjgu6odtdl" path="res://Sprites/Items/TorchSand.png" id="4_jqmfr"]
 
 [sub_resource type="Curve" id="Curve_rdfia"]
 _limits = [-360.0, 360.0, 0.0, 1.0]
@@ -53,6 +54,22 @@ scale_min = 0.0
 scale_curve = SubResource("CurveTexture_7l2j1")
 color_ramp = SubResource("GradientTexture1D_mu8cx")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l2j1"]
+atlas = ExtResource("4_jqmfr")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_654jp"]
+atlas = ExtResource("4_jqmfr")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frpfi"]
+atlas = ExtResource("4_jqmfr")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvy0o"]
+atlas = ExtResource("4_jqmfr")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpwkm"]
 atlas = ExtResource("2_rdfia")
 region = Rect2(16, 0, 16, 12)
@@ -71,6 +88,23 @@ region = Rect2(0, 0, 16, 12)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7l2j1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l2j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_654jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frpfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvy0o")
+}],
+"loop": true,
+"name": &"BossAnimation",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fpwkm")
@@ -95,8 +129,8 @@ script = ExtResource("1_rdfia")
 
 [node name="LightTexture" type="PointLight2D" parent="." unique_id=842360511]
 y_sort_enabled = true
-position = Vector2(0, -2)
-scale = Vector2(0.23437501, 0.21508789)
+position = Vector2(0, 1.0000005)
+scale = Vector2(0.26757813, 0.2364502)
 color = Color(0.96219605, 0.6768721, 0.38177067, 1)
 energy = 1.5
 shadow_enabled = true
@@ -117,8 +151,9 @@ process_material = SubResource("ParticleProcessMaterial_654jp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=745895682]
 z_index = 1
-position = Vector2(4, 1)
+position = Vector2(1, 1)
 scale = Vector2(1.0625, 1)
 sprite_frames = SubResource("SpriteFrames_7l2j1")
+animation = &"BossAnimation"
 autoplay = "default"
-frame_progress = 0.23255792
+frame_progress = 0.099420406
