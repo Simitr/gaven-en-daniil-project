@@ -28,30 +28,36 @@ public partial class ParallaxSky : Node
 	private bool isMoving = false;
 	public string state = "";
 
-	public override void _Ready()
+
+    public override void _Ready()
 	{
 		StopPressD.Modulate = new Color(1, 1, 1, 0);
 		PressD.Modulate = new Color(1, 1, 1, 0);
 		timer.Timeout += OnTimerTimeout;
 		horseAudio.Play();
-	}
+        var tween = CreateTween();
+        tween.TweenProperty(blackBackground, "modulate:a", 0f, 2.0f);
+
+
+    }
 
 	public override void _Process(double delta)
 	{
-		var tween5 = CreateTween();
-		tween5.TweenProperty(blackBackground, "modulate:a", 0f, 2.0f);
- 
+       
+
+        
 
 		if (!isMoving)
 		{
-		  
-			 
-			//horseAudio.Seek(5f);
-			if (Player.Position.X < 160)
+
+         
+            //horseAudio.Seek(5f);
+            if (Player.Position.X < 160)
 			{
 				Player.Velocity = Vector2.Right * 90;
 				Player.MoveAndSlide();
-			}
+          
+            }
 			else
 			{
 				horseAudio.Stop();
@@ -65,16 +71,19 @@ public partial class ParallaxSky : Node
 		}
 		if (isMoving)
 		{
-		   
-			var tweenmusic = CreateTween();
+         
+
+            var tweenmusic = CreateTween();
 		   tweenmusic.TweenProperty(music, "volume_db", -10, 2f);
 		   
 
 			if (Input.IsActionPressed("walkRight"))
 			{
-			 // horseAudio.Play();
-			   
-				PressD.Modulate = new Color(1, 1, 1, 0);
+              
+
+             // horseAudio.Play();
+
+                PressD.Modulate = new Color(1, 1, 1, 0);
 			
 
 				var tween = CreateTween();
@@ -92,7 +101,7 @@ public partial class ParallaxSky : Node
 			}
 			else
 			{
-				animatieCharacter.Play("idle");
+				 
 				horseAudio.Play();
 				
 		  // horseAudio.Stop();
@@ -146,8 +155,10 @@ public partial class ParallaxSky : Node
   
 
 				break;
-			
+        
+                
+		  
 
-		}
+        }
 	}
 }

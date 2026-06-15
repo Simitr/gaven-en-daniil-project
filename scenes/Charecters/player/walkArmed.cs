@@ -33,6 +33,11 @@ public partial class walkArmed : State
 
     public override void _Process(double delta)
     {
+        if (fsm.CurrentState != this)
+            return;
+
+   
+
         animatedSprite.Position = new Vector2(-2, -15);
         Legs.Visible = false;
         if (!Global.Aremd)

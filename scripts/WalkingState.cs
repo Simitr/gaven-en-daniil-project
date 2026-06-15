@@ -5,7 +5,8 @@ public partial class WalkingState : State
 {
 	[Export] public CharacterBody2D character;
 	[Export] public AnimatedSprite2D animatedSprite;
-	[Export] public float speed = 90f;
+    [Export] public AnimatedSprite2D Legs;
+    [Export] public float speed = 90f;
 
 
 	public override void Update(float delta)
@@ -31,7 +32,30 @@ public partial class WalkingState : State
 				animatedSprite.Play("walkingDown");
 			}
 
-			character.Velocity = dir * speed;
+             if (dir.Y < 0)
+            {
+                Legs.Play("walkingUp");
+                Legs.Visible = true;
+             
+                if (Legs.Frame == 1 || Legs.Frame == 4)
+                {
+                    animatedSprite.Position = new Vector2(-2, -14);
+
+                }
+                else
+                {
+                    animatedSprite.Position = new Vector2(-2, -15);
+
+                }
+              
+                animatedSprite.Play("WalkingUp");
+            }
+			else
+			{
+                Legs.Visible = false;
+            }
+
+            character.Velocity = dir * speed;
 			character.MoveAndSlide();
 		}
 		else

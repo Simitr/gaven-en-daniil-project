@@ -8,6 +8,7 @@ public partial class IdleState : State
     [Export] AnimatedSprite2D LampL;
     [Export] AnimatedSprite2D LampR;
     [Export] AnimatedSprite2D HandsAnimation;
+    [Export] AnimatedSprite2D Legs;
     public Vector2 direction;
 	public int x = 0;
     public bool down = false;
@@ -17,11 +18,12 @@ public partial class IdleState : State
 
     public override void Enter()
 	{
-         
-            LampL.Visible = false;
+     
+        LampL.Visible = false;
             LampR.Visible = false;
             HandsAnimation.Visible = false;
-       
+        Legs.Visible = false;
+         
 
         if (animatedSprite.Animation == "walking")
 		{
@@ -35,16 +37,19 @@ public partial class IdleState : State
 		{
 			animatedSprite.Play("idleDown");
 		}
-        else
+        else if (animatedSprite.Animation == "WalkingUp")
         {
-           // animatedSprite.Play("idle");
+            animatedSprite.Play("idleUp");
         }
        
        
 	}
 	public override void Update(float delta)
 	{
-		var dir = GameInput.MovementInput();
+        HandsAnimation.Visible = false;
+        LampL.Visible = false;
+        LampR.Visible = false;
+        var dir = GameInput.MovementInput();
 		if (dir != Vector2.Zero && !Global.Aremd)
 		{
 			fsm.ChangeState("Walk");
@@ -155,6 +160,10 @@ public partial class IdleState : State
             else if (animatedSprite.Animation == "idleDownGun")
             {
                 animatedSprite.Play("idleDown");
+            }
+            else if (animatedSprite.Animation == "idleUpGun")
+            {
+                animatedSprite.Play("idleUp");
             }
 
         }

@@ -18,6 +18,14 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("1_3ibdw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_miwnm")
 }, {
 "duration": 1.0,
@@ -30,16 +38,8 @@ animations = [{
 "texture": ExtResource("6_fvbv0")
 }],
 "loop": true,
-"name": &"1",
+"name": &"idle",
 "speed": 3.5
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_3ibdw")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -67,7 +67,7 @@ animations = [{
 "texture": ExtResource("13_80gqm")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"walking",
 "speed": 6.0
 }]
 
@@ -80,9 +80,8 @@ size = Vector2(20, 34)
 visible = false
 position = Vector2(114, 51)
 sprite_frames = SubResource("SpriteFrames_wv0uv")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.8494869
+animation = &"walking"
+autoplay = "walking"
 
 [node name="Node" type="Node" parent="." unique_id=1964660053]
 

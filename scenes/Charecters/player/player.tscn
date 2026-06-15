@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bc4waybd2ft8u"]
 
 [ext_resource type="Script" uid="uid://bwaob4v6tnegi" path="res://scenes/Charecters/player/player.gd" id="1_7h4xu"]
+[ext_resource type="Texture2D" uid="uid://c4dr4g5kmgf62" path="res://assets/game/prologue_texture/Character/sWalk.png" id="2_pmcni"]
 [ext_resource type="Texture2D" uid="uid://d1dd0lfj7b432" path="res://assets/game/prologue_texture/Character/idleAnimation1.png" id="6_0db3b"]
 [ext_resource type="Texture2D" uid="uid://5rddffsij2jq" path="res://assets/game/prologue_texture/Character/idleAnimation2.png" id="7_sk4vv"]
 [ext_resource type="Texture2D" uid="uid://ce503svoquqmd" path="res://assets/game/prologue_texture/Character/widle.png" id="8_2jlw7"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bsaoy0dvqbnie" path="res://assets/game/prologue_texture/Character/cowboyanimation1V1Gun.png" id="10_8mjg4"]
 [ext_resource type="Script" uid="uid://bluefqlme4tko" path="res://scripts/StateMachine.cs" id="10_mw1nl"]
 [ext_resource type="Texture2D" uid="uid://coeiwbu6buyt" path="res://assets/game/prologue_texture/Character/cowboyanimation1v2BackGun.png" id="10_xktao"]
+[ext_resource type="Texture2D" uid="uid://c2oku4g6hodvi" path="res://assets/game/prologue_texture/Character/sIdle.png" id="10_yutb7"]
 [ext_resource type="Texture2D" uid="uid://d1t6vtkeqycxm" path="res://assets/game/prologue_texture/Character/w5.png" id="11_r4kbv"]
 [ext_resource type="Texture2D" uid="uid://cx6cxbtlkoqrx" path="res://assets/game/prologue_texture/Character/sprites/cowboyanimation4.png" id="11_uqc0y"]
 [ext_resource type="Texture2D" uid="uid://bnu43hutk2ym2" path="res://assets/game/prologue_texture/Character/cowboyanimation1back.png" id="12_8pucs"]
@@ -69,6 +71,14 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_pmcni")
+}],
+"loop": true,
+"name": &"WalkingUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("6_0db3b")
 }, {
 "duration": 1.0,
@@ -116,6 +126,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleLeftGun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_yutb7")
+}],
+"loop": true,
+"name": &"idleUp",
 "speed": 5.0
 }, {
 "frames": [{
@@ -399,7 +417,7 @@ z_index = 1
 z_as_relative = false
 position = Vector2(-2, -15)
 sprite_frames = SubResource("SpriteFrames_d66dv")
-animation = &"walking"
+animation = &"WalkingUp"
 autoplay = "walkingDownGun"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985997954]
@@ -411,18 +429,20 @@ shape = SubResource("RectangleShape2D_8pucs")
 script = ExtResource("10_mw1nl")
 initialState = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="FSM" unique_id=1102053152 node_paths=PackedStringArray("character", "animatedSprite", "LampL", "LampR", "HandsAnimation")]
+[node name="Idle" type="Node" parent="FSM" unique_id=1102053152 node_paths=PackedStringArray("character", "animatedSprite", "LampL", "LampR", "HandsAnimation", "Legs")]
 script = ExtResource("14_uqc0y")
 character = NodePath("../..")
 animatedSprite = NodePath("../../AnimatedSprite2D")
 LampL = NodePath("../../Armed/LampL")
 LampR = NodePath("../../Armed/LampR")
 HandsAnimation = NodePath("../../Armed/Hands")
+Legs = NodePath("../../Armed/legs")
 
-[node name="Walk" type="Node" parent="FSM" unique_id=1382341779 node_paths=PackedStringArray("character", "animatedSprite")]
+[node name="Walk" type="Node" parent="FSM" unique_id=1382341779 node_paths=PackedStringArray("character", "animatedSprite", "Legs")]
 script = ExtResource("14_ke6lp")
 character = NodePath("../..")
 animatedSprite = NodePath("../../AnimatedSprite2D")
+Legs = NodePath("../../Armed/legs")
 
 [node name="WalkAremd" type="Node" parent="FSM" unique_id=2017531734 node_paths=PackedStringArray("character", "animatedSprite", "LampL", "LampR", "HandsAnimation", "Legs")]
 script = ExtResource("34_21r4g")
@@ -462,7 +482,9 @@ animation = &"LampRightWalkingDown"
 autoplay = "LampRightWalkingDown"
 
 [node name="legs" type="AnimatedSprite2D" parent="Armed" unique_id=799739059]
+visible = false
 position = Vector2(1, -2)
 sprite_frames = SubResource("SpriteFrames_08db6")
 animation = &"walkingUp"
+autoplay = "walkingUp"
 frame_progress = 0.77664244

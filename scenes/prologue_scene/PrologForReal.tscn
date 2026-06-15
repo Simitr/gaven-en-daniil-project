@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://ck2qck88abja5"]
 
 [ext_resource type="PackedScene" uid="uid://bot4c7b8vip0s" path="res://scenes/Charecters/player/playerHorse.tscn" id="1_4xe8f"]
+[ext_resource type="Texture2D" uid="uid://dnseidhetg76l" path="res://assets/game/prologue_texture/Character/konn.png" id="2_m2pmb"]
 [ext_resource type="Texture2D" uid="uid://c6u3slh5hf2y6" path="res://assets/game/prologue_texture/Character/horse1.png" id="3_6gqm1"]
 [ext_resource type="Texture2D" uid="uid://cqxsnndlvyjwq" path="res://assets/game/prologue_texture/Character/sky.png" id="3_n8mk2"]
 [ext_resource type="Script" uid="uid://d1ypud76ak2jc" path="res://scripts/ParallaxSky.cs" id="3_ncrow"]
@@ -14,9 +15,36 @@
 [ext_resource type="Texture2D" uid="uid://bd0a18memsl10" path="res://assets/game/prologue_texture/Character/koni2.png" id="8_yjyr0"]
 [ext_resource type="Texture2D" uid="uid://d1c6i37b56ywn" path="res://assets/game/prologue_texture/Character/koni3.png" id="9_gut3q"]
 [ext_resource type="Texture2D" uid="uid://d2ymkq228qqo0" path="res://assets/game/prologue_texture/Character/koni4.png" id="10_5kxdj"]
+[ext_resource type="Texture2D" uid="uid://cexjxamusaxor" path="res://assets/game/prologue_texture/Character/koni5.png" id="11_e0aqg"]
+[ext_resource type="Texture2D" uid="uid://ks8n7wpbpanr" path="res://assets/game/prologue_texture/Character/koni6.png" id="12_m8cy2"]
+[ext_resource type="Texture2D" uid="uid://c74r3d2e5lry0" path="res://assets/game/prologue_texture/Character/koni7.png" id="13_okaej"]
+[ext_resource type="Texture2D" uid="uid://cc581k8c3joxs" path="res://assets/game/prologue_texture/Character/koni8.png" id="14_m2r7m"]
+[ext_resource type="Script" uid="uid://beuf5uo5bd5yh" path="res://scenes/Charecters/player/Horse.cs" id="15_51hnb"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0npu4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_blaey"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m2pmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m2pmb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m2pmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m2pmb")
+}],
+"loop": true,
+"name": &"default_2",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_6gqm1")
@@ -46,6 +74,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_5kxdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e0aqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_m8cy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_okaej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_m2r7m")
 }],
 "loop": true,
 "name": &"walking",
@@ -68,12 +108,14 @@ z_index = 1
 texture_filter = 1
 position = Vector2(-10, 156)
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="PlayerHorse" unique_id=614264825]
-texture_filter = 1
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="PlayerHorse" unique_id=1948227375 node_paths=PackedStringArray("animatieCharacter")]
 position = Vector2(114, 51)
-sprite_frames = SubResource("SpriteFrames_0npu4")
-animation = &"idle"
-autoplay = "idle"
+sprite_frames = SubResource("SpriteFrames_blaey")
+animation = &"default_2"
+autoplay = "walking"
+frame_progress = 0.1298071
+script = ExtResource("15_51hnb")
+animatieCharacter = NodePath(".")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1457906002]
 texture_filter = 1
@@ -173,3 +215,5 @@ offset_top = -30.0
 offset_right = 672.0
 offset_bottom = 370.0
 color = Color(0, 0, 0, 1)
+
+[connection signal="animation_finished" from="PlayerHorse/AnimatedSprite2D2" to="Node" method="_on_animated_sprite_2d_2_animation_finished"]
