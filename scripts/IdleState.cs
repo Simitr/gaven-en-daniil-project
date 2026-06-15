@@ -46,6 +46,10 @@ public partial class IdleState : State
 	}
 	public override void Update(float delta)
 	{
+        if (Input.IsActionJustPressed("armed"))
+        {
+            Global.Aremd = !Global.Aremd;
+        }
         HandsAnimation.Visible = false;
         LampL.Visible = false;
         LampR.Visible = false;

@@ -54,13 +54,15 @@ public partial class ParallaxSky : Node
             //horseAudio.Seek(5f);
             if (Player.Position.X < 160)
 			{
-				Player.Velocity = Vector2.Right * 90;
+                animatieCharacter.Play("walking");
+                Player.Velocity = Vector2.Right * 90;
 				Player.MoveAndSlide();
           
             }
 			else
 			{
-				horseAudio.Stop();
+                animatieCharacter.Play("idle");
+                horseAudio.Stop();
 				isMoving = true;
 				music.Play();
 			}
@@ -79,9 +81,9 @@ public partial class ParallaxSky : Node
 
 			if (Input.IsActionPressed("walkRight"))
 			{
-              
 
-             // horseAudio.Play();
+
+                animatieCharacter.Play("walking");
 
                 PressD.Modulate = new Color(1, 1, 1, 0);
 			
@@ -101,8 +103,8 @@ public partial class ParallaxSky : Node
 			}
 			else
 			{
-				 
-				horseAudio.Play();
+                animatieCharacter.Play("idle");
+                horseAudio.Play();
 				
 		  // horseAudio.Stop();
 

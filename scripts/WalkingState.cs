@@ -11,7 +11,11 @@ public partial class WalkingState : State
 
 	public override void Update(float delta)
 	{
-		if (!Global.Aremd)
+        if (Input.IsActionJustPressed("armed"))
+        {
+            Global.Aremd = !Global.Aremd;
+        }
+        if (!Global.Aremd)
 		{
 			var dir = GameInput.MovementInput();
 			if (dir == Vector2.Zero)
