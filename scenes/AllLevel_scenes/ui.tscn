@@ -100,16 +100,14 @@ offset_top = 15.0
 offset_right = 234.0
 offset_bottom = 39.0
 max_value = 1.0
-value = 1.0
 texture_under = ExtResource("6_lb3l4")
 texture_progress = ExtResource("8_grtu0")
 
-[node name="HealthPotion3" type="TextureProgressBar" parent="." unique_id=1443953408]
+[node name="KeySlot" type="TextureProgressBar" parent="." unique_id=1443953408]
 offset_left = 244.0
 offset_top = 15.0
 offset_right = 268.0
 offset_bottom = 39.0
 max_value = 1.0
-value = 1.0
 texture_under = ExtResource("6_lb3l4")
 texture_progress = ExtResource("9_rgm80")

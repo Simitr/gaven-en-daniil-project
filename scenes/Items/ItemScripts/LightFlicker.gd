@@ -14,9 +14,7 @@ func _ready():
 		$AnimatedSprite2D.animation = "default"
 		
 	$AnimatedSprite2D.play()
-	print("Scene:", room_name)
-	print("Animation:", $AnimatedSprite2D.animation)
-	print("Playing:", $AnimatedSprite2D.is_playing())
+
 
 func activate():
 	light.enabled = true
