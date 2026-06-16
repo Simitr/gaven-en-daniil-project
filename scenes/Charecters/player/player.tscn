@@ -483,6 +483,7 @@ autoplay = "LampRightWalkingDown"
 
 [node name="legs" type="AnimatedSprite2D" parent="Armed" unique_id=799739059]
 visible = false
+z_index = 1
 position = Vector2(1, -2)
 sprite_frames = SubResource("SpriteFrames_08db6")
 animation = &"walkingUp"
