@@ -1,0 +1,22 @@
+extends Node
+class_name State
+
+var fsm: StateMachine
+
+func state_ready():
+	pass
+
+func enter():
+	pass
+
+func exit():
+	pass
+
+func update(delta):
+	pass
+
+func physics_update(delta):
+	pass
+
+func handle_input(event):
+	pass
