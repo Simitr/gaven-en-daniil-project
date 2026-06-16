@@ -6,7 +6,7 @@ class_name IdleState
 @export var lamp_l: AnimatedSprite2D
 @export var lamp_r: AnimatedSprite2D
 @export var hands_animation: AnimatedSprite2D
-@export var legs: AnimatedSprite2D
+
 
 var direction: Vector2
 var x := 0
@@ -23,7 +23,7 @@ func enter():
 	lamp_l.visible = false
 	lamp_r.visible = false
 	hands_animation.visible = false
-	legs.visible = false
+
 
 	if animated_sprite.animation == "walking":
 		animated_sprite.play("idle")
