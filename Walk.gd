@@ -3,7 +3,6 @@ class_name WalkingState
 
 @export var character: CharacterBody2D
 @export var animated_sprite: AnimatedSprite2D
-@export var legs: AnimatedSprite2D
 @export var speed: float = 90.0
 
 
@@ -21,19 +20,9 @@ func update(delta):
 			animated_sprite.play("walking")
 		elif dir.y > 0:
 			animated_sprite.play("walkingDown")
-
-		if dir.y < 0:
-			legs.play("walkingUp")
-			legs.visible = true
-
-			if legs.frame == 1 or legs.frame == 4:
-				animated_sprite.position = Vector2(-2, -14)
-			else:
-				animated_sprite.position = Vector2(-2, -15)
-
+		elif dir.y < 0:
 			animated_sprite.play("WalkingUp")
-		else:
-			legs.visible = false
+
 
 		character.velocity = dir * speed
 		character.move_and_slide()

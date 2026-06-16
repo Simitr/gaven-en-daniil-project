@@ -8,7 +8,7 @@ class_name WalkArmed
 @export var lamp_l: AnimatedSprite2D
 @export var lamp_r: AnimatedSprite2D
 @export var hands_animation: AnimatedSprite2D
-@export var legs: AnimatedSprite2D
+
 
 var position := false
 var down := false
@@ -40,7 +40,6 @@ func update(delta):
 
 	animated_sprite.position = Vector2(-2, -15)
 
-	legs.visible = false
 	hands_animation.visible = true
 
 	var mouse_dir = character.get_global_mouse_position() - character.global_position
@@ -104,26 +103,28 @@ func update(delta):
 		lamp_l.visible = false
 		lamp_r.visible = false
 		hands_animation.visible = false
+		var frame = animated_sprite.frame
+		var progress = animated_sprite.frame_progress
 
-		legs.visible = true
-		legs.play("walkingUp")
-
-		if legs.frame == 1 or legs.frame == 4:
-			animated_sprite.position = Vector2(-2, -14)
-		else:
-			animated_sprite.position = Vector2(-2, -15)
+		
 
 		if side == Side.RIGHT:
-			animated_sprite.frame = 1
+			if animated_sprite.animation != "walkingUpRightGun":
+				animated_sprite.play("walkingUpRightGun")
+				animated_sprite.frame = frame
+				animated_sprite.frame_progress = progress
 		else:
-			animated_sprite.frame = 0
+			if animated_sprite.animation != "walkingUpLeftGun":
+				animated_sprite.play("walkingUpLeftGun")
+				animated_sprite.frame = frame
+				animated_sprite.frame_progress = progress
 
-		animated_sprite.play("walkingUpGun")
+		
 
 		up = true
 
 	else:
-		legs.visible = false
+
 		up = false
 
 	# ==========================================
