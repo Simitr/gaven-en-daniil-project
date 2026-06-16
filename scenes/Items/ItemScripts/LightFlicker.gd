@@ -5,6 +5,18 @@ class_name Torch
 
 func _ready():
 	light.enabled = false
+	
+	var room_name = get_tree().current_scene.name
+	
+	if room_name == "LevelBoss":
+		$AnimatedSprite2D.animation = "BossAnimation"
+	else:
+		$AnimatedSprite2D.animation = "default"
+		
+	$AnimatedSprite2D.play()
+	print("Scene:", room_name)
+	print("Animation:", $AnimatedSprite2D.animation)
+	print("Playing:", $AnimatedSprite2D.is_playing())
 
 func activate():
 	light.enabled = true
@@ -17,3 +29,4 @@ var time: float = 0.0
 func _process(delta):
 	time += delta * flicker_speed
 	light.energy = target_energy + sin(time) * amplitude
+	

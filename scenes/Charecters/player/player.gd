@@ -46,7 +46,6 @@ func use_HealthPotions():
 		Global.health_potions = health_potions
 
 
-
 func take_damage(amount: int):
 	health -= amount
 	health = max(health, 0)
