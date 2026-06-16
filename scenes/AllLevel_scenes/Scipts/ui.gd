@@ -29,8 +29,7 @@ func _process(delta):
 		update_ammo_ui()
 		update_HealthPotions_ui()
 		update_health_ui()
-		update_KeySlot_ui()
-		update_LanternSlot_ui()
+		update_item_ui()
 
 
 func update_health_ui():
@@ -42,8 +41,6 @@ func update_ammo_ui():
 func update_HealthPotions_ui():
 	potion_label.text = str(player.health_potions)
 	
-func update_LanternSlot_ui():
-	lantern_slot.value = 1
-
-func update_KeySlot_ui():
-	key_slot.value = 1
+func update_item_ui():
+	lantern_slot.visible = player.lantern > 0
+	key_slot.visible = player.key > 0

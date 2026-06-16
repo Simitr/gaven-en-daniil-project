@@ -7,8 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="6_3ydi7"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="6_gslef"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="6_ij5e7"]
-[ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/HealthPotionPickup.tscn" id="8_iist4"]
-[ext_resource type="PackedScene" uid="uid://ctsy80vdmpfef" path="res://scenes/Items/AmmoPickup.tscn" id="8_ij5e7"]
+[ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/ItemPickup.tscn" id="8_iist4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
 texture = ExtResource("1_7vu5a")
@@ -990,16 +989,6 @@ position = Vector2(339, 107)
 z_index = 1
 position = Vector2(-201, 68)
 
-[node name="HealthPotionPickup" parent="WorldObjects" unique_id=918011205 instance=ExtResource("8_iist4")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-149, 77)
-
-[node name="AmmoPickup" parent="WorldObjects" unique_id=1134325876 instance=ExtResource("8_ij5e7")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-93, 67)
-
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("6_3ydi7")]
 y_sort_enabled = true
 position = Vector2(-119, 55)
@@ -1008,7 +997,13 @@ position = Vector2(-119, 55)
 y_sort_enabled = true
 position = Vector2(-177, 134)
 
+[node name="AmmoPickup" parent="WorldObjects" unique_id=1556862671 instance=ExtResource("8_iist4")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-137, 69)
+
 [node name="DoortoRoom2" type="Area2D" parent="." unique_id=2036692786]
+position = Vector2(55, 84)
 script = ExtResource("1_tmxtc")
 next_scene = "uid://wqerkhgxpo0k"
 target_spawn = "SpawnTop"
@@ -1027,6 +1022,7 @@ position = Vector2(343, 300)
 script = ExtResource("6_gslef")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1818539965]
+position = Vector2(1, 0)
 script = ExtResource("6_ij5e7")
 dark_color = Color(0.050980393, 0.050980393, 0.0627451, 1)
 

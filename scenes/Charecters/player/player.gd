@@ -6,6 +6,8 @@ var ammo
 var health_potions
 var max_health
 var health
+var lantern = 0
+var key = 0
 
 
 func _ready():
@@ -44,6 +46,18 @@ func use_HealthPotions():
 		health_potions -= 1
 		heal(25)
 		Global.health_potions = health_potions
+
+
+func add_lantern(amount: int):
+	lantern += amount
+	Global.lantern = lantern
+	
+	
+func add_key(amount: int):
+	key += amount
+	Global.key = key
+	
+
 
 
 func take_damage(amount: int):
