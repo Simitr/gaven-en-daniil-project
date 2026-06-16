@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cprjhkubpubhk" path="res://Sprites/InventoryAsset/Retro Inventory/Original/CooldownUI.png" id="6_lb3l4"]
 [ext_resource type="FontFile" uid="uid://u7hx7cn755h2" path="res://Sprites/kiwisoda/KiwiSoda.ttf" id="6_vio35"]
 [ext_resource type="Texture2D" uid="uid://co257x2dpu6id" path="res://Sprites/Items/HealthPotion.png" id="7_y3fu0"]
+[ext_resource type="Texture2D" uid="uid://p6akmalgv1du" path="res://Sprites/Items/Lantern.png" id="8_grtu0"]
+[ext_resource type="Texture2D" uid="uid://dhrg3g5l52cbl" path="res://Sprites/Items/Key.png" id="9_rgm80"]
 
 [sub_resource type="Theme" id="Theme_yn0fj"]
 
@@ -91,3 +93,23 @@ text = "
 
 
 "
+
+[node name="LanternSlot" type="TextureProgressBar" parent="." unique_id=372184987]
+offset_left = 210.0
+offset_top = 15.0
+offset_right = 234.0
+offset_bottom = 39.0
+max_value = 1.0
+value = 1.0
+texture_under = ExtResource("6_lb3l4")
+texture_progress = ExtResource("8_grtu0")
+
+[node name="HealthPotion3" type="TextureProgressBar" parent="." unique_id=1443953408]
+offset_left = 244.0
+offset_top = 15.0
+offset_right = 268.0
+offset_bottom = 39.0
+max_value = 1.0
+value = 1.0
+texture_under = ExtResource("6_lb3l4")
+texture_progress = ExtResource("9_rgm80")
