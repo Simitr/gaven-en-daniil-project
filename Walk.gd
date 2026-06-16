@@ -8,7 +8,7 @@ class_name WalkingState
 
 
 func update(delta):
-	if !GlobalArmed.armed:
+	if !Global.armed:
 		var dir = GameInput.movement_input()
 
 		if dir == Vector2.ZERO:

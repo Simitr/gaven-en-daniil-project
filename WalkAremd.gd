@@ -27,7 +27,7 @@ func update(delta):
 		fsm.change_state("Idle")
 		return
 
-	if !GlobalArmed.armed:
+	if !Global.armed:
 		lamp_l.visible = false
 		lamp_r.visible = false
 		hands_animation.visible = false

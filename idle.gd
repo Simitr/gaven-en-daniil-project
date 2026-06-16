@@ -42,12 +42,12 @@ func update(delta):
 
 	var dir = GameInput.movement_input()
 
-	if dir != Vector2.ZERO and !GlobalArmed.armed:
+	if dir != Vector2.ZERO and !Global.armed:
 		fsm.change_state("Walk")
-	elif dir != Vector2.ZERO and GlobalArmed.armed:
+	elif dir != Vector2.ZERO and Global.armed:
 		fsm.change_state("WalkAremd")
 
-	if GlobalArmed.armed:
+	if Global.armed:
 
 		var mouse_dir = character.get_global_mouse_position() - character.global_position
 		var angle = rad_to_deg(mouse_dir.angle())
