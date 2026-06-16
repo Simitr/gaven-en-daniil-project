@@ -427,31 +427,18 @@ shape = SubResource("RectangleShape2D_8pucs")
 
 [node name="FSM" type="Node" parent="." unique_id=1036934033]
 script = ExtResource("38_yutb7")
-initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="FSM" unique_id=1102053152 node_paths=PackedStringArray("character", "animated_sprite", "lamp_l", "lamp_r", "hands_animation", "legs")]
+[node name="Idle" type="Node" parent="FSM" unique_id=1102053152 node_paths=PackedStringArray("character")]
 script = ExtResource("39_yutb7")
 character = NodePath("../..")
-animated_sprite = NodePath("../../AnimatedSprite2D")
-lamp_l = NodePath("../../Armed/LampL")
-lamp_r = NodePath("../../Armed/LampR")
-hands_animation = NodePath("../../Armed/Hands")
-legs = NodePath("../../Armed/legs")
 
-[node name="Walk" type="Node" parent="FSM" unique_id=1382341779 node_paths=PackedStringArray("character", "animated_sprite", "legs")]
+[node name="Walk" type="Node" parent="FSM" unique_id=1382341779 node_paths=PackedStringArray("character")]
 script = ExtResource("40_yutb7")
 character = NodePath("../..")
-animated_sprite = NodePath("../../AnimatedSprite2D")
-legs = NodePath("../../Armed/legs")
 
-[node name="WalkAremd" type="Node" parent="FSM" unique_id=2017531734 node_paths=PackedStringArray("character", "animated_sprite", "lamp_l", "lamp_r", "hands_animation", "legs")]
+[node name="WalkAremd" type="Node" parent="FSM" unique_id=2017531734 node_paths=PackedStringArray("character")]
 script = ExtResource("41_yutb7")
 character = NodePath("../..")
-animated_sprite = NodePath("../../AnimatedSprite2D")
-lamp_l = NodePath("../../Armed/LampL")
-lamp_r = NodePath("../../Armed/LampR")
-hands_animation = NodePath("../../Armed/Hands")
-legs = NodePath("../../Armed/legs")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=34049318]
 
