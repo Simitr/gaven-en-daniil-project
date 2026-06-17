@@ -1035,6 +1035,7 @@ use_kinematic_bodies = true
 
 [node name="WorldObjects" type="CanvasGroup" parent="." unique_id=1387647873]
 y_sort_enabled = true
+position = Vector2(-1, 1)
 
 [node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_af1sh")]
 visibility_layer = 7
@@ -1074,8 +1075,8 @@ next_scene = "uid://b58xkhywvlmmw"
 target_spawn = "SpawnTop"
 
 [node name="DoortoRoom3" type="CollisionShape2D" parent="Doors/DoortoRoom3" unique_id=598241705]
-z_index = 1
-position = Vector2(184, 387)
+z_index = 2
+position = Vector2(185, 393)
 shape = SubResource("RectangleShape2D_wlvkq")
 
 [node name="DoortoRoom4" type="Area2D" parent="Doors" unique_id=251057713]
@@ -1089,21 +1090,21 @@ z_index = 2
 position = Vector2(-84, 138)
 shape = SubResource("RectangleShape2D_wlvkq")
 
-[node name="SpawnBottom" type="Marker2D" parent="." unique_id=1460348348]
-position = Vector2(182, 341)
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=484801838]
+script = ExtResource("6_bu1on")
+dark_color = Color(0.050980393, 0.050980393, 0.0627451, 1)
+
+[node name="SpawnTop" type="Marker2D" parent="." unique_id=191521246]
+position = Vector2(184, 12)
 script = ExtResource("4_4onql")
 
 [node name="SpawnLeft" type="Marker2D" parent="." unique_id=1266938466]
 position = Vector2(-38, 144)
 script = ExtResource("4_4onql")
 
-[node name="SpawnTop" type="Marker2D" parent="." unique_id=191521246]
-position = Vector2(184, 12)
+[node name="SpawnBottom" type="Marker2D" parent="." unique_id=1460348348]
+position = Vector2(182, 340)
 script = ExtResource("4_4onql")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=484801838]
-script = ExtResource("6_bu1on")
-dark_color = Color(0.050980393, 0.050980393, 0.0627451, 1)
 
 [connection signal="body_entered" from="Doors/DoortoRoom1" to="Doors/DoortoRoom1" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom3" to="Doors/DoortoRoom3" method="_on_body_entered"]

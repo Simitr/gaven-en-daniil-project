@@ -3,8 +3,8 @@ extends CanvasLayer
 @onready var health_bar = $"HealthBar"
 @onready var ammo_label = $"Ammo/AmmoLabel"
 @onready var potion_label = $"HealthPotion/PotionLabel"
-@onready var lantern_slot = $"LanternSlot"
-@onready var key_slot = $"KeySlot"
+@onready var lantern_item = $"LanternSlot/LanternItem"
+@onready var key_item = $"KeySlot/KeyItem"
 
 var player
 
@@ -42,5 +42,5 @@ func update_HealthPotions_ui():
 	potion_label.text = str(player.health_potions)
 	
 func update_item_ui():
-	lantern_slot.visible = player.lantern > 0
-	key_slot.visible = player.key > 0
+	lantern_item.visible = player.lantern > 0
+	key_item.visible = player.key > 0

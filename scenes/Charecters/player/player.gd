@@ -56,7 +56,6 @@ func add_lantern(amount: int):
 func add_key(amount: int):
 	key += amount
 	Global.key = key
-	
 
 
 

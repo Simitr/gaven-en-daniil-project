@@ -102,7 +102,7 @@ offset_bottom = 39.0
 max_value = 1.0
 texture_under = ExtResource("6_lb3l4")
 
-[node name="TextureRect" type="TextureRect" parent="LanternSlot" unique_id=1257652934]
+[node name="LanternItem" type="TextureRect" parent="LanternSlot" unique_id=1257652934]
 layout_mode = 0
 offset_right = 24.0
 offset_bottom = 24.0
@@ -116,7 +116,7 @@ offset_bottom = 39.0
 max_value = 1.0
 texture_under = ExtResource("6_lb3l4")
 
-[node name="TextureRect" type="TextureRect" parent="KeySlot" unique_id=652245110]
+[node name="KeyItem" type="TextureRect" parent="KeySlot" unique_id=652245110]
 layout_mode = 0
 offset_right = 24.0
 offset_bottom = 24.0
