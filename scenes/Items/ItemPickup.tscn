@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cx7i1iqyhaa0c"]
+
+[ext_resource type="Texture2D" uid="uid://c4vuwbystgk8v" path="res://Sprites/Items/HealthPotionPickup.png" id="1_o8m58"]
+[ext_resource type="Texture2D" uid="uid://b4q6li3j5l5fr" path="res://Sprites/Items/AmmoPickup.png" id="2_aj6ja"]
+[ext_resource type="Script" uid="uid://dxtmvbcbqvqm2" path="res://scenes/Items/ItemScripts/ItemPickup.gd" id="2_k7nra"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8m58"]
+size = Vector2(29.5, 28.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiwkn"]
+atlas = ExtResource("2_aj6ja")
+region = Rect2(0, 0, 28, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6owq"]
+atlas = ExtResource("2_aj6ja")
+region = Rect2(56, 0, 28, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfs1m"]
+atlas = ExtResource("2_aj6ja")
+region = Rect2(28, 0, 28, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpp5b"]
+atlas = ExtResource("2_aj6ja")
+region = Rect2(84, 0, 28, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7nra"]
+atlas = ExtResource("1_o8m58")
+region = Rect2(48, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddmus"]
+atlas = ExtResource("1_o8m58")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_425e1"]
+atlas = ExtResource("1_o8m58")
+region = Rect2(32, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxdqa"]
+atlas = ExtResource("1_o8m58")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1has5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiwkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6owq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfs1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpp5b")
+}],
+"loop": true,
+"name": &"AmmoPickup",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7nra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddmus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_425e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxdqa")
+}],
+"loop": true,
+"name": &"HealthPotionPickup",
+"speed": 2.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1556862671]
+position = Vector2(1, -4)
+script = ExtResource("2_k7nra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=430112023]
+position = Vector2(-0.25, 6.75)
+shape = SubResource("RectangleShape2D_o8m58")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1481431503]
+position = Vector2(2, 4)
+sprite_frames = SubResource("SpriteFrames_1has5")
+animation = &"AmmoPickup"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

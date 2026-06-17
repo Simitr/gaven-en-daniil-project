@@ -101,7 +101,12 @@ offset_right = 234.0
 offset_bottom = 39.0
 max_value = 1.0
 texture_under = ExtResource("6_lb3l4")
-texture_progress = ExtResource("8_grtu0")
+
+[node name="LanternItem" type="TextureRect" parent="LanternSlot" unique_id=1257652934]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 24.0
+texture = ExtResource("8_grtu0")
 
 [node name="KeySlot" type="TextureProgressBar" parent="." unique_id=1443953408]
 offset_left = 244.0
@@ -110,4 +115,9 @@ offset_right = 268.0
 offset_bottom = 39.0
 max_value = 1.0
 texture_under = ExtResource("6_lb3l4")
-texture_progress = ExtResource("9_rgm80")
+
+[node name="KeyItem" type="TextureRect" parent="KeySlot" unique_id=652245110]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 24.0
+texture = ExtResource("9_rgm80")

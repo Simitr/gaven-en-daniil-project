@@ -1063,23 +1063,25 @@ position = Vector2(152, 326)
 y_sort_enabled = true
 position = Vector2(-152, 323)
 
-[node name="DoortoRoom3" type="Area2D" parent="." unique_id=197177838]
+[node name="Doors" type="CanvasGroup" parent="." unique_id=466661053]
+
+[node name="DoortoRoom3" type="Area2D" parent="Doors" unique_id=197177838]
 position = Vector2(224, 66)
 script = ExtResource("3_wi8hq")
 next_scene = "uid://b58xkhywvlmmw"
 target_spawn = "SpawnBottom"
 
-[node name="DoortoRoom3" type="CollisionShape2D" parent="DoortoRoom3" unique_id=630083851]
+[node name="DoortoRoom3" type="CollisionShape2D" parent="Doors/DoortoRoom3" unique_id=630083851]
 z_index = 1
 position = Vector2(0, -25)
 shape = SubResource("RectangleShape2D_wi8hq")
-
-[node name="SpawnTop" type="Marker2D" parent="." unique_id=1172747839]
-position = Vector2(224, 66)
-script = ExtResource("3_odr71")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1625130651]
 script = ExtResource("7_getvy")
 dark_color = Color(0.050980393, 0.050980393, 0.0627451, 1)
 
-[connection signal="body_entered" from="DoortoRoom3" to="DoortoRoom3" method="_on_body_entered"]
+[node name="SpawnTop" type="Marker2D" parent="." unique_id=1172747839]
+position = Vector2(224, 66)
+script = ExtResource("3_odr71")
+
+[connection signal="body_entered" from="Doors/DoortoRoom3" to="Doors/DoortoRoom3" method="_on_body_entered"]
