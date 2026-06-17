@@ -11,5 +11,6 @@ var max_health := 100
 var health := 75
 
 var key = 0
+var lantern = 0
 
 var armed := false

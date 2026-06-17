@@ -1002,6 +1002,12 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(-137, 69)
 
+[node name="HealthPickup" parent="WorldObjects" unique_id=927233797 instance=ExtResource("8_iist4")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-250, 70)
+type = 1
+
 [node name="Doors" type="CanvasGroup" parent="." unique_id=1619103931]
 position = Vector2(55, 84)
 

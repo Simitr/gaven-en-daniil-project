@@ -4,10 +4,13 @@ class_name Player
 
 const BULLET_CLASS = preload("res://scenes/Items/bullet.tscn")
 
-var ammo
-var health_potions
-var max_health
-var health
+var ammo: int = 0
+var health_potions: int = 0
+var max_health: int = 0
+var health: int = 0
+var lantern: int = 0
+var key: int = 0
+
 var targetPosition: Vector2
 @export var flashlight2: PointLight2D
 @export var Gun: Marker2D
@@ -18,6 +21,8 @@ func _ready():
 
 	max_health = Global.max_health
 	health = Global.health
+	lantern = Global.lantern
+	key = Global.key
 	
 	
 	
@@ -77,6 +82,17 @@ func heal(amount: int):
 	health += amount
 	health = min(health, max_health)
 	Global.health = health
+	
+	
+func add_lantern(amount: int):
+	lantern += amount
+	Global.lantern = lantern
+
+
+func add_key(amount: int):
+	key += amount
+	Global.key = key
+	
 
 func shoot():
 	
