@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://btb25bbiofejs"]
+
+[ext_resource type="Script" uid="uid://dib34wqneq2pv" path="res://scripts/bullet.gd" id="1_d01l7"]
+[ext_resource type="Texture2D" uid="uid://bu2s1d2rhbu2y" path="res://Sprites/Items/All_Fire_Bullet_Pixel_16x16.png" id="2_kg7g6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xd32x"]
+radius = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d01l7"]
+atlas = ExtResource("2_kg7g6")
+region = Rect2(224, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg7g6"]
+atlas = ExtResource("2_kg7g6")
+region = Rect2(240, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd32x"]
+atlas = ExtResource("2_kg7g6")
+region = Rect2(256, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50q0l"]
+atlas = ExtResource("2_kg7g6")
+region = Rect2(176, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owaww"]
+atlas = ExtResource("2_kg7g6")
+region = Rect2(192, 288, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6ib3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d01l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kg7g6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd32x")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50q0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owaww")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bullet" type="Area2D" unique_id=1049972130 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_d01l7")
+sprite = NodePath("CollisionShape2D/AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1687480023]
+shape = SubResource("CircleShape2D_xd32x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=115528845]
+sprite_frames = SubResource("SpriteFrames_k6ib3")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

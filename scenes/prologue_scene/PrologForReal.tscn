@@ -60,7 +60,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 3.5
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -111,9 +111,8 @@ position = Vector2(-10, 156)
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="PlayerHorse" unique_id=1948227375 node_paths=PackedStringArray("animatieCharacter")]
 position = Vector2(114, 51)
 sprite_frames = SubResource("SpriteFrames_blaey")
-animation = &"default_2"
+animation = &"idle"
 autoplay = "walking"
-frame_progress = 0.1298071
 script = ExtResource("15_51hnb")
 animatieCharacter = NodePath(".")
 

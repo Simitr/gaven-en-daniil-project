@@ -10,6 +10,8 @@ class_name WalkArmed
 @export var hands_animation: AnimatedSprite2D
 
 
+
+
 var position := false
 var down := false
 var up := false
@@ -31,6 +33,8 @@ func update(delta):
 		lamp_l.visible = false
 		lamp_r.visible = false
 		hands_animation.visible = false
+
+		
 
 		fsm.change_state("Walk")
 		return

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bc4waybd2ft8u"]
 
 [ext_resource type="Script" uid="uid://bwaob4v6tnegi" path="res://scenes/Charecters/player/player.gd" id="1_7h4xu"]
+[ext_resource type="Texture2D" uid="uid://bwmowgb4ogsy1" path="res://Sprites/Items/Light.png" id="3_flheb"]
 [ext_resource type="Texture2D" uid="uid://d1dd0lfj7b432" path="res://assets/game/prologue_texture/Character/idleAnimation1.png" id="6_0db3b"]
 [ext_resource type="Texture2D" uid="uid://5rddffsij2jq" path="res://assets/game/prologue_texture/Character/idleAnimation2.png" id="7_sk4vv"]
 [ext_resource type="Texture2D" uid="uid://ce503svoquqmd" path="res://assets/game/prologue_texture/Character/widle.png" id="8_2jlw7"]
@@ -442,10 +443,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1372397156 groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1372397156 node_paths=PackedStringArray("flashlight2") groups=["player"]]
 visibility_layer = 6
 y_sort_enabled = true
 script = ExtResource("1_7h4xu")
+flashlight2 = NodePath("flashlight2")
+
+[node name="flashlight2" type="PointLight2D" parent="." unique_id=1627306792]
+visibility_layer = 8
+z_index = -2
+position = Vector2(-2, -12)
+color = Color(0.9607843, 0.6784314, 0.38039216, 1)
+texture = ExtResource("3_flheb")
+offset = Vector2(80, 0)
+texture_scale = 0.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2030178958]
 visibility_layer = 6
@@ -460,6 +471,9 @@ autoplay = "walkingDownGun"
 z_index = 1
 position = Vector2(-0.5, -3)
 shape = SubResource("RectangleShape2D_8pucs")
+
+[node name="Gun" type="Marker2D" parent="CollisionShape2D" unique_id=1790452545]
+position = Vector2(19.5, -13)
 
 [node name="FSM" type="Node" parent="." unique_id=1036934033]
 script = ExtResource("38_yutb7")
@@ -489,7 +503,7 @@ hands_animation = NodePath("../../Armed/Hands")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=34049318]
 
 [node name="Armed" type="Node2D" parent="." unique_id=634772376]
-z_index = 8
+z_index = -1
 position = Vector2(-3, -13)
 
 [node name="Hands" type="AnimatedSprite2D" parent="Armed" unique_id=357965397]
