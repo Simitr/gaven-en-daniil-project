@@ -36,12 +36,11 @@ func _process(delta):
 	Gun.look_at(get_global_mouse_position())
 
 func update_flashlight():
-	if Global.armed:
+	if Global.armed && lantern == 1:
 		targetPosition = get_global_mouse_position()
 		flashlight2.look_at(get_global_mouse_position())
 		 
 	 
-		
 		flashlight2.visible = true
 	else:
 		flashlight2.visible = false

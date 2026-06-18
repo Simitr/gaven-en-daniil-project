@@ -72,35 +72,35 @@ region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulvto"]
 atlas = ExtResource("4_061no")
-region = Rect2(32, 0, 16, 29)
+region = Rect2(0, 0, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qame8"]
 atlas = ExtResource("4_061no")
-region = Rect2(48, 0, 16, 29)
+region = Rect2(16, 0, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_061no"]
 atlas = ExtResource("4_061no")
-region = Rect2(0, 0, 16, 29)
+region = Rect2(32, 0, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_81ham"]
 atlas = ExtResource("4_061no")
-region = Rect2(16, 0, 16, 29)
+region = Rect2(48, 0, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_led31"]
 atlas = ExtResource("4_061no")
-region = Rect2(64, 0, 16, 32)
+region = Rect2(64, 0, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otpo1"]
 atlas = ExtResource("4_061no")
-region = Rect2(80, 0, 16, 32)
+region = Rect2(80, 0, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jiq8o"]
 atlas = ExtResource("4_061no")
-region = Rect2(96, 0, 16, 32)
+region = Rect2(96, 0, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rb0ct"]
 atlas = ExtResource("4_061no")
-region = Rect2(112, 0, 16, 32)
+region = Rect2(112, 0, 16, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mcm5l"]
 animations = [{
@@ -157,14 +157,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulvto"]
-size = Vector2(42, 51)
+size = Vector2(42, 76.5)
 
 [node name="KeyTorch" type="Area2D" unique_id=2046788511]
 script = ExtResource("1_ulvto")
 
 [node name="LightTexture" type="PointLight2D" parent="." unique_id=811384241]
 y_sort_enabled = true
-position = Vector2(-1, 8.999999)
+position = Vector2(0, 1.0000014)
 scale = Vector2(0.29986572, 0.24908449)
 color = Color(0.96219605, 0.6768721, 0.38177067, 1)
 energy = 1.5
@@ -187,13 +187,14 @@ process_material = SubResource("ParticleProcessMaterial_rb0ct")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1506673244]
 z_index = 1
-position = Vector2(1, 1)
+position = Vector2(2, -6)
 scale = Vector2(1.0625, 1)
 sprite_frames = SubResource("SpriteFrames_mcm5l")
 autoplay = "default"
+frame_progress = 0.92782813
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=432157251]
-position = Vector2(0, 15.5)
+position = Vector2(0, 13.75)
 shape = SubResource("RectangleShape2D_ulvto")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
