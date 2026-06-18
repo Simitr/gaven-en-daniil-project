@@ -283,7 +283,7 @@ texture = ExtResource("1_7vu5a")
 5:8/0/y_sort_origin = -15
 5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -8, -8, -8, -8, 8)
 6:8/0 = 0
-6:8/0/y_sort_origin = -6
+6:8/0/y_sort_origin = -15
 6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.8324585, -8, 5.8324585)
 7:8/0 = 0
 7:8/0/y_sort_origin = -15
@@ -994,7 +994,7 @@ position = Vector2(-201, 68)
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("6_3ydi7")]
 y_sort_enabled = true
-position = Vector2(-119, 55)
+position = Vector2(-108, 53)
 
 [node name="AmmoPickup" parent="WorldObjects" unique_id=1556862671 instance=ExtResource("8_iist4")]
 z_index = 1
@@ -1008,6 +1008,7 @@ position = Vector2(-250, 70)
 type = 1
 
 [node name="KeyTorch" parent="WorldObjects" unique_id=2046788511 node_paths=PackedStringArray("popup") instance=ExtResource("6_pgoe3")]
+y_sort_enabled = true
 position = Vector2(-171, 136)
 popup = NodePath("../../LootPopup")
 lantern_texture = ExtResource("7_sxyga")
@@ -1028,7 +1029,7 @@ shape = SubResource("RectangleShape2D_ey6jb")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1818539965]
 position = Vector2(1, 0)
 script = ExtResource("6_ij5e7")
-dark_color = Color(0.050980393, 0.050980393, 0.0627451, 1)
+dark_color = Color(0.01390053, 0.0139003685, 0.017907057, 1)
 
 [node name="SpawnRight" type="Marker2D" parent="." unique_id=672166369]
 position = Vector2(343, 300)
