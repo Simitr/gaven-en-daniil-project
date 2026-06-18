@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="6_3ydi7"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="6_gslef"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="6_ij5e7"]
-[ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/ItemPickup.tscn" id="8_iist4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
 texture = ExtResource("1_7vu5a")
@@ -996,17 +995,6 @@ position = Vector2(-119, 55)
 [node name="Torch2" parent="WorldObjects" unique_id=1307193123 instance=ExtResource("6_3ydi7")]
 y_sort_enabled = true
 position = Vector2(-177, 134)
-
-[node name="AmmoPickup" parent="WorldObjects" unique_id=1556862671 instance=ExtResource("8_iist4")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-137, 69)
-
-[node name="HealthPickup" parent="WorldObjects" unique_id=927233797 instance=ExtResource("8_iist4")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-250, 70)
-type = 1
 
 [node name="Doors" type="CanvasGroup" parent="." unique_id=1619103931]
 position = Vector2(55, 84)

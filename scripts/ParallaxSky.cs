@@ -25,8 +25,10 @@ public partial class ParallaxSky : Node
 	[Export] public float GroundMaxSpeed = 40f;
 	[Export] public float GrassMaxSpeed = 50f;
 	[Export] public float BackMaxSpeed = 15f;
+	[Export] public Sprite2D trap;
 	private bool isMoving = false;
 	public string state = "";
+	public bool isatrap = false;
 
 
     public override void _Ready()
@@ -67,7 +69,7 @@ public partial class ParallaxSky : Node
 				music.Play();
 			}
 
-			timer.WaitTime = 5f;
+			timer.WaitTime = 1f;
 			state = "start";
 			timer.Start();
 		}
@@ -82,7 +84,14 @@ public partial class ParallaxSky : Node
 			if (Input.IsActionPressed("walkRight"))
 			{
 
-
+				if (isatrap)
+				{
+					trap.Position -= new Vector2(1, 0);
+					if (trap.Position == new Vector2(300, 235))
+					{
+                        GetTree().ChangeSceneToFile("res://scenes/AllLevel_scenes/Level1.tscn");
+                    }
+                }
                 animatieCharacter.Play("walking");
 
                 PressD.Modulate = new Color(1, 1, 1, 0);
@@ -150,13 +159,10 @@ public partial class ParallaxSky : Node
 		switch (state)
 		{
 			case "start":
-				if (!Input.IsActionPressed("walkRight"))
-				{
-					PressD.Modulate = new Color(1, 1, 1, 1);
-				}
-  
+                isatrap = true;
 
-				break;
+
+                break;
         
                 
 		  
