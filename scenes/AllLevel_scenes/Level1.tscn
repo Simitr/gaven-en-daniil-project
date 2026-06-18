@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="6_3ydi7"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="6_gslef"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="6_ij5e7"]
+[ext_resource type="PackedScene" uid="uid://b8bgt0c07p4dq" path="res://scenes/Items/TorchPickup.tscn" id="6_pgoe3"]
+[ext_resource type="Texture2D" uid="uid://p6akmalgv1du" path="res://Sprites/Items/Lantern.png" id="7_sxyga"]
+[ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/ItemPickup.tscn" id="8_iist4"]
+[ext_resource type="PackedScene" uid="uid://brr6k13ob4p8x" path="res://scenes/Items/KeyPopup.tscn" id="11_1iw4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
 texture = ExtResource("1_7vu5a")
@@ -992,9 +996,21 @@ position = Vector2(-201, 68)
 y_sort_enabled = true
 position = Vector2(-119, 55)
 
-[node name="Torch2" parent="WorldObjects" unique_id=1307193123 instance=ExtResource("6_3ydi7")]
+[node name="AmmoPickup" parent="WorldObjects" unique_id=1556862671 instance=ExtResource("8_iist4")]
+z_index = 1
 y_sort_enabled = true
-position = Vector2(-177, 134)
+position = Vector2(-137, 69)
+
+[node name="HealthPickup" parent="WorldObjects" unique_id=927233797 instance=ExtResource("8_iist4")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-250, 70)
+type = 1
+
+[node name="KeyTorch" parent="WorldObjects" unique_id=2046788511 node_paths=PackedStringArray("popup") instance=ExtResource("6_pgoe3")]
+position = Vector2(-171, 136)
+popup = NodePath("../../LootPopup")
+lantern_texture = ExtResource("7_sxyga")
 
 [node name="Doors" type="CanvasGroup" parent="." unique_id=1619103931]
 position = Vector2(55, 84)
@@ -1021,5 +1037,7 @@ script = ExtResource("6_gslef")
 [node name="SpawnLeft" type="Marker2D" parent="." unique_id=2094508336]
 position = Vector2(219, 274)
 script = ExtResource("6_gslef")
+
+[node name="LootPopup" parent="." unique_id=1514084314 instance=ExtResource("11_1iw4m")]
 
 [connection signal="body_entered" from="Doors/DoortoRoom2" to="Doors/DoortoRoom2" method="_on_body_entered"]
