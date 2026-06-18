@@ -105,3 +105,15 @@ func _input(event: InputEvent) -> void:
 		if(Global.armed):
 			if(Global.ammo > 0):
 				shoot()
+
+
+ 
+
+func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if area.is_in_group("enemy"):
+		print(area)
+		print(area.get_groups())
+
+
+
+ 

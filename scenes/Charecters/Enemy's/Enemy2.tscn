@@ -17,9 +17,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_damwt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjf8o"]
-radius = 234.01923
+radius = 35.510563
 
-[node name="Enemy2" type="CharacterBody2D" unique_id=435413124]
+[node name="Enemy2" type="CharacterBody2D" unique_id=435413124 groups=["enemy"]]
 script = ExtResource("1_i1eqr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1214221474]
@@ -28,10 +28,10 @@ sprite_frames = SubResource("SpriteFrames_xemqh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239150159]
 shape = SubResource("CircleShape2D_damwt")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=318689570]
+[node name="Area2D" type="Area2D" parent="." unique_id=318689570 groups=["enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=498466875]
-position = Vector2(0, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=498466875 groups=["enemy"]]
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_bjf8o")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
