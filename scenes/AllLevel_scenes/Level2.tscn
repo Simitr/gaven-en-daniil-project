@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="6_bu1on"]
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="7_33fcf"]
 [ext_resource type="PackedScene" uid="uid://dwgrqou34lil0" path="res://scenes/Items/Campfire.tscn" id="8_33fcf"]
+[ext_resource type="PackedScene" uid="uid://dr8xdkft5th33" path="res://scenes/Charecters/Enemy's/Enemy2.tscn" id="9_bvl68"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
 texture = ExtResource("1_0xvxj")
@@ -1105,6 +1106,9 @@ script = ExtResource("4_4onql")
 [node name="SpawnBottom" type="Marker2D" parent="." unique_id=1460348348]
 position = Vector2(182, 340)
 script = ExtResource("4_4onql")
+
+[node name="Enemy2" parent="." unique_id=435413124 instance=ExtResource("9_bvl68")]
+position = Vector2(71, 252)
 
 [connection signal="body_entered" from="Doors/DoortoRoom1" to="Doors/DoortoRoom1" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom3" to="Doors/DoortoRoom3" method="_on_body_entered"]

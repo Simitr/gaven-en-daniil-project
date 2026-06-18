@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="6_3ydi7"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="6_gslef"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="6_ij5e7"]
-[ext_resource type="PackedScene" uid="uid://b8bgt0c07p4dq" path="res://scenes/Items/TorchPickup.tscn" id="6_pgoe3"]
+[ext_resource type="PackedScene" path="res://scenes/Items/TorchPickup.tscn" id="6_pgoe3"]
 [ext_resource type="Texture2D" uid="uid://p6akmalgv1du" path="res://Sprites/Items/Lantern.png" id="7_sxyga"]
 [ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/ItemPickup.tscn" id="8_iist4"]
 [ext_resource type="PackedScene" uid="uid://brr6k13ob4p8x" path="res://scenes/Items/KeyPopup.tscn" id="11_1iw4m"]
