@@ -284,7 +284,7 @@ texture = ExtResource("1_0xvxj")
 5:8/0/y_sort_origin = -15
 5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -8, -8, -8, -8, 8)
 6:8/0 = 0
-6:8/0/y_sort_origin = -6
+6:8/0/y_sort_origin = -15
 6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.8324585, -8, 5.8324585)
 7:8/0 = 0
 7:8/0/y_sort_origin = -15
@@ -1034,6 +1034,9 @@ tile_map_data = PackedByteArray("AAANAAsAAAAKAAsAAAAMAAsAAAAKAAsAAAAMAAwAAAAKAAs
 tile_set = SubResource("TileSet_tgalm")
 use_kinematic_bodies = true
 
+[node name="Enemy2" parent="TileMap" unique_id=435413124 instance=ExtResource("9_bvl68")]
+position = Vector2(368, 246)
+
 [node name="WorldObjects" type="CanvasGroup" parent="." unique_id=1387647873]
 y_sort_enabled = true
 position = Vector2(-1, 1)
@@ -1107,7 +1110,7 @@ script = ExtResource("4_4onql")
 position = Vector2(182, 340)
 script = ExtResource("4_4onql")
 
-[node name="Enemy2" parent="." unique_id=435413124 instance=ExtResource("9_bvl68")]
+[node name="Enemy2" parent="." unique_id=1166335273 instance=ExtResource("9_bvl68")]
 position = Vector2(71, 252)
 
 [connection signal="body_entered" from="Doors/DoortoRoom1" to="Doors/DoortoRoom1" method="_on_body_entered"]

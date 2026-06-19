@@ -41,9 +41,11 @@ func update_flashlight():
 		flashlight2.look_at(get_global_mouse_position())
 		 
 	 
-		flashlight2.visible = true
+		flashlight2.enabled = true
+		$flashlight2/Area2D/CollisionShape2D2.disabled = false
 	else:
-		flashlight2.visible = false
+		flashlight2.enabled = false
+		$flashlight2/Area2D/CollisionShape2D2.disabled = true
 		
 
 
@@ -94,7 +96,8 @@ func add_key(amount: int):
 	
 
 func shoot():
-	
+	for enemy in get_tree().get_nodes_in_group("enemy"):
+		print(enemy)
 	use_ammo()
 	var new_bullet = BULLET_CLASS.instantiate()
 	print(new_bullet)
@@ -105,12 +108,13 @@ func _input(event: InputEvent) -> void:
 		if(Global.armed):
 			if(Global.ammo > 0):
 				shoot()
+				
 
 
  
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	if area.is_in_group("enemy"):
+	if area.is_in_group("enemyarea"):
 		print(area)
 		print(area.get_groups())
 

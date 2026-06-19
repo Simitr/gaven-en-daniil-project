@@ -990,7 +990,7 @@ position = Vector2(339, 107)
 
 [node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_veiaw")]
 z_index = 1
-position = Vector2(-201, 68)
+position = Vector2(-119, 177)
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("6_3ydi7")]
 y_sort_enabled = true

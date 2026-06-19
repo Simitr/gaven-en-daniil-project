@@ -1,29 +1,35 @@
 [gd_scene format=3 uid="uid://dr8xdkft5th33"]
 
 [ext_resource type="Script" uid="uid://msbdwa3wumwi" path="res://scripts/enemy_2.gd" id="1_i1eqr"]
+[ext_resource type="Texture2D" uid="uid://lyvq158r0eyg" path="res://Sprites/EnemyAsset/GuardMutantEnemy.png" id="2_exewc"]
 [ext_resource type="Texture2D" uid="uid://b7ypwcup3ln7r" path="res://Sprites/EnemyAsset/GuardEnemy.png" id="2_wna3i"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xemqh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_wna3i")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_damwt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjf8o"]
 radius = 35.510563
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ie7wm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wna3i")
+}],
+"loop": true,
+"name": &"fullHealth",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_exewc")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}]
+
 [node name="Enemy2" type="CharacterBody2D" unique_id=435413124 groups=["enemy"]]
 script = ExtResource("1_i1eqr")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1214221474]
-sprite_frames = SubResource("SpriteFrames_xemqh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239150159]
 shape = SubResource("CircleShape2D_damwt")
@@ -33,6 +39,11 @@ shape = SubResource("CircleShape2D_damwt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=498466875 groups=["enemy"]]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_bjf8o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1081259340]
+sprite_frames = SubResource("SpriteFrames_ie7wm")
+animation = &"hurt"
+autoplay = "fullHealth"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
