@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dl6e5oub5qqrq"]
+
+[ext_resource type="Script" uid="uid://cb7iebmrxn7ir" path="res://scenes/Items/ItemScripts/BossDoor.gd" id="1_4k2cv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo1xp"]
+size = Vector2(38, 23)
+
+[node name="Area2D" type="Area2D" unique_id=1728167937]
+script = ExtResource("1_4k2cv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=708082911]
+shape = SubResource("RectangleShape2D_lo1xp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

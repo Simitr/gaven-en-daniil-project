@@ -8,6 +8,11 @@ var picked_up := false
 
 @onready var sprite = $AnimatedSprite2D
 
+func _ready():
+	if Global.torch_pickup:
+		queue_free()
+
+
 func _process(_delta):
 	if player_in_range and not picked_up:
 		if Input.is_action_just_pressed("Interact"):
@@ -17,8 +22,9 @@ func _process(_delta):
 func pickup_lantern():
 	if picked_up:
 		return
-
+		
 	picked_up = true
+	Global.torch_pickup = true
 
 	var player = get_tree().get_first_node_in_group("player")
 
@@ -29,7 +35,7 @@ func pickup_lantern():
 		popup.show_loot(
 			lantern_texture,
 			"Ancient Torch",
-			"You made a lantern"
+			"You made a lantern!"
 		)
 
 	queue_free()

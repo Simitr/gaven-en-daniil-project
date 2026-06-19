@@ -10,7 +10,12 @@ var opened := false
 
 
 func _ready() -> void:
-	sprite.play("ChestClosed")
+	if Global.key_pickup:
+		opened = true
+		sprite.play("ChestOpen")
+	else:
+		sprite.play("ChestClosed")
+			
 
 
 func _process(_delta):
@@ -19,11 +24,11 @@ func _process(_delta):
 			open_chest()
 
 
-
 func open_chest():
 	if opened:
 		return
 	opened = true
+	Global.key_pickup = true
 	sprite.play("ChestOpened")
 
 	var player = get_tree().get_first_node_in_group("player")
@@ -32,20 +37,23 @@ func open_chest():
 
 	if popup:
 		popup.show_loot(key_texture, "Key of Azurath", "Acquired")
+		
 	else:
 		print("Popup missing or not in group")
 		
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and not opened:
 		player_in_range = true
 		sprite.play("ChestInteract")
-	if opened == true:
-		sprite.play("ChestOpen")
+	
 
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_range = false
-	if opened == true:
-		sprite.play("ChestOpen")
+
+		if opened:
+			sprite.play("ChestOpen")
+		else:
+			sprite.play("ChestClosed")

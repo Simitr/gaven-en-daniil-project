@@ -1111,7 +1111,9 @@ position = Vector2(182, 340)
 script = ExtResource("4_4onql")
 
 [node name="Enemy2" parent="." unique_id=1166335273 instance=ExtResource("9_bvl68")]
-position = Vector2(71, 252)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(64, 256)
 
 [connection signal="body_entered" from="Doors/DoortoRoom1" to="Doors/DoortoRoom1" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom3" to="Doors/DoortoRoom3" method="_on_body_entered"]

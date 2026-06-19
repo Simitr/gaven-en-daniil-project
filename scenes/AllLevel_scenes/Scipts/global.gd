@@ -14,3 +14,6 @@ var key = 0
 var lantern = 0
 
 var armed := false
+
+var torch_pickup = false
+var key_pickup = false
