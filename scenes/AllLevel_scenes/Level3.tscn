@@ -286,7 +286,7 @@ texture = ExtResource("2_fc61m")
 5:8/0/y_sort_origin = -15
 5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -8, -8, -8, -8, 8)
 6:8/0 = 0
-6:8/0/y_sort_origin = -6
+6:8/0/y_sort_origin = -15
 6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.8324585, -8, 5.8324585)
 7:8/0 = 0
 7:8/0/y_sort_origin = -15
@@ -1130,4 +1130,3 @@ script = ExtResource("5_458l2")
 
 [connection signal="body_entered" from="Doors/DoortoRoom4" to="Doors/DoortoRoom4" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom2" to="Doors/DoortoRoom2" method="_on_body_entered"]
-[connection signal="body_exited" from="Doors/BossDoor" to="Doors/BossDoor" method="_on_body_exited"]

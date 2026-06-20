@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var item_name = $Panel/ItemName
 @onready var item_line = $Panel/ItemLine
 @onready var game_message = $GameMessage
+@onready var LootPanel = $Panel
 
 func _ready():
 	hide()
@@ -20,9 +21,9 @@ func show_loot(texture: Texture2D, loot_name: String, loot_byline: String):
 	hide()
 	
 func show_message(message: String):
-	icon.texture = null
-	item_name.text = ""
-	item_line.text = ""
+	LootPanel.hide()
+
+	game_message.show()
 	game_message.text = message
 	
 	show()
