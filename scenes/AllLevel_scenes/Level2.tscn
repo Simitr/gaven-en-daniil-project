@@ -10,6 +10,66 @@
 [ext_resource type="PackedScene" uid="uid://dwgrqou34lil0" path="res://scenes/Items/Campfire.tscn" id="8_33fcf"]
 [ext_resource type="PackedScene" uid="uid://dr8xdkft5th33" path="res://scenes/Charecters/Enemy's/Enemy2.tscn" id="9_bvl68"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bvl68"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_be08k"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8ubld"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8kw18"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_72xt4"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fgi26"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_32lix"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_abbrv"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6fsnw"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sj58y"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
 texture = ExtResource("1_0xvxj")
 0:0/0 = 0
@@ -294,9 +354,13 @@ texture = ExtResource("1_0xvxj")
 9:8/0 = 0
 9:8/0/y_sort_origin = -15
 10:8/0 = 0
+10:8/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8ubld")
 11:8/0 = 0
+11:8/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8ubld")
 12:8/0 = 0
+12:8/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8ubld")
 13:8/0 = 0
+13:8/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8ubld")
 16:8/0 = 0
 17:8/0 = 0
 18:8/0 = 0
@@ -331,11 +395,17 @@ texture = ExtResource("1_0xvxj")
 7:9/0/y_sort_origin = 20
 7:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -2.3503952, 8, -2.3503952, -8, 8, -8)
 10:9/0 = 0
+10:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8kw18")
 11:9/0 = 0
+11:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8kw18")
 12:9/0 = 0
+12:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8kw18")
 13:9/0 = 0
+13:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_72xt4")
 14:9/0 = 0
+14:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_72xt4")
 15:9/0 = 0
+15:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_72xt4")
 16:9/0 = 0
 17:9/0 = 0
 18:9/0 = 0
@@ -370,9 +440,13 @@ texture = ExtResource("1_0xvxj")
 7:10/0 = 0
 7:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.26115608, -0.26115417, 0.08705139, -0.43525696, -8, 8, -8, 8, 8, -8, 8)
 10:10/0 = 0
+10:10/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_bvl68")
 11:10/0 = 0
+11:10/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_bvl68")
 12:10/0 = 0
+12:10/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_bvl68")
 13:10/0 = 0
+13:10/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_bvl68")
 16:10/0 = 0
 17:10/0 = 0
 18:10/0 = 0
@@ -400,11 +474,17 @@ texture = ExtResource("1_0xvxj")
 3:11/0/y_sort_origin = 20
 3:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.4798775, -8, -1.6575603, 8, 8, 8, 8, -8)
 10:11/0 = 0
+10:11/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_be08k")
 11:11/0 = 0
+11:11/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_be08k")
 12:11/0 = 0
+12:11/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_be08k")
 13:11/0 = 0
+13:11/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_be08k")
 14:11/0 = 0
+14:11/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_be08k")
 15:11/0 = 0
+15:11/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_be08k")
 16:11/0 = 0
 17:11/0 = 0
 18:11/0 = 0
@@ -942,6 +1022,7 @@ texture = ExtResource("1_0xvxj")
 13:29/0 = 0
 14:29/0 = 0
 17:29/0 = 0
+17:29/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_32lix")
 21:29/0 = 0
 24:29/0 = 0
 25:29/0 = 0
@@ -962,8 +1043,11 @@ texture = ExtResource("1_0xvxj")
 8:30/0 = 0
 9:30/0 = 0
 16:30/0 = 0
+16:30/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_fgi26")
 17:30/0 = 0
+17:30/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_abbrv")
 18:30/0 = 0
+18:30/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_sj58y")
 20:30/0 = 0
 21:30/0 = 0
 22:30/0 = 0
@@ -976,6 +1060,7 @@ texture = ExtResource("1_0xvxj")
 30:30/0 = 0
 31:30/0 = 0
 17:31/0 = 0
+17:31/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_6fsnw")
 21:31/0 = 0
 24:31/0 = 0
 25:31/0 = 0
@@ -988,6 +1073,7 @@ texture = ExtResource("1_0xvxj")
 
 [sub_resource type="TileSet" id="TileSet_tgalm"]
 physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_veiaw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wivl7"]
@@ -1035,7 +1121,7 @@ tile_set = SubResource("TileSet_tgalm")
 use_kinematic_bodies = true
 
 [node name="Enemy2" parent="TileMap" unique_id=435413124 instance=ExtResource("9_bvl68")]
-position = Vector2(368, 246)
+position = Vector2(183, 231)
 
 [node name="WorldObjects" type="CanvasGroup" parent="." unique_id=1387647873]
 y_sort_enabled = true
@@ -1048,7 +1134,7 @@ position = Vector2(251, 193)
 
 [node name="Campfire" parent="WorldObjects" unique_id=115467166 instance=ExtResource("8_33fcf")]
 y_sort_enabled = true
-position = Vector2(393, 262)
+position = Vector2(382, 270)
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("7_33fcf")]
 y_sort_enabled = true
@@ -1109,9 +1195,6 @@ script = ExtResource("4_4onql")
 [node name="SpawnBottom" type="Marker2D" parent="." unique_id=1460348348]
 position = Vector2(182, 340)
 script = ExtResource("4_4onql")
-
-[node name="Enemy2" parent="." unique_id=1166335273 instance=ExtResource("9_bvl68")]
-position = Vector2(71, 252)
 
 [connection signal="body_entered" from="Doors/DoortoRoom1" to="Doors/DoortoRoom1" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom3" to="Doors/DoortoRoom3" method="_on_body_entered"]

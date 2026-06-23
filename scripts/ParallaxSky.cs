@@ -29,42 +29,42 @@ public partial class ParallaxSky : Node
 	private bool isMoving = false;
 	public string state = "";
 	public bool isatrap = false;
+	public bool end = false;
 
-
-    public override void _Ready()
+	public override void _Ready()
 	{
 		StopPressD.Modulate = new Color(1, 1, 1, 0);
 		PressD.Modulate = new Color(1, 1, 1, 0);
 		timer.Timeout += OnTimerTimeout;
 		horseAudio.Play();
-        var tween = CreateTween();
-        tween.TweenProperty(blackBackground, "modulate:a", 0f, 2.0f);
+		var tween = CreateTween();
+		tween.TweenProperty(blackBackground, "modulate:a", 0f, 2.0f);
 
 
-    }
+	}
 
 	public override void _Process(double delta)
 	{
-       
 
-        
+
+
 
 		if (!isMoving)
 		{
 
-         
-            //horseAudio.Seek(5f);
-            if (Player.Position.X < 160)
+
+			//horseAudio.Seek(5f);
+			if (Player.Position.X < 160)
 			{
-                animatieCharacter.Play("walking");
-                Player.Velocity = Vector2.Right * 90;
+				animatieCharacter.Play("walking");
+				Player.Velocity = Vector2.Right * 90;
 				Player.MoveAndSlide();
-          
-            }
+
+			}
 			else
 			{
-                animatieCharacter.Play("idle");
-                horseAudio.Stop();
+				animatieCharacter.Play("idle");
+				horseAudio.Stop();
 				isMoving = true;
 				music.Play();
 			}
@@ -73,85 +73,97 @@ public partial class ParallaxSky : Node
 			state = "start";
 			timer.Start();
 		}
-		if (isMoving)
+		if (!end)
 		{
-         
-
-            var tweenmusic = CreateTween();
-		   tweenmusic.TweenProperty(music, "volume_db", -10, 2f);
-		   
-
-			if (Input.IsActionPressed("walkRight"))
+			if (isMoving)
 			{
 
-				if (isatrap)
+
+				var tweenmusic = CreateTween();
+				tweenmusic.TweenProperty(music, "volume_db", -10, 2f);
+
+
+				if (Input.IsActionPressed("walkRight"))
 				{
-					trap.Position -= new Vector2(1, 0);
-					if (trap.Position == new Vector2(300, 235))
+
+					if (isatrap)
 					{
-                        GetTree().ChangeSceneToFile("res://scenes/AllLevel_scenes/Level1.tscn");
-                    }
-                }
-                animatieCharacter.Play("walking");
+						trap.Position += new Vector2((float)(-GroundStartSpeed * delta), 0);
+						if (trap.Position < new Vector2(270, 235))
+						{
+							end = true;
+						}
+					}
+					animatieCharacter.Play("walking");
 
-                PressD.Modulate = new Color(1, 1, 1, 0);
-			
+					PressD.Modulate = new Color(1, 1, 1, 0);
 
-				var tween = CreateTween();
-				tween.TweenProperty(this, "SkyStartSpeed", SkyMaxSpeed, 1.5f);
-				var tween2 = CreateTween();
-				tween2.TweenProperty(this, "BackStartSpeed", BackMaxSpeed, 1.5f);
-				var tween3 = CreateTween();
-				tween3.TweenProperty(this, "GroundStartSpeed", GroundMaxSpeed, 1.5f);
-				var tween4 = CreateTween();
-				tween4.TweenProperty(this, "GrassStartSpeed", GrassMaxSpeed, 1.5f);
-				Parallax.ScrollOffset += new Vector2((float)(-SkyStartSpeed * delta), 0);
-				Parallax2.ScrollOffset += new Vector2((float)(-BackStartSpeed * delta), 0);
-				Parallax3.ScrollOffset += new Vector2((float)(-GroundStartSpeed * delta), 0);
-				Parallax4.ScrollOffset += new Vector2((float)(-GrassStartSpeed * delta), 0);
+
+					var tween = CreateTween();
+					tween.TweenProperty(this, "SkyStartSpeed", SkyMaxSpeed, 1.5f);
+					var tween2 = CreateTween();
+					tween2.TweenProperty(this, "BackStartSpeed", BackMaxSpeed, 1.5f);
+					var tween3 = CreateTween();
+					tween3.TweenProperty(this, "GroundStartSpeed", GroundMaxSpeed, 1.5f);
+					var tween4 = CreateTween();
+					tween4.TweenProperty(this, "GrassStartSpeed", GrassMaxSpeed, 1.5f);
+					Parallax.ScrollOffset += new Vector2((float)(-SkyStartSpeed * delta), 0);
+					Parallax2.ScrollOffset += new Vector2((float)(-BackStartSpeed * delta), 0);
+					Parallax3.ScrollOffset += new Vector2((float)(-GroundStartSpeed * delta), 0);
+					Parallax4.ScrollOffset += new Vector2((float)(-GrassStartSpeed * delta), 0);
+				}
+				else
+				{
+					animatieCharacter.Play("idle");
+					horseAudio.Play();
+
+					// horseAudio.Stop();
+
+					var tween = CreateTween();
+					tween.TweenProperty(this, "SkyStartSpeed", 1, 1.0f);
+					var tween2 = CreateTween();
+					tween2.TweenProperty(this, "BackStartSpeed", 0, 1.0f);
+					var tween3 = CreateTween();
+					tween3.TweenProperty(this, "GroundStartSpeed", 0, 1.0f);
+					var tween4 = CreateTween();
+					tween4.TweenProperty(this, "GrassStartSpeed", 0, 1.0f);
+					Parallax.ScrollOffset += new Vector2((float)(-SkyStartSpeed * delta), 0);
+					Parallax2.ScrollOffset += new Vector2((float)(-BackStartSpeed * delta), 0);
+					Parallax3.ScrollOffset += new Vector2((float)(-GroundStartSpeed * delta), 0);
+					Parallax4.ScrollOffset += new Vector2((float)(-GrassStartSpeed * delta), 0);
+					if (BackStartSpeed < 5)
+					{
+						BackStartSpeed = 0;
+					}
+					if (GroundStartSpeed < 5)
+					{
+						GroundStartSpeed = 0;
+					}
+					if (GrassStartSpeed < 5)
+					{
+						GrassStartSpeed = 0;
+					}
+
+
+				}
+				if (Input.IsActionJustReleased("walkRight"))
+				{
+					timer.WaitTime = 5f;
+					state = "start";
+					timer.Start();
+				}
 			}
-			else
+
+
+		}
+		else
+		{
+			 animatieCharacter.Play("fall");
+			if (animatieCharacter.Frame == 12)
 			{
-                animatieCharacter.Play("idle");
-                horseAudio.Play();
-				
-		  // horseAudio.Stop();
-
-				var tween = CreateTween();
-				tween.TweenProperty(this, "SkyStartSpeed", 1, 1.0f);
-				var tween2 = CreateTween();
-				tween2.TweenProperty(this, "BackStartSpeed", 0, 1.0f);
-				var tween3 = CreateTween();
-				tween3.TweenProperty(this, "GroundStartSpeed", 0, 1.0f);
-				var tween4 = CreateTween();
-				tween4.TweenProperty(this, "GrassStartSpeed", 0, 1.0f);
-				Parallax.ScrollOffset += new Vector2((float)(-SkyStartSpeed * delta), 0);
-				Parallax2.ScrollOffset += new Vector2((float)(-BackStartSpeed * delta), 0);
-				Parallax3.ScrollOffset += new Vector2((float)(-GroundStartSpeed * delta), 0);
-				Parallax4.ScrollOffset += new Vector2((float)(-GrassStartSpeed * delta), 0);
-				if (BackStartSpeed < 5)
-				{
-					BackStartSpeed = 0;
-				}
-				if (GroundStartSpeed < 5)
-				{
-					GroundStartSpeed = 0;
-				}
-				if (GrassStartSpeed < 5)
-				{
-					GrassStartSpeed = 0;
-				}
-
-
-			}
-			if (Input.IsActionJustReleased("walkRight"))
-			{
-				timer.WaitTime = 5f;
-				state = "start";
-				timer.Start();
-			}
-			}
-
+                GetTree().ChangeSceneToFile("res://scenes/AllLevel_scenes/Level1.tscn");
+            }
+        }
 
 	}
 	private void OnTimerTimeout()
@@ -159,14 +171,19 @@ public partial class ParallaxSky : Node
 		switch (state)
 		{
 			case "start":
-                isatrap = true;
+				isatrap = true;
 
 
-                break;
-        
-                
-		  
+				break;
 
-        }
+
+
+
+		}
 	}
+ 
+
 }
+
+
+

@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://w6fd3lpmaxdr" path="res://Sprites/Items/Smoke.png" id="4_fpwkm"]
 [ext_resource type="Texture2D" uid="uid://cmcdjgu6odtdl" path="res://Sprites/Items/TorchSand.png" id="4_jqmfr"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jqmfr"]
+radius = 77.9404
+
 [sub_resource type="Curve" id="Curve_rdfia"]
 _limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.23655912, 353.557), 0.0, 0.0, 0, 0, Vector2(0.49999997, -0.8054199), 0.0, 0.0, 0, 0, Vector2(0.7311828, 360), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -135,6 +138,15 @@ energy = 1.5
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("1_x2o3u")
+
+[node name="Area2D" type="Area2D" parent="LightTexture" unique_id=882222608 groups=["light"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LightTexture/Area2D" unique_id=1779541694]
+position = Vector2(-8.392334e-05, 8.029396)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_jqmfr")
+debug_color = Color(0.84393924, 0.0010532934, 0.9154825, 0.41960785)
 
 [node name="Smoke" type="GPUParticles2D" parent="." unique_id=1436962051]
 modulate = Color(1, 1, 1, 0.22745098)

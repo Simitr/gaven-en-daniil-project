@@ -32,7 +32,7 @@ func _process(delta):
 		use_HealthPotions()
 	update_flashlight()
 	var direction = (get_global_mouse_position() - global_position).normalized()
-	Gun.position = direction * 50
+	Gun.position = direction * 20
 	Gun.look_at(get_global_mouse_position())
 
 func update_flashlight():
@@ -96,8 +96,7 @@ func add_key(amount: int):
 	
 
 func shoot():
-	for enemy in get_tree().get_nodes_in_group("enemy"):
-		print(enemy)
+	Global.rage = true
 	use_ammo()
 	var new_bullet = BULLET_CLASS.instantiate()
 	print(new_bullet)

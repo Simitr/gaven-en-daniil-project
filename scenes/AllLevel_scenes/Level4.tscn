@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://brr6k13ob4p8x" path="res://scenes/Items/KeyPopup.tscn" id="6_458l2"]
 [ext_resource type="Texture2D" uid="uid://dhrg3g5l52cbl" path="res://Sprites/Items/Key.png" id="6_mbd1d"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="7_sa74c"]
+[ext_resource type="PackedScene" uid="uid://dr8xdkft5th33" path="res://scenes/Charecters/Enemy's/Enemy2.tscn" id="11_pq8lm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
 texture = ExtResource("1_hmscp")
@@ -1110,6 +1111,9 @@ position = Vector2(1136, 687)
 script = ExtResource("3_wio24")
 
 [node name="LootPopup" parent="." unique_id=1514084314 instance=ExtResource("6_458l2")]
+
+[node name="Enemy2" parent="." unique_id=435413124 instance=ExtResource("11_pq8lm")]
+position = Vector2(402, 479)
 
 [connection signal="body_entered" from="Doors/DoortoRoom2" to="Doors/DoortoRoom2" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom3" to="Doors/DoortoRoom3" method="_on_body_entered"]

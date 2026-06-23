@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dfgdpipoix14u" path="res://Sprites/Items/Campfire.png" id="4_ksdvt"]
 [ext_resource type="Texture2D" uid="uid://w6fd3lpmaxdr" path="res://Sprites/Items/Smoke.png" id="4_niyna"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ksdvt"]
+radius = 77.9404
+
 [sub_resource type="Curve" id="Curve_rdfia"]
 _limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0, 17.142853), 0.0, 0.0, 0, 0, Vector2(0.23723727, 360), 0.0, 0.0, 0, 0, Vector2(0.49698794, -14.141937), 0.0, 0.0, 0, 0, Vector2(0.75975984, 360), 0.0, 0.0, 0, 0, Vector2(1, -12.857147), 0.0, 0.0, 0, 0]
@@ -102,13 +105,22 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("2_gohj1")
 
+[node name="Area2D" type="Area2D" parent="LightTexture" unique_id=1304951561 groups=["light"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LightTexture/Area2D" unique_id=564472443]
+position = Vector2(-8.392334e-05, 8.029396)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_ksdvt")
+debug_color = Color(0.84393924, 0.0010532934, 0.9154825, 0.41960785)
+
 [node name="Smoke" type="GPUParticles2D" parent="." unique_id=1436962051]
 modulate = Color(1, 1, 1, 0.22745098)
 z_index = 1
 texture_filter = 1
 amount = 250
 texture = ExtResource("4_niyna")
-lifetime = 1.4000000000000001
+lifetime = 1.4
 speed_scale = 0.4
 randomness = 1.0
 collision_base_size = 0.0

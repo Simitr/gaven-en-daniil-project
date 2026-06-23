@@ -55,6 +55,8 @@ animations = [{
 }]
 
 [node name="Bullet" type="Area2D" unique_id=1049972130 node_paths=PackedStringArray("sprite")]
+z_index = 1
+collision_layer = 2
 script = ExtResource("1_d01l7")
 sprite = NodePath("CollisionShape2D/AnimatedSprite2D")
 

@@ -2,24 +2,37 @@
 
 [ext_resource type="PackedScene" uid="uid://bot4c7b8vip0s" path="res://scenes/Charecters/player/playerHorse.tscn" id="1_4xe8f"]
 [ext_resource type="Texture2D" uid="uid://dnseidhetg76l" path="res://assets/game/prologue_texture/Character/konn.png" id="2_m2pmb"]
+[ext_resource type="Texture2D" uid="uid://dgvr2o0gxx2am" path="res://assets/game/prologue_texture/Character/konfal1.png" id="3_3nsu5"]
 [ext_resource type="Texture2D" uid="uid://c6u3slh5hf2y6" path="res://assets/game/prologue_texture/Character/horse1.png" id="3_6gqm1"]
 [ext_resource type="Texture2D" uid="uid://cqxsnndlvyjwq" path="res://assets/game/prologue_texture/Character/sky.png" id="3_n8mk2"]
 [ext_resource type="Script" uid="uid://d1ypud76ak2jc" path="res://scripts/ParallaxSky.cs" id="3_ncrow"]
 [ext_resource type="Texture2D" uid="uid://dblajam766b04" path="res://assets/game/prologue_texture/Character/horse2.png" id="4_8tkle"]
+[ext_resource type="Texture2D" uid="uid://dpp7681wvgqb0" path="res://assets/game/prologue_texture/Character/konfal2.png" id="4_fnjau"]
+[ext_resource type="Texture2D" uid="uid://hqi1623rliet" path="res://assets/game/prologue_texture/Character/konfal4.png" id="5_c2kp5"]
 [ext_resource type="Texture2D" uid="uid://d1h2iqlt3m7uv" path="res://assets/game/prologue_texture/Character/back.png" id="5_ncrow"]
 [ext_resource type="Texture2D" uid="uid://bwo6iv7w2jhbx" path="res://assets/game/prologue_texture/Character/horse3.png" id="5_ywb8p"]
 [ext_resource type="Texture2D" uid="uid://l6ss8m8ioe7y" path="res://assets/game/prologue_texture/Character/ground.png" id="6_1gy4g"]
+[ext_resource type="Texture2D" uid="uid://b67aw11gdlqbb" path="res://assets/game/prologue_texture/Character/konfal5.png" id="6_toyys"]
 [ext_resource type="Texture2D" uid="uid://cfimwprn6vjgt" path="res://assets/game/prologue_texture/Character/horse4.png" id="6_yjyr0"]
+[ext_resource type="Texture2D" uid="uid://ugr2egtjjvxe" path="res://assets/game/prologue_texture/Character/konfal6.png" id="7_d4fb8"]
 [ext_resource type="AudioStream" uid="uid://b33aptopw111c" path="res://music/Dust Trail Horizon.mp3" id="7_h2ubk"]
 [ext_resource type="Texture2D" uid="uid://cui3skgna13yb" path="res://assets/game/prologue_texture/Character/koni1.png" id="7_ywb8p"]
+[ext_resource type="Texture2D" uid="uid://ce8swqabkexwn" path="res://assets/game/prologue_texture/Character/konfal7.png" id="8_ngby5"]
 [ext_resource type="Texture2D" uid="uid://bd0a18memsl10" path="res://assets/game/prologue_texture/Character/koni2.png" id="8_yjyr0"]
+[ext_resource type="Texture2D" uid="uid://dpfe38vjhevlt" path="res://assets/game/prologue_texture/Character/konfal8.png" id="9_4xpkd"]
 [ext_resource type="Texture2D" uid="uid://d1c6i37b56ywn" path="res://assets/game/prologue_texture/Character/koni3.png" id="9_gut3q"]
 [ext_resource type="Texture2D" uid="uid://d2ymkq228qqo0" path="res://assets/game/prologue_texture/Character/koni4.png" id="10_5kxdj"]
+[ext_resource type="Texture2D" uid="uid://bma62eo8uhoav" path="res://assets/game/prologue_texture/Character/konfal9.png" id="10_6epyh"]
 [ext_resource type="Texture2D" uid="uid://cexjxamusaxor" path="res://assets/game/prologue_texture/Character/koni5.png" id="11_e0aqg"]
+[ext_resource type="Texture2D" uid="uid://bxqc661fsnese" path="res://assets/game/prologue_texture/Character/konfal10.png" id="11_rlugp"]
 [ext_resource type="Texture2D" uid="uid://ks8n7wpbpanr" path="res://assets/game/prologue_texture/Character/koni6.png" id="12_m8cy2"]
+[ext_resource type="Texture2D" uid="uid://crf3k7oht5m54" path="res://assets/game/prologue_texture/Character/konfal11.png" id="12_xovp3"]
+[ext_resource type="Texture2D" uid="uid://be3auwnuh6y2a" path="res://assets/game/prologue_texture/Character/konfal12.png" id="13_3t2rl"]
 [ext_resource type="Texture2D" uid="uid://c74r3d2e5lry0" path="res://assets/game/prologue_texture/Character/koni7.png" id="13_okaej"]
+[ext_resource type="Texture2D" uid="uid://df2j5llqg1c1l" path="res://assets/game/prologue_texture/Character/konfal13.png" id="14_ixcf0"]
 [ext_resource type="Texture2D" uid="uid://cc581k8c3joxs" path="res://assets/game/prologue_texture/Character/koni8.png" id="14_m2r7m"]
 [ext_resource type="Script" uid="uid://beuf5uo5bd5yh" path="res://scenes/Charecters/player/Horse.cs" id="15_51hnb"]
+[ext_resource type="Texture2D" uid="uid://bldacdt2w8sob" path="res://assets/game/prologue_texture/Character/konfal17.png" id="15_kpxjl"]
 [ext_resource type="Texture2D" uid="uid://bvj8as7uu2sn1" path="res://assets/game/prologue_texture/Character/trap.png" id="21_e0aqg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blaey"]
@@ -45,6 +58,50 @@ animations = [{
 "loop": true,
 "name": &"default_2",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3nsu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fnjau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c2kp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_toyys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d4fb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ngby5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4xpkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6epyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rlugp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xovp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3t2rl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ixcf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kpxjl")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -112,7 +169,7 @@ position = Vector2(-10, 156)
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="PlayerHorse" unique_id=1948227375 node_paths=PackedStringArray("animatieCharacter")]
 position = Vector2(114, 51)
 sprite_frames = SubResource("SpriteFrames_blaey")
-animation = &"idle"
+animation = &"fall"
 autoplay = "walking"
 script = ExtResource("15_51hnb")
 animatieCharacter = NodePath(".")
@@ -220,5 +277,3 @@ color = Color(0, 0, 0, 1)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1454870304]
 position = Vector2(610, 235)
 texture = ExtResource("21_e0aqg")
-
-[connection signal="animation_finished" from="PlayerHorse/AnimatedSprite2D2" to="Node" method="_on_animated_sprite_2d_2_animation_finished"]

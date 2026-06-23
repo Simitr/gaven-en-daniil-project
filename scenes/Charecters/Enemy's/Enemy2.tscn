@@ -45,5 +45,12 @@ sprite_frames = SubResource("SpriteFrames_ie7wm")
 animation = &"hurt"
 autoplay = "fullHealth"
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1339110142]
+path_desired_distance = 3.0
+target_desired_distance = 3.0
+path_postprocessing = 1
+debug_enabled = true
+debug_use_custom = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
