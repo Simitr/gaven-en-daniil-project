@@ -145,6 +145,7 @@ position = Vector2(-8.392334e-05, 8.029396)
 rotation = 1.5707964
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_jqmfr")
+disabled = true
 debug_color = Color(0.84393924, 0.0010532934, 0.9154825, 0.41960785)
 
 [node name="Smoke" type="GPUParticles2D" parent="." unique_id=1436962051]

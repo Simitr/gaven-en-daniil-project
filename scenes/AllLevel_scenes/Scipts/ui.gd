@@ -5,7 +5,10 @@ extends CanvasLayer
 @onready var potion_label = $"HealthPotion/PotionLabel"
 @onready var lantern_item = $"LanternSlot/LanternItem"
 @onready var key_item = $"KeySlot/KeyItem"
-
+@onready var ammo = $Ammo
+@onready var health = $HealthPotion
+@onready var lantern = $LanternSlot
+@onready var key = $KeySlot
 var player
 
 
@@ -19,6 +22,27 @@ func _ready():
 
 
 func _process(_delta):
+	if !Global.ui_on:
+		
+		health_bar.visible = false
+		ammo_label.visible = false
+		potion_label.visible = false
+		lantern_item.visible = false
+		key_item.visible = false
+		ammo.visible = false
+		health.visible = false
+		lantern.visible = false
+		key.visible = false
+	else:
+		health_bar.visible = true
+		ammo_label.visible = true
+		potion_label.visible = true
+		lantern_item.visible = true
+		key_item.visible = true
+		ammo.visible = true
+		health.visible = true
+		lantern.visible = true
+		key.visible = true
 	if player == null or not is_instance_valid(player):
 		player = get_tree().get_first_node_in_group("player")
 

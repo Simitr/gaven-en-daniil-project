@@ -114,7 +114,12 @@ public partial class ParallaxSky : Node
 				}
 				else
 				{
-					animatieCharacter.Play("idle");
+                    if (isatrap)
+                    {
+                        trap.Position += new Vector2((float)(-GroundStartSpeed * delta), 0);
+                     
+                    }
+                    animatieCharacter.Play("idle");
 					horseAudio.Play();
 
 					// horseAudio.Stop();
