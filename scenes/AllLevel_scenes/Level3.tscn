@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="4_nnq0f"]
 [ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Scipts/Door.gd" id="4_sa74c"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="5_458l2"]
+[ext_resource type="PackedScene" uid="uid://dl6e5oub5qqrq" path="res://scenes/Items/BossDoor.tscn" id="6_0h4ax"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="7_0h4ax"]
+[ext_resource type="PackedScene" uid="uid://brr6k13ob4p8x" path="res://scenes/Items/KeyPopup.tscn" id="9_sede1"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nnq0f"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -302,7 +304,7 @@ texture = ExtResource("2_fc61m")
 5:8/0/y_sort_origin = -15
 5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -8, -8, -8, -8, 8)
 6:8/0 = 0
-6:8/0/y_sort_origin = -6
+6:8/0/y_sort_origin = -15
 6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.8324585, -8, 5.8324585)
 7:8/0 = 0
 7:8/0/y_sort_origin = -15
@@ -1056,9 +1058,6 @@ sources/0 = SubResource("TileSetAtlasSource_veiaw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ml3pu"]
 size = Vector2(62, 62.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnq0f"]
-size = Vector2(40, 36)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li3ca"]
 size = Vector2(84.875, 63)
 
@@ -1137,17 +1136,6 @@ z_index = 1
 position = Vector2(-59, -6.75)
 shape = SubResource("RectangleShape2D_ml3pu")
 
-[node name="DoortoBoss" type="Area2D" parent="Doors" unique_id=165061913]
-position = Vector2(208, 442)
-script = ExtResource("4_sa74c")
-next_scene = "uid://1r51ss5ljpd2"
-target_spawn = "SpawnTop"
-
-[node name="DoortoBoss" type="CollisionShape2D" parent="Doors/DoortoBoss" unique_id=544604991]
-z_index = 1
-position = Vector2(0, -39)
-shape = SubResource("RectangleShape2D_nnq0f")
-
 [node name="DoortoRoom2" type="Area2D" parent="Doors" unique_id=1046542701]
 position = Vector2(322, 15)
 script = ExtResource("4_sa74c")
@@ -1159,12 +1147,19 @@ z_index = 1
 position = Vector2(8.4375, -51)
 shape = SubResource("RectangleShape2D_li3ca")
 
+[node name="BossDoor" parent="Doors" unique_id=1728167937 node_paths=PackedStringArray("popup") instance=ExtResource("6_0h4ax")]
+z_index = 2
+position = Vector2(208, 412)
+popup = NodePath("../../LootPopup")
+next_scene = "uid://1r51ss5ljpd2"
+target_spawn = "SpawnTop"
+
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1320129295]
 script = ExtResource("7_0h4ax")
 dark_color = Color(0.050980393, 0.050980393, 0.0627451, 1)
 
 [node name="SpawnBottom" type="Marker2D" parent="." unique_id=417826358]
-position = Vector2(208, 434)
+position = Vector2(208, 446)
 script = ExtResource("5_458l2")
 
 [node name="SpawnLeft" type="Marker2D" parent="." unique_id=1751806234]
@@ -1175,6 +1170,7 @@ script = ExtResource("5_458l2")
 position = Vector2(322, 19)
 script = ExtResource("5_458l2")
 
+[node name="LootPopup" parent="." unique_id=1514084314 instance=ExtResource("9_sede1")]
+
 [connection signal="body_entered" from="Doors/DoortoRoom4" to="Doors/DoortoRoom4" method="_on_body_entered"]
-[connection signal="body_entered" from="Doors/DoortoBoss" to="Doors/DoortoBoss" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom2" to="Doors/DoortoRoom2" method="_on_body_entered"]

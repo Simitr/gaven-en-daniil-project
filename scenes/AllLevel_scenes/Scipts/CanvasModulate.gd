@@ -1,6 +1,6 @@
 extends CanvasModulate
 
-@export var dark_color := Color("160d16ff")
+@export var dark_color := Color("040405")
 @export var transition_speed := 2.0
 
 var target_color := Color.WHITE

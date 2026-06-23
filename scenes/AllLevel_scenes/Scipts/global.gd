@@ -15,3 +15,6 @@ var lantern = 0
 
 var armed := false
 var rage := false
+
+var torch_pickup = false
+var key_pickup = false
