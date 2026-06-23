@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dqlm1jbyg3mkk" path="res://Sprites/Items/LightTexture.png" id="1_de6vl"]
 [ext_resource type="Script" uid="uid://crnoknac5735g" path="res://scenes/Items/ItemScripts/TorchPickup.gd" id="1_ulvto"]
 [ext_resource type="Texture2D" uid="uid://w6fd3lpmaxdr" path="res://Sprites/Items/Smoke.png" id="2_ulvto"]
-[ext_resource type="Texture2D" uid="uid://cmcdjgu6odtdl" path="res://Sprites/Items/TorchSand.png" id="3_qame8"]
 [ext_resource type="Texture2D" uid="uid://bi715dyxsf4tw" path="res://Sprites/Items/Torch.png" id="4_061no"]
 
 [sub_resource type="Curve" id="Curve_81ham"]
@@ -54,22 +53,6 @@ scale_min = 0.0
 scale_curve = SubResource("CurveTexture_7l2j1")
 color_ramp = SubResource("GradientTexture1D_mu8cx")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7l2j1"]
-atlas = ExtResource("3_qame8")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_654jp"]
-atlas = ExtResource("3_qame8")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_frpfi"]
-atlas = ExtResource("3_qame8")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lvy0o"]
-atlas = ExtResource("3_qame8")
-region = Rect2(0, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulvto"]
 atlas = ExtResource("4_061no")
 region = Rect2(0, 0, 16, 29)
@@ -104,23 +87,6 @@ region = Rect2(112, 0, 16, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mcm5l"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7l2j1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_654jp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_frpfi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lvy0o")
-}],
-"loop": true,
-"name": &"BossAnimation",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ulvto")
@@ -190,8 +156,8 @@ z_index = 1
 position = Vector2(2, -6)
 scale = Vector2(1.0625, 1)
 sprite_frames = SubResource("SpriteFrames_mcm5l")
+animation = &"Interact"
 autoplay = "default"
-frame_progress = 0.92782813
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=432157251]
 position = Vector2(0, 13.75)

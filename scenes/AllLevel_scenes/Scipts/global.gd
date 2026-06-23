@@ -4,7 +4,7 @@ var spawn_point = ""
 
 var collected_pickups = []
 
-var ammo := 600
+var ammo := 6
 var health_potions := 0
 
 var max_health := 100

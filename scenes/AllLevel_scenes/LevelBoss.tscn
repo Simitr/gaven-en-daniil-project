@@ -1078,7 +1078,6 @@ shape = SubResource("RectangleShape2D_wi8hq")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1625130651]
 script = ExtResource("7_getvy")
-dark_color = Color(0.050980393, 0.050980393, 0.0627451, 1)
 
 [node name="SpawnTop" type="Marker2D" parent="." unique_id=1172747839]
 position = Vector2(224, 66)

@@ -967,7 +967,7 @@ sources/0 = SubResource("TileSetAtlasSource_veiaw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ey6jb"]
 size = Vector2(66, 68)
 
-[node name="Node2D" type="Node2D" unique_id=2130533778]
+[node name="Node2D2" type="Node2D" unique_id=2130533778]
 y_sort_enabled = true
 script = ExtResource("1_gslef")
 
@@ -1050,7 +1050,6 @@ shape = SubResource("RectangleShape2D_ey6jb")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1818539965]
 position = Vector2(1, 0)
 script = ExtResource("6_ij5e7")
-dark_color = Color(0.01390053, 0.0139003685, 0.017907057, 1)
 
 [node name="SpawnRight" type="Marker2D" parent="." unique_id=672166369]
 position = Vector2(343, 300)

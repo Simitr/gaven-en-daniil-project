@@ -1061,7 +1061,7 @@ size = Vector2(62, 62.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li3ca"]
 size = Vector2(84.875, 63)
 
-[node name="Node2D" type="Node2D" unique_id=2130533778]
+[node name="Node2D2" type="Node2D" unique_id=2130533778]
 y_sort_enabled = true
 script = ExtResource("1_dfk3p")
 
@@ -1156,7 +1156,6 @@ target_spawn = "SpawnTop"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1320129295]
 script = ExtResource("7_0h4ax")
-dark_color = Color(0.050980393, 0.050980393, 0.0627451, 1)
 
 [node name="SpawnBottom" type="Marker2D" parent="." unique_id=417826358]
 position = Vector2(208, 446)
