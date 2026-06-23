@@ -5,6 +5,7 @@ class_name WalkingState
 @export var animated_sprite: AnimatedSprite2D
 @export var speed: float = 90.0
 
+var enabled
 
 func update(delta):
 	if !Global.armed:

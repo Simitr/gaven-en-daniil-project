@@ -15,6 +15,8 @@ var targetPosition: Vector2
 @export var flashlight2: PointLight2D
 @export var Gun: Marker2D
 
+ 
+
 func _ready():
 	ammo = Global.ammo
 	health_potions = Global.health_potions
@@ -23,6 +25,7 @@ func _ready():
 	health = Global.health
 	lantern = Global.lantern
 	key = Global.key
+	Global.ui_on = true
 	
 	
 	

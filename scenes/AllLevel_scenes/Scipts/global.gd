@@ -18,3 +18,5 @@ var rage := false
 
 var torch_pickup = false
 var key_pickup = false
+
+var ui_on = false
