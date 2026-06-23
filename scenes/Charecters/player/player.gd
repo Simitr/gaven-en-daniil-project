@@ -15,7 +15,11 @@ var targetPosition: Vector2
 @export var flashlight2: PointLight2D
 @export var Gun: Marker2D
 
- 
+@export var footstep_player: AudioStreamPlayer2D
+@export var footstep_sounds: Array[AudioStream] = []
+
+var step_timer := 0.0
+var step_interval := 0.35  # частота шагов
 
 func _ready():
 	ammo = Global.ammo
@@ -50,7 +54,14 @@ func update_flashlight():
 		flashlight2.enabled = false
 		$flashlight2/Area2D/CollisionShape2D2.disabled = true
 		
-
+func play_footstep():
+	if footstep_sounds.is_empty():
+		return
+	var sound = footstep_sounds[randi() % footstep_sounds.size()]
+	footstep_player.stream = sound
+	footstep_player.volume_db = randf_range(-2.0, 2.0)
+	footstep_player.pitch_scale = randf_range(0.9, 1.1)
+	footstep_player.play()
 
 func add_ammo(amount: int):
 	ammo += amount

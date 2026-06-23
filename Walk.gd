@@ -7,6 +7,12 @@ class_name WalkingState
 
 var enabled
 
+func _physics_process(delta):
+	var dir = GameInput.movement_input()
+	if dir.length() > 0:
+		character.play_footstep() 
+
+
 func update(delta):
 	if !Global.armed:
 		var dir = GameInput.movement_input()
