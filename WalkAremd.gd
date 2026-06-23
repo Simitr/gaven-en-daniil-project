@@ -21,8 +21,10 @@ enum Side {
 	RIGHT
 }
 
-func update(delta):
+ 
 
+func update(delta):
+	character.play_footstep() 
 	var dir = GameInput.movement_input()
 
 	if dir == Vector2.ZERO:

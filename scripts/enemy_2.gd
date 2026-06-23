@@ -13,6 +13,8 @@ enum State { CHASE, FLEE, WAIT, ATTACK }
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area: Area2D = $Area2D
 
+
+
 var nav_agent: NavigationAgent2D
 var wait_timer: Timer
 var attack_timer: Timer
