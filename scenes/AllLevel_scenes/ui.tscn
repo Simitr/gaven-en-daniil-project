@@ -124,6 +124,7 @@ offset_bottom = 24.0
 texture = ExtResource("9_rgm80")
 
 [node name="C93b87b911c24d218Be4644e3899e438" type="Sprite2D" parent="." unique_id=793010504]
+visible = false
 position = Vector2(565, 317)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("10_rgm80")

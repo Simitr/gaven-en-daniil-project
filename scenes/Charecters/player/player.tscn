@@ -470,6 +470,7 @@ z_index = -2
 position = Vector2(-2, -12)
 color = Color(0.9607843, 0.6784314, 0.38039216, 1)
 shadow_enabled = true
+shadow_filter = 1
 texture = ExtResource("3_flheb")
 offset = Vector2(100, 0)
 texture_scale = 0.2

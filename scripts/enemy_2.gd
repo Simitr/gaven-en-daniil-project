@@ -25,7 +25,7 @@ var hurt = false
 var dead = false
 var can_attack = true
 
-var hp = 10.0
+var hp = 25.0
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -51,14 +51,9 @@ func _ready():
 
 
 func add_hp(damage):
+	_enter_flee_state()
 	hp += damage
 	print(hp)
-
-	if hp <= 5 and hp > 0 and not hurt:
-		hurt = true
-		speed = 60
-		sprite.play("hurt")
-
 	if hp <= 0 and not dead:
 		dead = true
 		queue_free()

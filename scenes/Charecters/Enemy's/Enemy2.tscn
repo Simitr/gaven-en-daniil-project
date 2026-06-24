@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://msbdwa3wumwi" path="res://scripts/enemy_2.gd" id="1_i1eqr"]
 [ext_resource type="Texture2D" uid="uid://lyvq158r0eyg" path="res://Sprites/EnemyAsset/GuardMutantEnemy.png" id="2_exewc"]
-[ext_resource type="Texture2D" uid="uid://b7ypwcup3ln7r" path="res://Sprites/EnemyAsset/GuardEnemy.png" id="2_wna3i"]
+[ext_resource type="Texture2D" uid="uid://bcdhh0sr4cmpu" path="res://assets/game/prologue_texture/Character/handswilroll/6eb7e6f39df33c5.png" id="2_ie7wm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_damwt"]
 
@@ -13,7 +13,7 @@ radius = 35.510563
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_wna3i")
+"texture": ExtResource("2_ie7wm")
 }],
 "loop": true,
 "name": &"fullHealth",
@@ -41,15 +41,15 @@ position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_bjf8o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1081259340]
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_ie7wm")
-animation = &"hurt"
+animation = &"fullHealth"
 autoplay = "fullHealth"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1339110142]
 path_desired_distance = 3.0
 target_desired_distance = 3.0
 path_postprocessing = 1
-debug_enabled = true
 debug_use_custom = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
