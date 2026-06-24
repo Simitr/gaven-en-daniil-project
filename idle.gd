@@ -23,7 +23,7 @@ func enter():
 	lamp_l.visible = false
 	lamp_r.visible = false
 	hands_animation.visible = false
-
+	character.step_timer = character.step_interval
 
 	if animated_sprite.animation == "walking":
 		animated_sprite.play("idle")

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://co257x2dpu6id" path="res://Sprites/Items/HealthPotion.png" id="7_y3fu0"]
 [ext_resource type="Texture2D" uid="uid://p6akmalgv1du" path="res://Sprites/Items/Lantern.png" id="8_grtu0"]
 [ext_resource type="Texture2D" uid="uid://dhrg3g5l52cbl" path="res://Sprites/Items/Key.png" id="9_rgm80"]
+[ext_resource type="Texture2D" uid="uid://c0hnpio6txbro" path="res://assets/game/prologue_texture/Character/handswilroll/c93b87b9-11c2-4d21-8be4-644e3899e438.png" id="10_rgm80"]
 
 [sub_resource type="Theme" id="Theme_yn0fj"]
 
@@ -121,3 +122,8 @@ layout_mode = 0
 offset_right = 24.0
 offset_bottom = 24.0
 texture = ExtResource("9_rgm80")
+
+[node name="C93b87b911c24d218Be4644e3899e438" type="Sprite2D" parent="." unique_id=793010504]
+position = Vector2(565, 317)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("10_rgm80")

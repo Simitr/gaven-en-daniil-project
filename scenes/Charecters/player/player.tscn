@@ -81,6 +81,7 @@
 [ext_resource type="Texture2D" uid="uid://ekwkvssqlvbd" path="res://assets/game/prologue_texture/Character/handswilroll/s2.png" id="61_pmcni"]
 [ext_resource type="Texture2D" uid="uid://dq5pwwo153y55" path="res://assets/game/prologue_texture/Character/handswilroll/s3.png" id="62_yutb7"]
 [ext_resource type="Texture2D" uid="uid://dnklqb3yxcroh" path="res://assets/game/prologue_texture/Character/handswilroll/s4.png" id="63_w88tb"]
+[ext_resource type="Texture2D" uid="uid://dqlm1jbyg3mkk" path="res://Sprites/Items/LightTexture.png" id="82_cklkc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqqwl"]
 radius = 11.37
@@ -454,7 +455,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1372397156 node_paths=PackedStringArray("flashlight2", "Gun", "footstep_player") groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1372397156 node_paths=PackedStringArray("flashlight2", "Gun", "footstep_player", "muzzle_flash") groups=["player"]]
 visibility_layer = 6
 y_sort_enabled = true
 script = ExtResource("1_7h4xu")
@@ -462,6 +463,7 @@ flashlight2 = NodePath("flashlight2")
 Gun = NodePath("CollisionShape2D/Gun")
 footstep_player = NodePath("AudioStreamPlayer2D")
 footstep_sounds = Array[AudioStream]([ExtResource("2_1vx8p"), ExtResource("3_cklkc"), ExtResource("4_d0tpk"), ExtResource("5_mace0"), ExtResource("6_y2dap"), ExtResource("7_tw6t5"), ExtResource("8_chvkh")])
+muzzle_flash = NodePath("PointLight2D")
 
 [node name="flashlight2" type="PointLight2D" parent="." unique_id=1627306792]
 z_index = -2
@@ -556,5 +558,14 @@ animation = &"LampRightWalkingDown"
 autoplay = "LampRightWalkingDown"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=754985006]
+volume_db = 24.0
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1876237282]
+position = Vector2(-2, -12)
+enabled = false
+color = Color(0.9607843, 0.6784314, 0.38039216, 1)
+shadow_enabled = true
+texture = ExtResource("82_cklkc")
+texture_scale = 0.7
 
 [connection signal="area_shape_entered" from="flashlight2/Area2D" to="." method="_on_area_2d_area_shape_entered"]

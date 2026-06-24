@@ -14,7 +14,7 @@ func init(parent: Node2D) -> void:
 	global_position = parent.global_position
 	global_rotation = parent.global_rotation
 
-	var spread = deg_to_rad(randf_range(-10.0, 10.0))
+	var spread = deg_to_rad(randf_range(-5.0, 5.0))
 	direction = Vector2.RIGHT.rotated(global_rotation + spread)
 	
 func _physics_process(delta: float) -> void:
