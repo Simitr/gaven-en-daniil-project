@@ -9,6 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://ba46ceqsbtlmm" path="res://scenes/Items/TorchFireUp.tscn" id="5_agv4p"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="7_getvy"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_agv4p"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_g4th1"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8nuqb"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
 texture = ExtResource("1_6t5fs")
 0:0/0 = 0
@@ -316,11 +325,13 @@ texture = ExtResource("1_6t5fs")
 30:7/0 = 0
 31:7/0 = 0
 0:8/0 = 0
+0:8/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_agv4p")
 0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
 1:8/0 = 0
 1:8/0/y_sort_origin = 20
 1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6986008, -8, 8, -8, 8, 8, -2.3503952, 8)
 2:8/0 = 0
+2:8/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_g4th1")
 2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 3:8/0 = 0
 3:8/0/y_sort_origin = 20
@@ -564,6 +575,7 @@ texture = ExtResource("1_6t5fs")
 4:14/0/y_sort_origin = 20
 4:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -2.3503952, 8, -2.3503952, -8, 8, -8)
 5:14/0 = 0
+5:14/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_8nuqb")
 6:14/0 = 0
 6:14/0/y_sort_origin = 20
 6:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 2.3503952, 8, 2.3503952, -8, -8, -8)
@@ -995,6 +1007,7 @@ texture = ExtResource("1_6t5fs")
 31:31/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_tgalm"]
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_veiaw")
 

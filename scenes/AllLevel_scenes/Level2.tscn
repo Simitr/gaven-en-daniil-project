@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dwgrqou34lil0" path="res://scenes/Items/Campfire.tscn" id="8_33fcf"]
 [ext_resource type="PackedScene" uid="uid://dr8xdkft5th33" path="res://scenes/Charecters/Enemy's/Enemy2.tscn" id="9_bvl68"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_be08k"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bvl68"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
@@ -70,6 +73,12 @@ vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 agent_radius = 0.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8ubld"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8kw18"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veiaw"]
 texture = ExtResource("1_0xvxj")
@@ -330,12 +339,14 @@ texture = ExtResource("1_0xvxj")
 30:7/0 = 0
 31:7/0 = 0
 0:8/0 = 0
+0:8/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_be08k")
 0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
 1:8/0 = 0
 1:8/0/y_sort_origin = 20
 1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6986008, -8, 8, -8, 8, 8, -2.3503952, 8)
 2:8/0 = 0
 2:8/0/y_sort_origin = 100
+2:8/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_8ubld")
 2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 3:8/0 = 0
 3:8/0/y_sort_origin = 20
@@ -601,6 +612,7 @@ texture = ExtResource("1_0xvxj")
 4:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -2.3503952, 8, -2.3503952, -8, 8, -8)
 5:14/0 = 0
 5:14/0/y_sort_origin = 100
+5:14/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_8kw18")
 6:14/0 = 0
 6:14/0/y_sort_origin = 20
 6:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 2.3503952, 8, 2.3503952, -8, -8, -8)
@@ -1077,6 +1089,7 @@ texture = ExtResource("3_be08k")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_tgalm"]
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_veiaw")

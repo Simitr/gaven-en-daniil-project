@@ -79,7 +79,7 @@ func play_footstep(delta: float):
 		return
 	var sound = footstep_sounds[randi() % footstep_sounds.size()]
 	footstep_player.stream = sound
-	footstep_player.volume_db = randf_range(-5.0, 0.0)
+	footstep_player.volume_db = randf_range(-15.0, -10.0)
 	footstep_player.pitch_scale = randf_range(0.9, 1.1)
 	footstep_player.play()
 
