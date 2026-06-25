@@ -17,7 +17,7 @@ extends Node2D
 
 # Минимальное и максимальное время до повторного появления (в секундах)
 @export var respawn_time_min: float = 5.0
-@export var respawn_time_max: float = 15.0
+@export var respawn_time_max: float = 5.0
 
 # Минимальное расстояние от игрока, на котором может заспауниться враг
 @export var min_spawn_distance_from_player: float = 200.0
@@ -78,8 +78,9 @@ func _spawn_enemy():
 	var enemy = enemy_scene.instantiate()
 
 	# Добавляем врага в корень сцены, чтобы он не был дочерним узлом спаунера
-	get_tree().current_scene.add_child(enemy)
-	enemy.global_position = spawn_pos
+	# call_deferred нужен чтобы add_child не вызывался пока сцена ещё грузится
+	get_tree().current_scene.add_child.call_deferred(enemy)
+	enemy.set_deferred("global_position", spawn_pos)
 
 	print("EnemySpawner: враг появился в позиции ", spawn_pos)
 

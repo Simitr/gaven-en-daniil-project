@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://lyvq158r0eyg" path="res://Sprites/EnemyAsset/GuardMutantEnemy.png" id="2_exewc"]
 [ext_resource type="Texture2D" uid="uid://bcdhh0sr4cmpu" path="res://assets/game/prologue_texture/Character/handswilroll/6eb7e6f39df33c5.png" id="2_ie7wm"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_damwt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie7wm"]
+size = Vector2(26, 57)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjf8o"]
 radius = 35.510563
@@ -32,7 +33,8 @@ animations = [{
 script = ExtResource("1_i1eqr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239150159]
-shape = SubResource("CircleShape2D_damwt")
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_ie7wm")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=318689570 groups=["enemy"]]
 

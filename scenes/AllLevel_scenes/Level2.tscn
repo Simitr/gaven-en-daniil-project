@@ -1148,7 +1148,6 @@ position = Vector2(-1, 1)
 visibility_layer = 7
 z_index = 1
 position = Vector2(251, 193)
-footstep_sounds = Array[AudioStream]([])
 
 [node name="Campfire" parent="WorldObjects" unique_id=115467166 instance=ExtResource("8_33fcf")]
 y_sort_enabled = true
@@ -1199,7 +1198,6 @@ position = Vector2(-84, 138)
 shape = SubResource("RectangleShape2D_wlvkq")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=484801838]
-visible = false
 script = ExtResource("6_bu1on")
 
 [node name="SpawnTop" type="Marker2D" parent="." unique_id=191521246]
@@ -1214,17 +1212,15 @@ script = ExtResource("4_4onql")
 position = Vector2(182, 340)
 script = ExtResource("4_4onql")
 
-[node name="Enemy2" parent="." unique_id=435413124 instance=ExtResource("9_bvl68")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(184, 161)
-
 [node name="Node2D" parent="." unique_id=237879362 instance=ExtResource("11_8ubld")]
 position = Vector2(96, 182)
 enemy_scene = ExtResource("9_bvl68")
 
 [node name="Marker2D2" type="Marker2D" parent="Node2D" unique_id=1247577661]
-position = Vector2(-26, 103)
+position = Vector2(361, -67)
+
+[node name="Marker2D3" type="Marker2D" parent="Node2D" unique_id=1665286394]
+position = Vector2(-104, 123)
 
 [connection signal="body_entered" from="Doors/DoortoRoom1" to="Doors/DoortoRoom1" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom3" to="Doors/DoortoRoom3" method="_on_body_entered"]

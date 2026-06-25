@@ -1127,7 +1127,6 @@ y_sort_enabled = true
 [node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_l7ukn")]
 z_index = 1
 position = Vector2(38, 110)
-footstep_sounds = Array[AudioStream]([])
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("4_dsk3o")]
 y_sort_enabled = true
@@ -1183,7 +1182,6 @@ position = Vector2(-465, 558.5)
 shape = SubResource("RectangleShape2D_dfk3p")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=859739934]
-visible = false
 script = ExtResource("7_sa74c")
 
 [node name="SpawnTop" type="Marker2D" parent="." unique_id=817269149]
