@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="7_33fcf"]
 [ext_resource type="PackedScene" uid="uid://dwgrqou34lil0" path="res://scenes/Items/Campfire.tscn" id="8_33fcf"]
 [ext_resource type="PackedScene" uid="uid://dr8xdkft5th33" path="res://scenes/Charecters/Enemy's/Enemy2.tscn" id="9_bvl68"]
+[ext_resource type="PackedScene" uid="uid://5t7iyiaih35k" path="res://Sprites/EnemyAsset/enemy_spawner.tscn" id="11_8ubld"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_be08k"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -1147,6 +1148,7 @@ position = Vector2(-1, 1)
 visibility_layer = 7
 z_index = 1
 position = Vector2(251, 193)
+footstep_sounds = Array[AudioStream]([])
 
 [node name="Campfire" parent="WorldObjects" unique_id=115467166 instance=ExtResource("8_33fcf")]
 y_sort_enabled = true
@@ -1213,7 +1215,16 @@ position = Vector2(182, 340)
 script = ExtResource("4_4onql")
 
 [node name="Enemy2" parent="." unique_id=435413124 instance=ExtResource("9_bvl68")]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(184, 161)
+
+[node name="Node2D" parent="." unique_id=237879362 instance=ExtResource("11_8ubld")]
+position = Vector2(96, 182)
+enemy_scene = ExtResource("9_bvl68")
+
+[node name="Marker2D2" type="Marker2D" parent="Node2D" unique_id=1247577661]
+position = Vector2(-26, 103)
 
 [connection signal="body_entered" from="Doors/DoortoRoom1" to="Doors/DoortoRoom1" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom3" to="Doors/DoortoRoom3" method="_on_body_entered"]

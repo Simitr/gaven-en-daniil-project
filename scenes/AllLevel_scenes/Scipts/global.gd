@@ -19,4 +19,7 @@ var rage := false
 var torch_pickup = false
 var key_pickup = false
 
+var monster_hp := 25.0
+var monster_dead := false
+
 var ui_on = false

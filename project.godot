@@ -39,6 +39,7 @@ project/assembly_name="GavenEnDaniilProject"
 [global_group]
 
 loot_popup=""
+enemy_spawner=""
 
 [input]
 
