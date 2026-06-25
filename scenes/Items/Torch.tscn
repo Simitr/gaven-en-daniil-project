@@ -73,6 +73,22 @@ region = Rect2(32, 0, 16, 32)
 atlas = ExtResource("4_jqmfr")
 region = Rect2(48, 0, 16, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqmfr"]
+atlas = ExtResource("2_rdfia")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5owwi"]
+atlas = ExtResource("2_rdfia")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhjva"]
+atlas = ExtResource("2_rdfia")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xpa7"]
+atlas = ExtResource("2_rdfia")
+region = Rect2(48, 0, 16, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_frpfi"]
 atlas = ExtResource("2_rdfia")
 region = Rect2(64, 0, 16, 32)
@@ -110,6 +126,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_jqmfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5owwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhjva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xpa7")
+}],
+"loop": true,
+"name": &"Interact",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_frpfi")
 }, {
 "duration": 1.0,
@@ -131,8 +164,8 @@ script = ExtResource("1_rdfia")
 
 [node name="LightTexture" type="PointLight2D" parent="." unique_id=842360511]
 y_sort_enabled = true
-position = Vector2(2.2888184e-05, 1.9073486e-06)
-scale = Vector2(0.28222656, 0.24908449)
+position = Vector2(0.8750045, 1.1171877)
+scale = Vector2(0.28564447, 0.2534485)
 color = Color(0.96219605, 0.6768721, 0.38177067, 1)
 energy = 1.5
 shadow_enabled = true
@@ -141,12 +174,11 @@ texture = ExtResource("1_x2o3u")
 
 [node name="Area2D" type="Area2D" parent="LightTexture" unique_id=882222608 groups=["light"]]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="LightTexture/Area2D" unique_id=1779541694]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightTexture/Area2D" unique_id=1779541694]
 position = Vector2(-8.392334e-05, 8.029396)
 rotation = 1.5707964
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_jqmfr")
-disabled = true
 debug_color = Color(0.84393924, 0.0010532934, 0.9154825, 0.41960785)
 
 [node name="Smoke" type="GPUParticles2D" parent="." unique_id=1436962051]
@@ -165,4 +197,8 @@ z_index = 1
 position = Vector2(2, -6)
 scale = Vector2(1.0625, 1)
 sprite_frames = SubResource("SpriteFrames_7l2j1")
+animation = &"Interact"
 autoplay = "default"
+
+[connection signal="body_entered" from="LightTexture/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="LightTexture/Area2D" to="." method="_on_area_2d_body_exited"]

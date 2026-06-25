@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://5t7iyiaih35k"]
+
+[ext_resource type="Script" uid="uid://doakgr5uvn7" path="res://enemy_spawner.gd" id="1_qmhqj"]
+
+[node name="Node2D" type="Node2D" unique_id=237879362 groups=["enemy_spawner"]]
+script = ExtResource("1_qmhqj")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1691820024]
+position = Vector2(185, 144)
