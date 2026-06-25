@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="3_odr71"]
 [ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Scipts/Door.gd" id="3_wi8hq"]
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="4_g2ggs"]
-[ext_resource type="PackedScene" uid="uid://ba46ceqsbtlmm" path="res://scenes/Items/TorchFireUp.tscn" id="5_agv4p"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="7_getvy"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_agv4p"]
@@ -1076,11 +1075,6 @@ position = Vector2(152, 326)
 [node name="Torch4" parent="WorldObjects" unique_id=814553867 instance=ExtResource("4_g2ggs")]
 y_sort_enabled = true
 position = Vector2(-152, 323)
-
-[node name="TorchTurnOn" parent="WorldObjects" unique_id=2046788511 instance=ExtResource("5_agv4p")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(75, -51)
 
 [node name="Doors" type="CanvasGroup" parent="." unique_id=466661053]
 

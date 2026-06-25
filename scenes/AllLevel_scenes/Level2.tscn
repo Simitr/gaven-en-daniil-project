@@ -8,9 +8,8 @@
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="4_4onql"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="6_bu1on"]
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="7_33fcf"]
-[ext_resource type="PackedScene" uid="uid://dwgrqou34lil0" path="res://scenes/Items/Campfire.tscn" id="8_33fcf"]
 [ext_resource type="PackedScene" uid="uid://dr8xdkft5th33" path="res://scenes/Charecters/Enemy's/Enemy2.tscn" id="9_bvl68"]
-[ext_resource type="PackedScene" uid="uid://5t7iyiaih35k" path="res://Sprites/EnemyAsset/enemy_spawner.tscn" id="11_8ubld"]
+[ext_resource type="PackedScene" path="res://Sprites/EnemyAsset/enemy_spawner.tscn" id="11_8ubld"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_be08k"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -1150,17 +1149,13 @@ z_index = 1
 position = Vector2(251, 193)
 footstep_sounds = Array[AudioStream]([])
 
-[node name="Campfire" parent="WorldObjects" unique_id=115467166 instance=ExtResource("8_33fcf")]
-y_sort_enabled = true
-position = Vector2(382, 270)
-
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("7_33fcf")]
 y_sort_enabled = true
-position = Vector2(248, 82)
+position = Vector2(121, 84)
 
-[node name="Torch2" parent="WorldObjects" unique_id=392271381 instance=ExtResource("7_33fcf")]
+[node name="Torch2" parent="WorldObjects" unique_id=1931367413 instance=ExtResource("7_33fcf")]
 y_sort_enabled = true
-position = Vector2(121, 83)
+position = Vector2(252, 84)
 
 [node name="Doors" type="CanvasGroup" parent="." unique_id=618052261]
 position = Vector2(121, 83)
@@ -1199,7 +1194,6 @@ position = Vector2(-84, 138)
 shape = SubResource("RectangleShape2D_wlvkq")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=484801838]
-visible = false
 script = ExtResource("6_bu1on")
 
 [node name="SpawnTop" type="Marker2D" parent="." unique_id=191521246]
