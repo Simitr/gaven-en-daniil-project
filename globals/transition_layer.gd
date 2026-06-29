@@ -12,11 +12,13 @@ func reveal():
 	animation_player.play("reveal")
 
 func transition_to_next_scene(scene_path):
-	
+
 	fade_to_black()
-	
+
 	await animation_player.animation_finished
-	
+
 	get_tree().change_scene_to_file(scene_path)
-	
+
+	await get_tree().process_frame
+
 	reveal()
