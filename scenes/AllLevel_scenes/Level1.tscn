@@ -1026,6 +1026,7 @@ y_sort_enabled = true
 position = Vector2(339, 107)
 
 [node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_veiaw")]
+visible = false
 z_index = 1
 position = Vector2(-119, 177)
 
