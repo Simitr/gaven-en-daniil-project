@@ -26,7 +26,13 @@ public partial class ParallaxSky : Node
 	[Export] public float GrassMaxSpeed = 50f;
 	[Export] public float BackMaxSpeed = 15f;
 	[Export] public Sprite2D trap;
+<<<<<<< Updated upstream
 	private bool isMoving = false;
+=======
+    [Export] public Sprite2D PressD;
+    [Export] public Sprite2D PressD2;
+    private bool isMoving = false;
+>>>>>>> Stashed changes
 	public string state = "";
 	public bool isatrap = false;
 	public bool end = false;
@@ -39,6 +45,11 @@ public partial class ParallaxSky : Node
 		horseAudio.Play();
 		var tween = CreateTween();
 		tween.TweenProperty(blackBackground, "modulate:a", 0f, 2.0f);
+<<<<<<< Updated upstream
+=======
+        PressD.Modulate = new Color(1, 1, 1, 0);
+        PressD2.Modulate = new Color(1, 1, 1, 0);
+>>>>>>> Stashed changes
 
 
 	}
@@ -85,6 +96,15 @@ public partial class ParallaxSky : Node
 
 				if (Input.IsActionPressed("walkRight"))
 				{
+<<<<<<< Updated upstream
+=======
+                    var twee = CreateTween();
+                    twee.TweenProperty(blackBackground, "modulate:a", 0f, 0.2f);
+                    PressD.Modulate = new Color(1, 1, 1, 0);
+                    PressD2.Modulate = new Color(1, 1, 1, 0);
+                    var tweenmusic = CreateTween();
+					tweenmusic.TweenProperty(music, "volume_db", -10, 2f);
+>>>>>>> Stashed changes
 
 					if (isatrap)
 					{
@@ -125,6 +145,7 @@ public partial class ParallaxSky : Node
 					// horseAudio.Stop();
 
 					var tween = CreateTween();
+<<<<<<< Updated upstream
 					tween.TweenProperty(this, "SkyStartSpeed", 1, 1.0f);
 					var tween2 = CreateTween();
 					tween2.TweenProperty(this, "BackStartSpeed", 0, 1.0f);
@@ -137,6 +158,13 @@ public partial class ParallaxSky : Node
 					Parallax3.ScrollOffset += new Vector2((float)(-GroundStartSpeed * delta), 0);
 					Parallax4.ScrollOffset += new Vector2((float)(-GrassStartSpeed * delta), 0);
 					if (BackStartSpeed < 5)
+=======
+					tween.TweenProperty(blackBackground, "modulate:a", 0.7f, 0.2f);
+					PressD.Modulate = new Color(1, 1, 1, 1);
+                    PressD2.Modulate = new Color(1, 1, 1, 1);
+
+                    if (Input.IsActionPressed("walkRight"))
+>>>>>>> Stashed changes
 					{
 						BackStartSpeed = 0;
 					}
