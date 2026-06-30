@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="6_bu1on"]
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="7_33fcf"]
 [ext_resource type="PackedScene" uid="uid://dr8xdkft5th33" path="res://scenes/Charecters/Enemy's/Enemy2.tscn" id="9_bvl68"]
-[ext_resource type="PackedScene" path="res://Sprites/EnemyAsset/enemy_spawner.tscn" id="11_8ubld"]
+[ext_resource type="PackedScene" uid="uid://5t7iyiaih35k" path="res://Sprites/EnemyAsset/enemy_spawner.tscn" id="11_8ubld"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_be08k"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

@@ -33,16 +33,21 @@ animations = [{
 script = ExtResource("1_i1eqr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239150159]
+
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_ie7wm")
 
+
+
 [node name="Area2D" type="Area2D" parent="." unique_id=318689570 groups=["enemy"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=498466875 groups=["enemy"]]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_bjf8o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1081259340]
+position = Vector2(1.5258789e-05, -7.6293945e-06)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_ie7wm")
 animation = &"fullHealth"

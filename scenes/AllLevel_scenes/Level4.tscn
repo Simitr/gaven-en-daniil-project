@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://brr6k13ob4p8x" path="res://scenes/Items/KeyPopup.tscn" id="6_458l2"]
 [ext_resource type="Texture2D" uid="uid://dhrg3g5l52cbl" path="res://Sprites/Items/Key.png" id="6_mbd1d"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="7_sa74c"]
+[ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/ItemPickup.tscn" id="8_om287"]
 [ext_resource type="PackedScene" uid="uid://dr8xdkft5th33" path="res://scenes/Charecters/Enemy's/Enemy2.tscn" id="11_pq8lm"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_om287"]
@@ -1154,6 +1155,11 @@ y_sort_enabled = true
 position = Vector2(40, 31)
 popup = NodePath("../../LootPopup")
 key_texture = ExtResource("6_mbd1d")
+
+[node name="AmmoPickup" parent="WorldObjects" unique_id=1556862671 instance=ExtResource("8_om287")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(386, 267)
 
 [node name="Doors" type="CanvasGroup" parent="." unique_id=1322639328]
 

@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cm6rjfxd2faev"]
+
+[ext_resource type="Texture2D" uid="uid://u2kjlvg61862" path="res://Sprites/MainMenu.png" id="1_10frx"]
+[ext_resource type="Script" uid="uid://dqodw1nmrqayb" path="res://scenes/Items/ItemScripts/MainMenu.gd" id="1_lfst1"]
+[ext_resource type="FontFile" uid="uid://vg0rwher20o0" path="res://Sprites/Items/alagard.ttf" id="2_lfst1"]
+[ext_resource type="Texture2D" uid="uid://dqlwxin3pc5qc" path="res://Sprites/Title.png" id="3_r7j78"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10frx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agh3j"]
+
+[node name="MainMenu" type="Node2D" unique_id=130409502]
+script = ExtResource("1_lfst1")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2006394182]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("1_10frx")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="TextureRect" parent="." unique_id=1978509685]
+offset_left = -196.0
+offset_top = -90.0
+offset_right = 197.0
+offset_bottom = -11.875
+size_flags_horizontal = 4
+texture = ExtResource("3_r7j78")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1845641105]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -255.0
+offset_top = 34.0
+offset_right = 257.0
+offset_bottom = 144.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=920973293]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7411765, 0.5058824, 0.14509805, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_lfst1")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_10frx")
+text = "Start
+"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=302348453]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7411765, 0.5058824, 0.14509805, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_lfst1")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_agh3j")
+text = "Quit
+
+"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

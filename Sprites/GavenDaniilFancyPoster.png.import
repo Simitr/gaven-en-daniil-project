@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgllspimqxb83"
-path="res://.godot/imported/RadiationCatStudiosPixel.png-3c6b3665210c9361625880939289500b.ctex"
+uid="uid://c8lm58jhgachp"
+path="res://.godot/imported/GavenDaniilFancyPoster.png-de9f7ebc66c33eb0b2ba2d23e227a236.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/RadiationCatStudiosPixel.png"
-dest_files=["res://.godot/imported/RadiationCatStudiosPixel.png-3c6b3665210c9361625880939289500b.ctex"]
+source_file="res://Sprites/GavenDaniilFancyPoster.png"
+dest_files=["res://.godot/imported/GavenDaniilFancyPoster.png-de9f7ebc66c33eb0b2ba2d23e227a236.ctex"]
 
 [params]
 
