@@ -33,7 +33,13 @@
 [ext_resource type="Texture2D" uid="uid://cc581k8c3joxs" path="res://assets/game/prologue_texture/Character/koni8.png" id="14_m2r7m"]
 [ext_resource type="Script" uid="uid://beuf5uo5bd5yh" path="res://scenes/Charecters/player/Horse.cs" id="15_51hnb"]
 [ext_resource type="Texture2D" uid="uid://bldacdt2w8sob" path="res://assets/game/prologue_texture/Character/konfal17.png" id="15_kpxjl"]
+[ext_resource type="Texture2D" uid="uid://crrb0dvw6okgu" path="res://assets/game/prologue_texture/Character/fall1.png" id="16_d4fb8"]
+[ext_resource type="Texture2D" uid="uid://oprkiq8o7haa" path="res://assets/game/prologue_texture/Character/fall2.png" id="17_ngby5"]
+[ext_resource type="Texture2D" uid="uid://ctiku3xt4iqau" path="res://assets/game/prologue_texture/Character/fall3.png" id="18_4xpkd"]
+[ext_resource type="Texture2D" uid="uid://c3y43j4ddlfcp" path="res://assets/game/prologue_texture/Character/fall4.png" id="19_6epyh"]
 [ext_resource type="Texture2D" uid="uid://bvj8as7uu2sn1" path="res://assets/game/prologue_texture/Character/trap.png" id="21_e0aqg"]
+[ext_resource type="AudioStream" uid="uid://bbhmjoud435yf" path="res://scenes/prologue_scene/movement-and-falling-stones-landslide.mp3" id="39_ngby5"]
+[ext_resource type="Texture2D" uid="uid://des4dk6wacqj0" path="res://assets/game/prologue_texture/Character/press d sreen.png" id="40_4xpkd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blaey"]
 animations = [{
@@ -58,6 +64,32 @@ animations = [{
 "loop": true,
 "name": &"default_2",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_d4fb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ngby5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4xpkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6epyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6epyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6epyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6epyh")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -100,7 +132,7 @@ animations = [{
 "texture": ExtResource("15_kpxjl")
 }],
 "loop": false,
-"name": &"fall",
+"name": &"fall2",
 "speed": 10.0
 }, {
 "frames": [{
@@ -171,6 +203,8 @@ position = Vector2(114, 51)
 sprite_frames = SubResource("SpriteFrames_blaey")
 animation = &"fall"
 autoplay = "walking"
+frame = 4
+frame_progress = 1.0
 script = ExtResource("15_51hnb")
 animatieCharacter = NodePath(".")
 
@@ -193,7 +227,7 @@ texture_filter = 1
 position = Vector2(300, 148)
 texture = ExtResource("5_ncrow")
 
-[node name="Node" type="Node" parent="." unique_id=1212987585 node_paths=PackedStringArray("Parallax", "Parallax2", "Parallax3", "Parallax4", "Player", "animatieCharacter", "StopPressD", "PressD", "music", "timer", "horseAudio", "blackBackground", "trap")]
+[node name="Node" type="Node" parent="." unique_id=1212987585 node_paths=PackedStringArray("Parallax", "Parallax2", "Parallax3", "Parallax4", "Player", "animatieCharacter", "music", "fall", "timer", "horseAudio", "blackBackground", "trap", "PressD")]
 script = ExtResource("3_ncrow")
 Parallax = NodePath("../Parallax2D")
 Parallax2 = NodePath("../Parallax2D2")
@@ -201,9 +235,8 @@ Parallax3 = NodePath("../Parallax2D3")
 Parallax4 = NodePath("../Parallax2D4")
 Player = NodePath("../PlayerHorse")
 animatieCharacter = NodePath("../PlayerHorse/AnimatedSprite2D2")
-StopPressD = NodePath("../Label")
-PressD = NodePath("Label2")
 music = NodePath("../Music")
+fall = NodePath("../AudioStreamPlayer2D2")
 timer = NodePath("../Timer")
 horseAudio = NodePath("../AudioStreamPlayer2D")
 blackBackground = NodePath("../ColorRect")
@@ -212,13 +245,7 @@ GroundMaxSpeed = 50.0
 GrassMaxSpeed = 70.0
 BackMaxSpeed = 12.0
 trap = NodePath("../Sprite2D")
-
-[node name="Label2" type="Label" parent="Node" unique_id=1417801192]
-offset_left = 431.0
-offset_top = 141.0
-offset_right = 489.0
-offset_bottom = 164.0
-text = "Press D"
+PressD = NodePath("../Sprite2D2")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1786927392]
 texture_filter = 1
@@ -245,14 +272,8 @@ texture_filter = 1
 position = Vector2(330, 152)
 zoom = Vector2(2, 2)
 
-[node name="Label" type="Label" parent="." unique_id=259978865]
-offset_left = 427.0
-offset_top = 140.0
-offset_right = 486.0
-offset_bottom = 163.0
-text = "let go D"
-
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1636780950]
+position = Vector2(82, -3)
 stream = ExtResource("7_h2ubk")
 volume_db = -20.0
 
@@ -266,7 +287,6 @@ volume_db = -15.0
 autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=760892023]
-visible = false
 z_index = 10
 offset_left = 72.0
 offset_top = -30.0
@@ -275,5 +295,15 @@ offset_bottom = 370.0
 color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1454870304]
-position = Vector2(610, 235)
+visible = false
+position = Vector2(1100, 235)
 texture = ExtResource("21_e0aqg")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=96901211]
+position = Vector2(2, 201)
+stream = ExtResource("39_ngby5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=945523278]
+z_index = 11
+position = Vector2(314, 158)
+texture = ExtResource("40_4xpkd")

@@ -1124,9 +1124,6 @@ tile_map_data = PackedByteArray("AAAPACAAAAAKAAsAAAAPAB8AAAAKAAsAAAAOAB8AAAAKAAs
 tile_set = SubResource("TileSet_tgalm")
 use_kinematic_bodies = true
 
-[node name="Enemy2" parent="TileMap" unique_id=435413124 instance=ExtResource("4_nhyqi")]
-position = Vector2(413, 411)
-
 [node name="WorldObjects" type="CanvasGroup" parent="." unique_id=853354745]
 y_sort_enabled = true
 
