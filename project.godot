@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GavenEnDaniilProject"
-run/main_scene="uid://d2p8je7uac3lm"
+run/main_scene="uid://cm6rjfxd2faev"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,7 +20,6 @@ config/icon="res://icon.svg"
 Global="*uid://bbie7s8obk5v0"
 TransitionLayer="*uid://t50fjkox2y4y"
 Ui="*uid://bxkro1qbvgf6d"
-GameState="*uid://cr4008v2ive5j"
 
 [display]
 

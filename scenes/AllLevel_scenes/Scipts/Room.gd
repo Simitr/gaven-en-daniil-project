@@ -3,6 +3,7 @@ extends Node2D
 @onready var canvas_modulate = get_node_or_null("CanvasModulate")
 @onready var world_objects = get_node_or_null("WorldObjects")
 
+
 func _ready():
 	if canvas_modulate:
 		canvas_modulate.activate_darkness()

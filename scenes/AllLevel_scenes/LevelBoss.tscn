@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://270i44b4hkyr" path="res://scenes/AllLevel_scenes/Scipts/Room.gd" id="1_xtbjn"]
 [ext_resource type="PackedScene" uid="uid://bc4waybd2ft8u" path="res://scenes/Charecters/player/player.tscn" id="2_odr71"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="3_odr71"]
-[ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Scipts/Door.gd" id="3_wi8hq"]
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="4_g2ggs"]
+[ext_resource type="PackedScene" uid="uid://bicam3802b7to" path="res://scenes/AllLevel_scenes/EndGame.tscn" id="5_getvy"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="7_getvy"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_agv4p"]
@@ -1010,9 +1010,6 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_veiaw")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi8hq"]
-size = Vector2(38, 20)
-
 [node name="LevelBoss" type="Node2D" unique_id=2130533778]
 y_sort_enabled = true
 script = ExtResource("1_xtbjn")
@@ -1072,22 +1069,10 @@ position = Vector2(-152, 194)
 y_sort_enabled = true
 position = Vector2(152, 326)
 
-[node name="Torch4" parent="WorldObjects" unique_id=814553867 instance=ExtResource("4_g2ggs")]
-y_sort_enabled = true
-position = Vector2(-152, 323)
-
-[node name="Doors" type="CanvasGroup" parent="." unique_id=466661053]
-
-[node name="DoortoRoom3" type="Area2D" parent="Doors" unique_id=197177838]
-position = Vector2(224, 66)
-script = ExtResource("3_wi8hq")
-next_scene = "uid://b58xkhywvlmmw"
-target_spawn = "SpawnBottom"
-
-[node name="DoortoRoom3" type="CollisionShape2D" parent="Doors/DoortoRoom3" unique_id=630083851]
-z_index = 1
-position = Vector2(0, -25)
-shape = SubResource("RectangleShape2D_wi8hq")
+[node name="Area2D" parent="WorldObjects" unique_id=60009177 instance=ExtResource("5_getvy")]
+z_index = 3
+position = Vector2(0, 217)
+next_scene = "uid://cm6rjfxd2faev"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1625130651]
 script = ExtResource("7_getvy")
@@ -1095,5 +1080,3 @@ script = ExtResource("7_getvy")
 [node name="SpawnTop" type="Marker2D" parent="." unique_id=1172747839]
 position = Vector2(224, 66)
 script = ExtResource("3_odr71")
-
-[connection signal="body_entered" from="Doors/DoortoRoom3" to="Doors/DoortoRoom3" method="_on_body_entered"]

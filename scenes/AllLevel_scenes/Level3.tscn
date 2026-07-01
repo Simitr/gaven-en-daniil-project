@@ -1130,6 +1130,7 @@ y_sort_enabled = true
 [node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("3_dsk3o")]
 z_index = 1
 position = Vector2(325, 117)
+footstep_sounds = null
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("4_nnq0f")]
 y_sort_enabled = true
@@ -1146,6 +1147,16 @@ position = Vector2(244, 403)
 [node name="Torch4" parent="WorldObjects" unique_id=1081807423 instance=ExtResource("4_nnq0f")]
 y_sort_enabled = true
 position = Vector2(171, 403)
+
+[node name="Node2D" parent="WorldObjects" unique_id=237879362 instance=ExtResource("12_nhyqi")]
+position = Vector2(96, 182)
+enemy_scene = ExtResource("4_nhyqi")
+
+[node name="Marker2D2" type="Marker2D" parent="WorldObjects/Node2D" unique_id=1794369392]
+position = Vector2(-42, 230)
+
+[node name="Marker2D3" type="Marker2D" parent="WorldObjects/Node2D" unique_id=898514981]
+position = Vector2(245, 287)
 
 [node name="Doors" type="CanvasGroup" parent="." unique_id=2103233807]
 
@@ -1194,16 +1205,6 @@ position = Vector2(322, 19)
 script = ExtResource("5_458l2")
 
 [node name="LootPopup" parent="." unique_id=1514084314 instance=ExtResource("9_sede1")]
-
-[node name="Node2D" parent="." unique_id=237879362 instance=ExtResource("12_nhyqi")]
-position = Vector2(96, 182)
-enemy_scene = ExtResource("4_nhyqi")
-
-[node name="Marker2D2" type="Marker2D" parent="Node2D" unique_id=1794369392]
-position = Vector2(-42, 230)
-
-[node name="Marker2D3" type="Marker2D" parent="Node2D" unique_id=898514981]
-position = Vector2(245, 287)
 
 [connection signal="body_entered" from="Doors/DoortoRoom4" to="Doors/DoortoRoom4" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom2" to="Doors/DoortoRoom2" method="_on_body_entered"]
