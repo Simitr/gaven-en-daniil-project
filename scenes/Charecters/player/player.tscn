@@ -2,17 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bwaob4v6tnegi" path="res://scenes/Charecters/player/player.gd" id="1_7h4xu"]
 [ext_resource type="AudioStream" uid="uid://dws817s6374gy" path="res://music/sounds/steps/Steps_carpet-001.ogg" id="2_1vx8p"]
-[ext_resource type="AudioStream" uid="uid://b4yxekl3i48c1" path="res://music/sounds/steps/Steps_carpet-002.ogg" id="3_cklkc"]
 [ext_resource type="Texture2D" uid="uid://bwmowgb4ogsy1" path="res://Sprites/Items/Light.png" id="3_flheb"]
-[ext_resource type="AudioStream" uid="uid://cog1mk8ivguld" path="res://music/sounds/steps/Steps_carpet-003.ogg" id="4_d0tpk"]
-[ext_resource type="AudioStream" uid="uid://b48c6ffbbbnl" path="res://music/sounds/steps/Steps_carpet-004.ogg" id="5_mace0"]
 [ext_resource type="Texture2D" uid="uid://d1dd0lfj7b432" path="res://assets/game/prologue_texture/Character/idleAnimation1.png" id="6_0db3b"]
-[ext_resource type="AudioStream" uid="uid://dyxcj3g7lestx" path="res://music/sounds/steps/Steps_carpet-005.ogg" id="6_y2dap"]
 [ext_resource type="Texture2D" uid="uid://5rddffsij2jq" path="res://assets/game/prologue_texture/Character/idleAnimation2.png" id="7_sk4vv"]
-[ext_resource type="AudioStream" uid="uid://dsbf6tcamvta3" path="res://music/sounds/steps/Steps_carpet-006.ogg" id="7_tw6t5"]
 [ext_resource type="Texture2D" uid="uid://ce503svoquqmd" path="res://assets/game/prologue_texture/Character/widle.png" id="8_2jlw7"]
-[ext_resource type="Texture2D" uid="uid://ggsk6cstcyxi" path="res://assets/game/prologue_texture/Character/w.png" id="8_4dh3i"]
-[ext_resource type="AudioStream" uid="uid://brqb872ftq7p1" path="res://music/sounds/steps/Steps_carpet-007.ogg" id="8_chvkh"]
 [ext_resource type="Texture2D" uid="uid://bva58h2wbwhcd" path="res://assets/game/prologue_texture/Character/w2.png" id="8_sk4vv"]
 [ext_resource type="Texture2D" uid="uid://dgcirik2mrbkd" path="res://assets/game/prologue_texture/Character/sprites/cowboyanimation1.png" id="8_undu6"]
 [ext_resource type="Texture2D" uid="uid://dgo8tuywdi4p2" path="res://assets/game/prologue_texture/Character/w3.png" id="9_2jlw7"]
@@ -81,6 +74,7 @@
 [ext_resource type="Texture2D" uid="uid://ekwkvssqlvbd" path="res://assets/game/prologue_texture/Character/handswilroll/s2.png" id="61_pmcni"]
 [ext_resource type="Texture2D" uid="uid://dq5pwwo153y55" path="res://assets/game/prologue_texture/Character/handswilroll/s3.png" id="62_yutb7"]
 [ext_resource type="Texture2D" uid="uid://dnklqb3yxcroh" path="res://assets/game/prologue_texture/Character/handswilroll/s4.png" id="63_w88tb"]
+[ext_resource type="AudioStream" uid="uid://cpc1f0eufxs42" path="res://assets/game/prologue_texture/Character/fe43b1e0b32fbaf.mp3" id="76_14rie"]
 [ext_resource type="Texture2D" uid="uid://dqlm1jbyg3mkk" path="res://Sprites/Items/LightTexture.png" id="82_cklkc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqqwl"]
@@ -133,7 +127,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_4dh3i")
+"texture": ExtResource("9_2jlw7")
 }],
 "loop": true,
 "name": &"idleDownGun",
@@ -241,7 +235,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_4dh3i")
+"texture": ExtResource("9_2jlw7")
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_sk4vv")
@@ -260,7 +254,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walkingDownGun",
-"speed": 7.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -461,8 +455,8 @@ y_sort_enabled = true
 script = ExtResource("1_7h4xu")
 flashlight2 = NodePath("flashlight2")
 Gun = NodePath("CollisionShape2D/Gun")
-footstep_player = NodePath("AudioStreamPlayer2D")
-footstep_sounds = Array[AudioStream]([ExtResource("2_1vx8p"), ExtResource("3_cklkc"), ExtResource("4_d0tpk"), ExtResource("5_mace0"), ExtResource("6_y2dap"), ExtResource("7_tw6t5"), ExtResource("8_chvkh")])
+footstep_player = NodePath("sfx_player")
+footstep_sounds = ExtResource("2_1vx8p")
 damage_overlay = NodePath("ColorRect")
 muzzle_flash = NodePath("PointLight2D")
 
@@ -491,7 +485,7 @@ z_index = 1
 z_as_relative = false
 position = Vector2(-2, -15)
 sprite_frames = SubResource("SpriteFrames_d66dv")
-animation = &"idle"
+animation = &"walkingDownGun"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985997954]
@@ -559,8 +553,11 @@ sprite_frames = SubResource("SpriteFrames_ha1fw")
 animation = &"LampRightWalkingDown"
 autoplay = "LampRightWalkingDown"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=754985006]
-volume_db = 24.0
+[node name="sfx_player" type="AudioStreamPlayer2D" parent="." unique_id=754985006]
+unique_name_in_owner = true
+stream = ExtResource("2_1vx8p")
+volume_db = -8.75
+bus = &"BusWalking"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1876237282]
 position = Vector2(-2, -12)
@@ -571,6 +568,7 @@ texture = ExtResource("82_cklkc")
 texture_scale = 0.7
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1412783386]
+visible = false
 visibility_layer = 15
 z_index = 3
 offset_left = -386.0
@@ -579,4 +577,10 @@ offset_right = 367.0
 offset_bottom = 228.0
 color = Color(0.6901961, 0, 0, 0.89411765)
 
+[node name="sfx_player_music" type="AudioStreamPlayer2D" parent="." unique_id=1401496551]
+stream = ExtResource("76_14rie")
+autoplay = true
+stream_paused = true
+
 [connection signal="area_shape_entered" from="flashlight2/Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cm6rjfxd2faev"]
+[gd_scene format=3 uid="uid://d2p8je7uac3lm"]
 
 [ext_resource type="Texture2D" uid="uid://u2kjlvg61862" path="res://Sprites/MainMenu.png" id="1_10frx"]
 [ext_resource type="Script" uid="uid://dqodw1nmrqayb" path="res://scenes/Items/ItemScripts/MainMenu.gd" id="1_lfst1"]
@@ -16,24 +16,31 @@ script = ExtResource("1_lfst1")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -359.0
+offset_top = -119.00001
+offset_right = 153.0
+offset_bottom = 60.999992
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.4, 1.4)
 size_flags_horizontal = 6
 size_flags_vertical = 6
+mouse_filter = 2
 texture = ExtResource("1_10frx")
 metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="TextureRect" parent="." unique_id=1978509685]
 offset_left = -196.0
-offset_top = -90.0
+offset_top = -91.0
 offset_right = 197.0
-offset_bottom = -11.875
+offset_bottom = -12.875
 size_flags_horizontal = 4
 texture = ExtResource("3_r7j78")
 expand_mode = 1
 stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1845641105]
+z_index = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -44,19 +51,31 @@ offset_bottom = 144.0
 grow_horizontal = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
+mouse_default_cursor_shape = 1
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=920973293]
-layout_mode = 2
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1170095536]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Start" type="Button" parent="." unique_id=920973293]
+offset_left = -255.0
+offset_top = 34.0
+offset_right = 257.0
+offset_bottom = 49.0
 theme_override_colors/font_color = Color(0.7411765, 0.5058824, 0.14509805, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_lfst1")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_10frx")
+action_mode = 0
+keep_pressed_outside = true
 text = "Start
 "
 
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=302348453]
-layout_mode = 2
+[node name="Quit" type="Button" parent="." unique_id=302348453]
+offset_left = -256.0
+offset_top = 56.0
+offset_right = 256.0
+offset_bottom = 71.0
 theme_override_colors/font_color = Color(0.7411765, 0.5058824, 0.14509805, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -67,5 +86,5 @@ text = "Quit
 
 "
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

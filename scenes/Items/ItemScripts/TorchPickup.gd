@@ -14,6 +14,8 @@ func _ready():
 
 
 func _process(_delta):
+	if Global.armed:
+		pickup_lantern()
 	if player_in_range and not picked_up:
 		if Input.is_action_just_pressed("Interact"):
 			pickup_lantern()

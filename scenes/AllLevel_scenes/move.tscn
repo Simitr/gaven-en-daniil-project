@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://2txwba0qscnh"]
+
+[ext_resource type="Script" uid="uid://ciw6vxu8yr3ad" path="res://scenes/AllLevel_scenes/move.gd" id="1_fjs04"]
+[ext_resource type="Texture2D" uid="uid://bv3sm5tmiems1" path="res://assets/game/prologue_texture/Character/move.png" id="1_u1i70"]
+[ext_resource type="Texture2D" uid="uid://4e8i5hericm1" path="res://assets/game/prologue_texture/Character/d.png" id="2_mhr7f"]
+[ext_resource type="Texture2D" uid="uid://bjavevkor6emy" path="res://assets/game/prologue_texture/Character/black.png" id="2_u1i70"]
+[ext_resource type="Texture2D" uid="uid://vpi54p6smqmu" path="res://assets/game/prologue_texture/Character/a.png" id="5_e030d"]
+[ext_resource type="Texture2D" uid="uid://ggsk6cstcyxi" path="res://assets/game/prologue_texture/Character/w.png" id="6_mmfy0"]
+[ext_resource type="Texture2D" uid="uid://c1et8kax7fhcy" path="res://assets/game/prologue_texture/Character/s.png" id="7_8k4a5"]
+
+[node name="Move" type="Node2D" unique_id=1227018285]
+script = ExtResource("1_fjs04")
+
+[node name="d" type="Sprite2D" parent="." unique_id=2064041621]
+z_index = 19
+position = Vector2(232, 209)
+texture = ExtResource("2_mhr7f")
+
+[node name="Move" type="Sprite2D" parent="." unique_id=1145223597]
+z_index = 17
+position = Vector2(321, 200)
+texture = ExtResource("1_u1i70")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=41013346]
+position = Vector2(420, 302)
+scale = Vector2(-664.9982, 415.5)
+texture = ExtResource("2_u1i70")
+
+[node name="a" type="Sprite2D" parent="." unique_id=155917944]
+z_index = 19
+position = Vector2(110, 208)
+texture = ExtResource("5_e030d")
+
+[node name="w" type="Sprite2D" parent="." unique_id=464454648]
+z_index = 19
+position = Vector2(170, 140)
+texture = ExtResource("6_mmfy0")
+
+[node name="s" type="Sprite2D" parent="." unique_id=818962618]
+z_index = 19
+position = Vector2(170, 208)
+texture = ExtResource("7_8k4a5")

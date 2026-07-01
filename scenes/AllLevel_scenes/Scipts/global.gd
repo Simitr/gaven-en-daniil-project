@@ -23,3 +23,4 @@ var monster_hp := 25.0
 var monster_dead := false
 
 var ui_on = false
+var move = false

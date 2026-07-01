@@ -20,12 +20,13 @@ config/icon="res://icon.svg"
 Global="*uid://bbie7s8obk5v0"
 TransitionLayer="*uid://t50fjkox2y4y"
 Ui="*uid://bxkro1qbvgf6d"
+GameState="*uid://cr4008v2ive5j"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=4
+window/size/mode=3
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"

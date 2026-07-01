@@ -14,7 +14,7 @@ var targetPosition: Vector2
 @export var flashlight2: PointLight2D
 @export var Gun: Marker2D
 @export var footstep_player: AudioStreamPlayer2D
-@export var footstep_sounds: Array[AudioStream] = []
+@export var footstep_sounds: AudioStream
 
 # ── экранный эффект урона ──
 # Добавь в сцену ColorRect (растянуть на весь экран, красный, alpha = 0)
@@ -38,6 +38,9 @@ var knockback_decay := 8.0   # насколько быстро гасится (�
 var damage_flash_timer := 0.0
 var damage_flash_duration := 0.4
 
+var footstep_frames : Array = [1, 3]
+var footstepUp_frames : Array = [4]
+
 
 func _ready():
 	ammo            = Global.ammo
@@ -51,6 +54,10 @@ func _ready():
 	if damage_overlay:
 		damage_overlay.modulate.a = 0.0
 
+func load_sfx(sfx_to_load):
+	if %sfx_player.stream != sfx_to_load:
+		%sfx_player.stop()
+		%sfx_player.stream = sfx_to_load
 
 func _process(delta):
 	if Input.is_action_just_pressed("Heal"):
@@ -96,8 +103,7 @@ func _physics_process(delta):
 	velocity += knockback_velocity
 	knockback_velocity = knockback_velocity.lerp(Vector2.ZERO, knockback_decay * delta)
 
-	if move_dir != Vector2.ZERO:
-		play_footstep(delta)
+	
 
 	move_and_slide()
 
@@ -121,20 +127,7 @@ func update_flashlight():
 #  Шаги
 # ─────────────────────────────────────────────
 
-func play_footstep(delta: float):
-	if footstep_sounds.is_empty():
-		return
-	step_timer += delta
-	if step_timer < step_interval:
-		return
-	step_timer = 0.0
-	if footstep_player.playing:
-		return
-	var sound = footstep_sounds[randi() % footstep_sounds.size()]
-	footstep_player.stream = sound
-	footstep_player.volume_db = randf_range(-10.0, -5.0)
-	footstep_player.pitch_scale = randf_range(0.9, 1.1)
-	footstep_player.play()
+
 
 
 # ─────────────────────────────────────────────
@@ -246,3 +239,18 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	if area.is_in_group("enemyarea"):
 		print(area)
 		print(area.get_groups())
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if $AnimatedSprite2D.animation == "idle"  : return
+	if $AnimatedSprite2D.animation == "idleDown"  : return
+	if $AnimatedSprite2D.animation == "idleDownGun"  : return
+	if $AnimatedSprite2D.animation == "idleGun"  : return
+	if $AnimatedSprite2D.animation == "idleLeft"  : return
+	if $AnimatedSprite2D.animation == "idleLeftGun"  : return
+	if $AnimatedSprite2D.animation == "idleUp"  : return
+	if $AnimatedSprite2D.animation == "idleUpGun"  : return
+	load_sfx(footstep_sounds)
+	if $AnimatedSprite2D.animation == "walkingDownGun" or $AnimatedSprite2D.animation == "walkingUpLeftGun" or $AnimatedSprite2D.animation == "walkingUpRightGun":
+		if $AnimatedSprite2D.frame in footstepUp_frames: %sfx_player.play()
+	elif $AnimatedSprite2D.frame in footstep_frames: %sfx_player.play()

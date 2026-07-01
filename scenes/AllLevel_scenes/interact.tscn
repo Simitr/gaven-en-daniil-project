@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cn104un7nwcp1"]
+
+[ext_resource type="Script" uid="uid://iaymn275djks" path="res://scenes/AllLevel_scenes/interact.gd" id="1_6jixf"]
+[ext_resource type="Texture2D" uid="uid://bjavevkor6emy" path="res://assets/game/prologue_texture/Character/black.png" id="2_uc7h2"]
+[ext_resource type="Texture2D" uid="uid://c6cfsocbsccfc" path="res://assets/game/prologue_texture/Character/f.png" id="3_fbjk0"]
+[ext_resource type="Texture2D" uid="uid://byasc5g5g7r47" path="res://assets/game/prologue_texture/Character/interact.png" id="4_uc7h2"]
+
+[node name="Interact" type="Node2D" unique_id=1512284559]
+script = ExtResource("1_6jixf")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=801069537]
+position = Vector2(420, 302)
+scale = Vector2(-664.9982, 415.5)
+texture = ExtResource("2_uc7h2")
+
+[node name="f" type="Sprite2D" parent="." unique_id=695169392]
+z_index = 19
+position = Vector2(170, 195)
+texture = ExtResource("3_fbjk0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=749281995]
+position = Vector2(360, 200)
+texture = ExtResource("4_uc7h2")

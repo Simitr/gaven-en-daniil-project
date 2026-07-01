@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bvj8as7uu2sn1" path="res://assets/game/prologue_texture/Character/trap.png" id="21_e0aqg"]
 [ext_resource type="AudioStream" uid="uid://bbhmjoud435yf" path="res://scenes/prologue_scene/movement-and-falling-stones-landslide.mp3" id="39_ngby5"]
 [ext_resource type="Texture2D" uid="uid://des4dk6wacqj0" path="res://assets/game/prologue_texture/Character/press d sreen.png" id="40_4xpkd"]
+[ext_resource type="Texture2D" uid="uid://4e8i5hericm1" path="res://assets/game/prologue_texture/Character/d.png" id="41_6epyh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blaey"]
 animations = [{
@@ -227,7 +228,7 @@ texture_filter = 1
 position = Vector2(300, 148)
 texture = ExtResource("5_ncrow")
 
-[node name="Node" type="Node" parent="." unique_id=1212987585 node_paths=PackedStringArray("Parallax", "Parallax2", "Parallax3", "Parallax4", "Player", "animatieCharacter", "music", "fall", "timer", "horseAudio", "blackBackground", "trap", "PressD")]
+[node name="Node" type="Node" parent="." unique_id=1212987585 node_paths=PackedStringArray("Parallax", "Parallax2", "Parallax3", "Parallax4", "Player", "animatieCharacter", "music", "fall", "timer", "horseAudio", "blackBackground", "trap", "PressD", "PressD2")]
 script = ExtResource("3_ncrow")
 Parallax = NodePath("../Parallax2D")
 Parallax2 = NodePath("../Parallax2D2")
@@ -246,6 +247,7 @@ GrassMaxSpeed = 70.0
 BackMaxSpeed = 12.0
 trap = NodePath("../Sprite2D")
 PressD = NodePath("../Sprite2D2")
+PressD2 = NodePath("../Sprite2D3")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1786927392]
 texture_filter = 1
@@ -307,3 +309,8 @@ stream = ExtResource("39_ngby5")
 z_index = 11
 position = Vector2(314, 158)
 texture = ExtResource("40_4xpkd")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=307983011]
+z_index = 10
+position = Vector2(330, 155)
+texture = ExtResource("41_6epyh")

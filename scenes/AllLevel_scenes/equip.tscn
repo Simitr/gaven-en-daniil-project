@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bv2gh5mmtaoyf"]
+
+[ext_resource type="Script" uid="uid://va5wq8royuid" path="res://scenes/AllLevel_scenes/equip.gd" id="1_b5obr"]
+[ext_resource type="Texture2D" uid="uid://bjavevkor6emy" path="res://assets/game/prologue_texture/Character/black.png" id="2_ex2jy"]
+[ext_resource type="Texture2D" uid="uid://dk00ospladvwd" path="res://assets/game/prologue_texture/Character/e.png" id="3_ex2jy"]
+[ext_resource type="Texture2D" uid="uid://cx58gcu4c3cuc" path="res://assets/game/prologue_texture/Character/equp.png" id="4_fkunr"]
+
+[node name="Equip" type="Node2D" unique_id=661738405]
+script = ExtResource("1_b5obr")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=43024738]
+position = Vector2(420, 302)
+scale = Vector2(-664.9982, 415.5)
+texture = ExtResource("2_ex2jy")
+
+[node name="e" type="Sprite2D" parent="." unique_id=2142070340]
+z_index = 19
+position = Vector2(230, 195)
+texture = ExtResource("3_ex2jy")
+
+[node name="Move" type="Sprite2D" parent="." unique_id=152609093]
+z_index = 17
+position = Vector2(321, 200)
+texture = ExtResource("4_fkunr")

@@ -26,6 +26,7 @@ public partial class ParallaxSky : Node
 	[Export] public float BackMaxSpeed = 15f;
 	[Export] public Sprite2D trap;
     [Export] public Sprite2D PressD;
+    [Export] public Sprite2D PressD2;
     private bool isMoving = false;
 	public string state = "";
 	public bool isatrap = false;
@@ -40,6 +41,7 @@ public partial class ParallaxSky : Node
 		var tween = CreateTween();
 		tween.TweenProperty(blackBackground, "modulate:a", 0f, 2.0f);
         PressD.Modulate = new Color(1, 1, 1, 0);
+        PressD2.Modulate = new Color(1, 1, 1, 0);
 
 
 
@@ -84,6 +86,7 @@ public partial class ParallaxSky : Node
                     var twee = CreateTween();
                     twee.TweenProperty(blackBackground, "modulate:a", 0f, 0.2f);
                     PressD.Modulate = new Color(1, 1, 1, 0);
+                    PressD2.Modulate = new Color(1, 1, 1, 0);
                     var tweenmusic = CreateTween();
 					tweenmusic.TweenProperty(music, "volume_db", -10, 2f);
 
@@ -177,8 +180,9 @@ public partial class ParallaxSky : Node
 					var tween = CreateTween();
 					tween.TweenProperty(blackBackground, "modulate:a", 0.7f, 0.2f);
 					PressD.Modulate = new Color(1, 1, 1, 1);
-					
-					if (Input.IsActionPressed("walkRight"))
+				    PressD2.Modulate = new Color(1, 1, 1, 1);
+
+                    if (Input.IsActionPressed("walkRight"))
 					{
 						zalupa = true;
 					}

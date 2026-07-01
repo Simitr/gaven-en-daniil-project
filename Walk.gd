@@ -12,8 +12,7 @@ var enabled
 func update(delta):
 
 
-	if !Global.armed:
-		character.play_footstep(delta)
+	if !Global.armed and Global.move:
 		var dir = GameInput.movement_input()
 		if dir == Vector2.ZERO:
 			fsm.change_state("Idle")

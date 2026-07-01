@@ -36,7 +36,6 @@ func _ready():
 
 
 func _process(delta):
-
 	if player_in_range and Input.is_action_just_pressed("Interact"):
 		toggle_torch()
 

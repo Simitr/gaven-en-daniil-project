@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bsggw0c7e4xt2"]
 
 [ext_resource type="Texture2D" uid="uid://buqr8sub0snn0" path="res://assets/game/prologue_texture/Dungeon_assets/FG_Cellar.png" id="1_7vu5a"]
-[ext_resource type="Script" uid="uid://270i44b4hkyr" path="res://scenes/AllLevel_scenes/Scipts/Room.gd" id="1_gslef"]
+[ext_resource type="Script" uid="uid://d3w43caeqabhh" path="res://scenes/AllLevel_scenes/level_1.gd" id="1_pgoe3"]
 [ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Scipts/Door.gd" id="1_tmxtc"]
 [ext_resource type="PackedScene" uid="uid://bc4waybd2ft8u" path="res://scenes/Charecters/player/player.tscn" id="2_veiaw"]
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="6_3ydi7"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://b8bgt0c07p4dq" path="res://scenes/Items/TorchPickup.tscn" id="6_pgoe3"]
 [ext_resource type="Texture2D" uid="uid://p6akmalgv1du" path="res://Sprites/Items/Lantern.png" id="7_sxyga"]
 [ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/ItemPickup.tscn" id="8_iist4"]
+[ext_resource type="Texture2D" uid="uid://dqlm1jbyg3mkk" path="res://Sprites/Items/LightTexture.png" id="8_sxyga"]
+[ext_resource type="Texture2D" uid="uid://dcvlctsorfrbj" path="res://assets/game/prologue_texture/Character/horsefall.png" id="9_k761q"]
+[ext_resource type="Texture2D" uid="uid://lh5uds816bu4" path="res://assets/game/prologue_texture/Character/trap2.png" id="10_urr1c"]
 [ext_resource type="PackedScene" uid="uid://brr6k13ob4p8x" path="res://scenes/Items/KeyPopup.tscn" id="11_1iw4m"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1iw4m"]
@@ -980,12 +983,16 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_veiaw")
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pgoe3"]
+a = Vector2(-32, 26)
+b = Vector2(-32, -16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ey6jb"]
 size = Vector2(66, 68)
 
 [node name="Node2D2" type="Node2D" unique_id=2130533778]
 y_sort_enabled = true
-script = ExtResource("1_gslef")
+script = ExtResource("1_pgoe3")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=58600368]
 y_sort_enabled = true
@@ -1026,9 +1033,8 @@ y_sort_enabled = true
 position = Vector2(339, 107)
 
 [node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_veiaw")]
-visible = false
 z_index = 1
-position = Vector2(-119, 177)
+position = Vector2(-126, 178)
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("6_3ydi7")]
 y_sort_enabled = true
@@ -1050,6 +1056,33 @@ y_sort_enabled = true
 position = Vector2(-171, 136)
 popup = NodePath("../../LootPopup")
 lantern_texture = ExtResource("7_sxyga")
+
+[node name="interactTrigger" type="Area2D" parent="WorldObjects" unique_id=1226115402]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldObjects/interactTrigger" unique_id=880191841]
+position = Vector2(-129, 164)
+shape = SubResource("SegmentShape2D_pgoe3")
+
+[node name="LightTexture" type="PointLight2D" parent="WorldObjects" unique_id=1863987101]
+y_sort_enabled = true
+position = Vector2(-110.99998, 168)
+scale = Vector2(0.11364066, 0.08320313)
+color = Color(0.99452287, 0.9108183, 0.8316201, 1)
+energy = 1.5
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("8_sxyga")
+
+[node name="Horseass" type="Sprite2D" parent="WorldObjects" unique_id=442672419]
+position = Vector2(-91, 145)
+scale = Vector2(2, 2)
+texture = ExtResource("9_k761q")
+
+[node name="Trap2" type="Sprite2D" parent="WorldObjects" unique_id=981548606]
+visible = false
+position = Vector2(-121, 170)
+scale = Vector2(0.96, 1.2)
+texture = ExtResource("10_urr1c")
 
 [node name="Doors" type="CanvasGroup" parent="." unique_id=1619103931]
 position = Vector2(55, 84)
@@ -1078,4 +1111,5 @@ script = ExtResource("6_gslef")
 
 [node name="LootPopup" parent="." unique_id=1514084314 instance=ExtResource("11_1iw4m")]
 
+[connection signal="body_exited" from="WorldObjects/interactTrigger" to="." method="_on_interact_trigger_body_exited"]
 [connection signal="body_entered" from="Doors/DoortoRoom2" to="Doors/DoortoRoom2" method="_on_body_entered"]

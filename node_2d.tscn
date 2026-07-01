@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dum5tlqqvek4y"]
+
+[ext_resource type="Script" uid="uid://cev02raj8d10n" path="res://node_2d.gd" id="1_wtcfe"]
+
+[node name="Control" type="Control" unique_id=13928724]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wtcfe")
+
+[node name="Button" type="Button" parent="." unique_id=1823385761]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.423
+anchor_top = 0.42800003
+anchor_right = 0.587
+anchor_bottom = 0.60400003
+offset_left = -37.72
+offset_top = -11.580017
+offset_right = 33.320007
+offset_bottom = 0.0599823
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "чтар"
+
+[node name="MenuButton" type="MenuButton" parent="." unique_id=1222885578]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.134
+anchor_top = 0.22600001
+anchor_right = 0.134
+anchor_bottom = 0.22600001
+offset_left = 105.24
+offset_top = 139.64
+offset_right = 276.24
+offset_bottom = 302.64
+text = "test"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
