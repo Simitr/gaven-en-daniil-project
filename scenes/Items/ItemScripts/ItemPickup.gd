@@ -7,13 +7,19 @@ enum PickupType {
 	KEY
 }
 
+@export var pickup_id: String
 @export var type: PickupType
 @export var amount := 1
 @onready var sprite = $AnimatedSprite2D
 
 
 func _ready():
+	if Global.collected_pickups.has(pickup_id):
+		queue_free()
+		return
+	
 	randomize()
+	
 	
 	match type:
 		PickupType.AMMO:
@@ -21,7 +27,7 @@ func _ready():
 			sprite.play("AmmoPickup")
 			
 		PickupType.HEALTH_POTION:
-			amount = randi_range(1, 2)
+			amount = 1
 			sprite.play("HealthPotionPickup")
 			
 		PickupType.LANTERN:
@@ -48,6 +54,5 @@ func _on_body_entered(body: Node2D) -> void:
 		PickupType.KEY:
 			body.add_key(amount)
 
-
-
+	Global.collected_pickups[pickup_id] = true
 	queue_free()

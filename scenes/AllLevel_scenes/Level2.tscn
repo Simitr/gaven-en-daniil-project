@@ -1147,6 +1147,7 @@ position = Vector2(-1, 1)
 visibility_layer = 7
 z_index = 1
 position = Vector2(251, 193)
+footstep_sounds = null
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("7_33fcf")]
 y_sort_enabled = true
@@ -1155,6 +1156,16 @@ position = Vector2(121, 84)
 [node name="Torch2" parent="WorldObjects" unique_id=1931367413 instance=ExtResource("7_33fcf")]
 y_sort_enabled = true
 position = Vector2(252, 84)
+
+[node name="Node2D" parent="WorldObjects" unique_id=237879362 instance=ExtResource("11_8ubld")]
+position = Vector2(97, 181)
+enemy_scene = ExtResource("9_bvl68")
+
+[node name="Marker2D2" type="Marker2D" parent="WorldObjects/Node2D" unique_id=1247577661]
+position = Vector2(361, -67)
+
+[node name="Marker2D3" type="Marker2D" parent="WorldObjects/Node2D" unique_id=1665286394]
+position = Vector2(-104, 123)
 
 [node name="Doors" type="CanvasGroup" parent="." unique_id=618052261]
 position = Vector2(121, 83)
@@ -1206,16 +1217,6 @@ script = ExtResource("4_4onql")
 [node name="SpawnBottom" type="Marker2D" parent="." unique_id=1460348348]
 position = Vector2(182, 340)
 script = ExtResource("4_4onql")
-
-[node name="Node2D" parent="." unique_id=237879362 instance=ExtResource("11_8ubld")]
-position = Vector2(96, 182)
-enemy_scene = ExtResource("9_bvl68")
-
-[node name="Marker2D2" type="Marker2D" parent="Node2D" unique_id=1247577661]
-position = Vector2(361, -67)
-
-[node name="Marker2D3" type="Marker2D" parent="Node2D" unique_id=1665286394]
-position = Vector2(-104, 123)
 
 [connection signal="body_entered" from="Doors/DoortoRoom1" to="Doors/DoortoRoom1" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom3" to="Doors/DoortoRoom3" method="_on_body_entered"]

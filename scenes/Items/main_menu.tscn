@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d2p8je7uac3lm"]
+[gd_scene format=3 uid="uid://cm6rjfxd2faev"]
 
 [ext_resource type="Texture2D" uid="uid://u2kjlvg61862" path="res://Sprites/MainMenu.png" id="1_10frx"]
 [ext_resource type="Script" uid="uid://dqodw1nmrqayb" path="res://scenes/Items/ItemScripts/MainMenu.gd" id="1_lfst1"]

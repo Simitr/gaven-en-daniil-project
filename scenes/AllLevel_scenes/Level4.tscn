@@ -1129,6 +1129,7 @@ y_sort_enabled = true
 [node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_l7ukn")]
 z_index = 1
 position = Vector2(1092, 687)
+footstep_sounds = null
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("4_dsk3o")]
 y_sort_enabled = true
@@ -1161,6 +1162,8 @@ key_texture = ExtResource("6_mbd1d")
 z_index = 1
 y_sort_enabled = true
 position = Vector2(386, 267)
+pickup_id = null
+amount = null
 
 [node name="Doors" type="CanvasGroup" parent="." unique_id=1322639328]
 

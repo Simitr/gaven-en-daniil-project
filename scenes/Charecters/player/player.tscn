@@ -49,7 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://cy1yctmhxmhh6" path="res://assets/game/prologue_texture/Character/handswilroll/sL1.png" id="37_aqqwl"]
 [ext_resource type="Texture2D" uid="uid://c2algc1mfdxl" path="res://assets/game/prologue_texture/Character/handswilroll/sL2.png" id="38_flheb"]
 [ext_resource type="Texture2D" uid="uid://dya4j3irmewic" path="res://assets/game/prologue_texture/Character/handswilroll/R0.png" id="38_vcpmc"]
-[ext_resource type="Script" uid="uid://l2wkrhsj51lo" path="res://scenes/Charecters/player/fsm.gd" id="38_yutb7"]
+[ext_resource type="Script" path="res://scenes/Charecters/player/fsm.gd" id="38_yutb7"]
 [ext_resource type="Texture2D" uid="uid://x8k4ci3i6boj" path="res://assets/game/prologue_texture/Character/handswilroll/L0.png" id="39_4nkv2"]
 [ext_resource type="Texture2D" uid="uid://otpjdc881qi2" path="res://assets/game/prologue_texture/Character/handswilroll/sL3.png" id="39_14rie"]
 [ext_resource type="Texture2D" uid="uid://bmv8bjkwqejmd" path="res://assets/game/prologue_texture/Character/handswilroll/R1.png" id="39_qhtry"]
@@ -580,7 +580,6 @@ color = Color(0.6901961, 0, 0, 0.89411765)
 [node name="sfx_player_music" type="AudioStreamPlayer2D" parent="." unique_id=1401496551]
 stream = ExtResource("76_14rie")
 autoplay = true
-stream_paused = true
 
 [connection signal="area_shape_entered" from="flashlight2/Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

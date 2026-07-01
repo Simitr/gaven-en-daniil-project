@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://2vei58thi3bf"]
+
+[ext_resource type="Script" uid="uid://4xj7d7p8jya4" path="res://scenes/Items/pause_menu.gd" id="1_6wrik"]
+[ext_resource type="FontFile" uid="uid://vg0rwher20o0" path="res://Sprites/Items/alagard.ttf" id="2_ypwr7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gav2n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eigfu"]
+
+[node name="pause_menu" type="Node2D" unique_id=496654756]
+script = ExtResource("1_6wrik")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1215124307]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.0
+offset_top = -121.0
+offset_right = 215.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1948472173]
+zoom = Vector2(1.5, 1.5)
+
+[node name="QuitGame" type="Button" parent="." unique_id=463346148]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_right = 256.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_ypwr7")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gav2n")
+text = "Quit Game
+
+
+"
+
+[node name="BackDesktop" type="Button" parent="." unique_id=1423978161]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_top = 43.0
+offset_right = 256.0
+offset_bottom = 78.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_ypwr7")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eigfu")
+action_mode = 0
+keep_pressed_outside = true
+text = "Back to Desktop
+
+"
+
+[node name="BackGame" type="Button" parent="." unique_id=1077776]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -38.0
+offset_right = 256.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_ypwr7")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gav2n")
+text = "Back to Game
+
+"
+
+[connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="BackDesktop" to="." method="_on_back_desktop_pressed"]
+[connection signal="pressed" from="BackGame" to="." method="_on_back_game_pressed"]

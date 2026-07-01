@@ -11,6 +11,7 @@ var lantern: int = 0
 var key: int = 0
 var targetPosition: Vector2
 
+
 @export var flashlight2: PointLight2D
 @export var Gun: Marker2D
 @export var footstep_player: AudioStreamPlayer2D
@@ -53,6 +54,7 @@ func _ready():
 
 	if damage_overlay:
 		damage_overlay.modulate.a = 0.0
+	
 
 func load_sfx(sfx_to_load):
 	if %sfx_player.stream != sfx_to_load:
@@ -227,7 +229,7 @@ func _notify_enemies_flee():
 #  Ввод
 # ─────────────────────────────────────────────
 
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:	
 	if event.is_action_pressed("shoot"):
 		if Global.armed and Global.ammo > 0:
 			if shoot_timer <= 0:
@@ -254,3 +256,5 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 	if $AnimatedSprite2D.animation == "walkingDownGun" or $AnimatedSprite2D.animation == "walkingUpLeftGun" or $AnimatedSprite2D.animation == "walkingUpRightGun":
 		if $AnimatedSprite2D.frame in footstepUp_frames: %sfx_player.play()
 	elif $AnimatedSprite2D.frame in footstep_frames: %sfx_player.play()
+	
+	

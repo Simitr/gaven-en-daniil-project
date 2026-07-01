@@ -1044,12 +1044,16 @@ position = Vector2(-108, 53)
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-137, 69)
+pickup_id = null
+amount = null
 
 [node name="HealthPickup" parent="WorldObjects" unique_id=927233797 instance=ExtResource("8_iist4")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-299, -68)
+pickup_id = null
 type = 1
+amount = null
 
 [node name="KeyTorch" parent="WorldObjects" unique_id=2046788511 node_paths=PackedStringArray("popup") instance=ExtResource("6_pgoe3")]
 y_sort_enabled = true
