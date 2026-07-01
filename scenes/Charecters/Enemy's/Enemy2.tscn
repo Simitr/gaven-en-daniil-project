@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://msbdwa3wumwi" path="res://scripts/enemy_2.gd" id="1_i1eqr"]
 [ext_resource type="Texture2D" uid="uid://lyvq158r0eyg" path="res://Sprites/EnemyAsset/GuardMutantEnemy.png" id="2_exewc"]
 [ext_resource type="Texture2D" uid="uid://bcdhh0sr4cmpu" path="res://assets/game/prologue_texture/Character/handswilroll/6eb7e6f39df33c5.png" id="2_ie7wm"]
+[ext_resource type="Texture2D" uid="uid://bqg6ntnxt44oc" path="res://assets/game/prologue_texture/Character/enemy/6fall.png" id="4_rs8r0"]
+[ext_resource type="Texture2D" uid="uid://dnjhwn8q4q5xr" path="res://assets/game/prologue_texture/Character/enemy/5fall.png" id="5_askrc"]
+[ext_resource type="Texture2D" uid="uid://usgea7uw5vge" path="res://assets/game/prologue_texture/Character/enemy/4fall.png" id="6_f4fpk"]
+[ext_resource type="Texture2D" uid="uid://iau7n7uwmqrw" path="res://assets/game/prologue_texture/Character/enemy/3fall.png" id="7_r66ij"]
+[ext_resource type="Texture2D" uid="uid://bnmqfk8mtpvns" path="res://assets/game/prologue_texture/Character/enemy/2fall.png" id="8_15utx"]
+[ext_resource type="Texture2D" uid="uid://vlvkd7p2c861" path="res://assets/game/prologue_texture/Character/enemy/1fall.png" id="9_5j36i"]
+[ext_resource type="AudioStream" uid="uid://cjjalune51xyi" path="res://assets/game/prologue_texture/Character/giant-monster-footstep-fx_G_minor.wav" id="10_f4fpk"]
+[ext_resource type="AudioStream" uid="uid://cr2vyksiq5dqd" path="res://assets/game/prologue_texture/Character/horror-scream_D_minor.wav" id="11_r66ij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie7wm"]
 size = Vector2(26, 57)
@@ -27,17 +35,60 @@ animations = [{
 "loop": true,
 "name": &"hurt",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rs8r0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_askrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f4fpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r66ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_15utx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5j36i")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 6.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5j36i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_15utx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r66ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f4fpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_askrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rs8r0")
+}],
+"loop": false,
+"name": &"vanish",
+"speed": 6.0
 }]
 
 [node name="Enemy2" type="CharacterBody2D" unique_id=435413124 groups=["enemy"]]
 script = ExtResource("1_i1eqr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239150159]
-
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_ie7wm")
-
-
 
 [node name="Area2D" type="Area2D" parent="." unique_id=318689570 groups=["enemy"]]
 visible = false
@@ -50,7 +101,7 @@ shape = SubResource("CircleShape2D_bjf8o")
 position = Vector2(1.5258789e-05, -7.6293945e-06)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_ie7wm")
-animation = &"fullHealth"
+animation = &"vanish"
 autoplay = "fullHealth"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1339110142]
@@ -58,6 +109,12 @@ path_desired_distance = 3.0
 target_desired_distance = 3.0
 path_postprocessing = 1
 debug_use_custom = true
+
+[node name="steps" type="AudioStreamPlayer2D" parent="." unique_id=242313915]
+stream = ExtResource("10_f4fpk")
+
+[node name="screem" type="AudioStreamPlayer2D" parent="." unique_id=1606346137]
+stream = ExtResource("11_r66ij")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

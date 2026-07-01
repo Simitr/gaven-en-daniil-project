@@ -172,13 +172,14 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("1_x2o3u")
 
-[node name="Area2D" type="Area2D" parent="LightTexture" unique_id=882222608 groups=["light"]]
+[node name="Area2D" type="Area2D" parent="LightTexture" unique_id=882222608]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LightTexture/Area2D" unique_id=1779541694]
 position = Vector2(-8.392334e-05, 8.029396)
 rotation = 1.5707964
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_jqmfr")
+disabled = true
 debug_color = Color(0.84393924, 0.0010532934, 0.9154825, 0.41960785)
 
 [node name="Smoke" type="GPUParticles2D" parent="." unique_id=1436962051]

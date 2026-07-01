@@ -23,7 +23,7 @@ var monster_hp := 25.0
 var monster_dead := false
 
 var ui_on = false
-var move = false
+var move = true
 
 var interact_triggered := false 
 var saved_player_position: Vector2 = Vector2.ZERO

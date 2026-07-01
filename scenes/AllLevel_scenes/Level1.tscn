@@ -1074,6 +1074,7 @@ shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("8_sxyga")
 
 [node name="Horseass" type="Sprite2D" parent="WorldObjects" unique_id=442672419]
+visible = false
 position = Vector2(-91, 145)
 scale = Vector2(2, 2)
 texture = ExtResource("9_k761q")

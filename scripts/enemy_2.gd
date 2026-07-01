@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 enum State { CHASE, FLEE, WAIT, ATTACK, PHASE_THROUGH }
 
-@export var speed = 100.0
+@export var speed = 60.0
 @export var rage_speed_multiplier = 1.8
 @export var flee_speed = 140.0
 @export var flee_distance = 250.0
 @export var attack_range = 40.0
-@export var flee_wait_time = 2.0
+@export var flee_wait_time = 0.5
 @export var attack_cooldown = 1.0
-@export var attack_damage = 10
+@export var attack_damage = 30
 @export var knockback_force = 200.0
 @export var corner_check_radius = 60.0
 @export var phase_speed = 160.0
@@ -60,8 +60,8 @@ func _ready():
 	attack_timer.timeout.connect(func(): can_attack = true)
 
 	# АНИМАЦИЯ: воспроизвести анимацию появления врага
-	# if sprite.sprite_frames and sprite.sprite_frames.has_animation("spawn"):
-	#     sprite.play("spawn")
+	if sprite.sprite_frames and sprite.sprite_frames.has_animation("spawn"):
+		sprite.play("spawn")
 
 
 func add_hp(damage):
@@ -107,9 +107,9 @@ func _vanish():
 	dead = true
 
 	# АНИМАЦИЯ: анимация исчезновения
-	# if sprite.sprite_frames and sprite.sprite_frames.has_animation("vanish"):
-	#     sprite.play("vanish")
-	# await sprite.animation_finished
+	if sprite.sprite_frames and sprite.sprite_frames.has_animation("vanish"):
+		sprite.play("vanish")
+		await sprite.animation_finished
 
 	# Уведомляем спаунер чтобы он запустил таймер переспауна
 	var spawner = get_tree().get_first_node_in_group("enemy_spawner")
@@ -162,9 +162,7 @@ func _process_chase(delta):
 		state = State.ATTACK
 		return
 
-	if _is_cornered() and phase_cooldown_timer <= 0:
-		_enter_phase_through()
-		return
+
 
 	# АНИМАЦИЯ: анимация преследования
 	# if sprite.sprite_frames and sprite.sprite_frames.has_animation("walk"):
@@ -239,6 +237,7 @@ func _process_attack():
 
 		if player and player.has_method("take_damage"):
 			player.take_damage(attack_damage)
+			$screem.play()
 		if player and player.has_method("apply_knockback"):
 			player.apply_knockback((player.global_position - global_position).normalized() * knockback_force)
 
@@ -252,25 +251,24 @@ func _process_attack():
 
 # ── PHASE THROUGH ──────────────────────────────
 
-func _is_cornered() -> bool:
-	var space = get_world_2d().direct_space_state
-	var blocked = 0
-	for d in [Vector2.RIGHT, Vector2.LEFT, Vector2.UP, Vector2.DOWN]:
-		var q = PhysicsRayQueryParameters2D.create(
-			global_position, global_position + d * corner_check_radius, collision_mask)
-		q.exclude = [self]
-		if space.intersect_ray(q):
-			blocked += 1
-	return blocked >= 3
+#func _is_cornered() -> bool:
+	#var space = get_world_2d().direct_space_state
+	#var blocked = 0
+	#for d in [Vector2.RIGHT, Vector2.LEFT, Vector2.UP, Vector2.DOWN]:
+		#var q = PhysicsRayQueryParameters2D.create(
+		#	global_position, global_position + d * corner_check_radius, collision_mask)
+		##if space.intersect_ray(q):
+		#	blocked += 1
+#	return blocked >= 3
 
 
-func _enter_phase_through():
-	state = State.PHASE_THROUGH
-	phase_cooldown_timer = phase_cooldown
-	phase_timer = phase_duration
-	phase_direction = (global_position - player.global_position).normalized()
-	set_collision_mask_value(1, false)
-	modulate = Color(1, 1, 1, 0.4)
+#func _enter_phase_through():
+	#state = State.PHASE_THROUGH
+	#phase_cooldown_timer = phase_cooldown
+	#phase_timer = phase_duration
+	#phase_direction = (global_position - player.global_position).normalized()
+	#set_collision_mask_value(1, false)
+	#modulate = Color(1, 1, 1, 0.4)
 
 	# АНИМАЦИЯ: анимация прохождения сквозь стены
 	# if sprite.sprite_frames and sprite.sprite_frames.has_animation("scared"):
@@ -299,3 +297,7 @@ func _on_wait_timer_timeout():
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	pass
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

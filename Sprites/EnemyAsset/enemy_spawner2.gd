@@ -45,11 +45,12 @@ const ROOM_NAME_SEPARATOR := "_"
 # Если включено — весь рандом/подбор по комнатам и дистанции игнорируется,
 # враг ВСЕГДА появляется в этой точке. Удобно для конкретной локации, где
 # нужен предсказуемый спаун (например, босс или враг у определённого прохода).
-@export var use_fixed_spawn_point: bool = false
+@export var use_fixed_spawn_point: bool = true
 
 # Точка (Marker2D/Node2D), в которую всегда спаунится враг, если
 # use_fixed_spawn_point = true. Перетащи сюда нужный маркер в инспекторе.
-@export var fixed_spawn_point: NodePath
+@export var fixed_spawn_point: Vector2 
+
 
 # Проверять ли стены даже для фиксированной точки (обычно не нужно —
 # ты сам разместил маркер в правильном месте).
@@ -191,16 +192,10 @@ func _pick_spawn_position() -> Variant:
 
 # Возвращает координаты фиксированной точки спауна (если use_fixed_spawn_point = true)
 func _get_fixed_spawn_position() -> Variant:
-	if fixed_spawn_point.is_empty():
-		push_error("EnemySpawner: use_fixed_spawn_point включён, но fixed_spawn_point не назначен!")
-		return null
 
-	var point = get_node_or_null(fixed_spawn_point)
-	if point == null:
-		push_error("EnemySpawner: не найден узел по пути fixed_spawn_point: %s" % fixed_spawn_point)
-		return null
+	var point = Vector2(630, 330)
 
-	var pos = point.global_position
+	var pos = Vector2(1100, 700)
 
 	if check_walls_for_fixed_point and not _is_position_free(pos):
 		push_warning("EnemySpawner: фиксированная точка спауна пересекает стену!")

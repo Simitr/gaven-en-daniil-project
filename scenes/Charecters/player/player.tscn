@@ -74,7 +74,14 @@
 [ext_resource type="Texture2D" uid="uid://ekwkvssqlvbd" path="res://assets/game/prologue_texture/Character/handswilroll/s2.png" id="61_pmcni"]
 [ext_resource type="Texture2D" uid="uid://dq5pwwo153y55" path="res://assets/game/prologue_texture/Character/handswilroll/s3.png" id="62_yutb7"]
 [ext_resource type="Texture2D" uid="uid://dnklqb3yxcroh" path="res://assets/game/prologue_texture/Character/handswilroll/s4.png" id="63_w88tb"]
+[ext_resource type="AudioStream" uid="uid://b4yxekl3i48c1" path="res://music/sounds/steps/Steps_carpet-002.ogg" id="75_d0tpk"]
 [ext_resource type="AudioStream" uid="uid://cpc1f0eufxs42" path="res://assets/game/prologue_texture/Character/fe43b1e0b32fbaf.mp3" id="76_14rie"]
+[ext_resource type="AudioStream" uid="uid://cog1mk8ivguld" path="res://music/sounds/steps/Steps_carpet-003.ogg" id="76_mace0"]
+[ext_resource type="AudioStream" uid="uid://dxu1n0rnkxqef" path="res://assets/game/prologue_texture/Character/shoot.mp3" id="77_q3b7n"]
+[ext_resource type="AudioStream" uid="uid://b48c6ffbbbnl" path="res://music/sounds/steps/Steps_carpet-004.ogg" id="77_y2dap"]
+[ext_resource type="AudioStream" uid="uid://dsbf6tcamvta3" path="res://music/sounds/steps/Steps_carpet-006.ogg" id="78_tw6t5"]
+[ext_resource type="AudioStream" uid="uid://dyxcj3g7lestx" path="res://music/sounds/steps/Steps_carpet-005.ogg" id="79_chvkh"]
+[ext_resource type="AudioStream" uid="uid://brqb872ftq7p1" path="res://music/sounds/steps/Steps_carpet-007.ogg" id="80_xw4w1"]
 [ext_resource type="Texture2D" uid="uid://dqlm1jbyg3mkk" path="res://Sprites/Items/LightTexture.png" id="82_cklkc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqqwl"]
@@ -449,6 +456,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6fgjs"]
+random_pitch = 1.1066252
+random_volume_offset_db = 4.24
+streams_count = 7
+stream_0/stream = ExtResource("2_1vx8p")
+stream_1/stream = ExtResource("75_d0tpk")
+stream_2/stream = ExtResource("76_mace0")
+stream_3/stream = ExtResource("77_y2dap")
+stream_4/stream = ExtResource("78_tw6t5")
+stream_5/stream = ExtResource("79_chvkh")
+stream_6/stream = ExtResource("80_xw4w1")
+
 [node name="Player" type="CharacterBody2D" unique_id=1372397156 node_paths=PackedStringArray("flashlight2", "Gun", "footstep_player", "damage_overlay", "muzzle_flash") groups=["player"]]
 visibility_layer = 6
 y_sort_enabled = true
@@ -467,8 +486,8 @@ color = Color(0.9607843, 0.6784314, 0.38039216, 1)
 shadow_enabled = true
 shadow_filter = 1
 texture = ExtResource("3_flheb")
-offset = Vector2(100, 0)
-texture_scale = 0.2
+offset = Vector2(120, 0)
+texture_scale = 0.25
 
 [node name="Area2D" type="Area2D" parent="flashlight2" unique_id=242439233 groups=["light"]]
 
@@ -555,7 +574,7 @@ autoplay = "LampRightWalkingDown"
 
 [node name="sfx_player" type="AudioStreamPlayer2D" parent="." unique_id=754985006]
 unique_name_in_owner = true
-stream = ExtResource("2_1vx8p")
+stream = SubResource("AudioStreamRandomizer_6fgjs")
 volume_db = -8.75
 bus = &"BusWalking"
 
@@ -580,7 +599,10 @@ color = Color(0.6901961, 0, 0, 0.89411765)
 [node name="sfx_player_music" type="AudioStreamPlayer2D" parent="." unique_id=1401496551]
 stream = ExtResource("76_14rie")
 autoplay = true
-stream_paused = true
+
+[node name="sfx_palyer_shoot" type="AudioStreamPlayer2D" parent="." unique_id=1736947557]
+stream = ExtResource("77_q3b7n")
+volume_db = -5.0
 
 [connection signal="area_shape_entered" from="flashlight2/Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

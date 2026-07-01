@@ -204,7 +204,7 @@ func apply_knockback(force: Vector2):
 func shoot():
 	Global.rage = true
 	use_ammo()
-
+	$sfx_palyer_shoot.play()
 	muzzle_flash.enabled = true
 	muzzle_flash.energy = 1.0
 	flash_timer = flash_duration
