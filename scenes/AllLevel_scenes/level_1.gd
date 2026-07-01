@@ -6,8 +6,8 @@ extends Node2D
 
 
 func _on_timer_timeout():
-	if GameState.save == true:
-		GameState.save = false
+	if Global.save == true:
+		Global.save = false
 		get_tree().change_scene_to_file("res://scenes/AllLevel_scenes/move.tscn")
 		
 
@@ -27,9 +27,9 @@ func _ready():
 			if child is Torch:
 				child.activate()
 	var player = $WorldObjects/Player
-	if GameState.has_saved_position:
-		player.global_position = GameState.saved_player_position
-		GameState.has_saved_position = false
+	if Global.has_saved_position:
+		player.global_position = Global.saved_player_position
+		Global.has_saved_position = false
 		return # позиция восстановлена — не трогаем spawn_point
 	if Global.spawn_point == "":
 		return
@@ -41,11 +41,11 @@ func _ready():
 
 
 func _on_interact_trigger_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player") and not GameState.interact_triggered:
-		GameState.interact_triggered = true
+	if body.is_in_group("player") and not Global.interact_triggered:
+		Global.interact_triggered = true
 		$WorldObjects/interactTrigger/CollisionShape2D.call_deferred("set_disabled", true)
-		GameState.saved_player_position = body.global_position
-		GameState.has_saved_position = true
+		Global.saved_player_position = body.global_position
+		Global.has_saved_position = true
 		call_deferred("_go_to_interact_scene")
 
 func _go_to_interact_scene():
