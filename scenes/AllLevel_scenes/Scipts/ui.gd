@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+const PAUSE_MENU = preload("res://scenes/Items/pause_menu.tscn")
+
 @onready var health_bar = $"HealthBar"
 @onready var ammo_label = $"Ammo/AmmoLabel"
 @onready var potion_label = $"HealthPotion/PotionLabel"
@@ -9,7 +11,9 @@ extends CanvasLayer
 @onready var health = $HealthPotion
 @onready var lantern = $LanternSlot
 @onready var key = $KeySlot
+
 var player
+var pause_menu = null
 
 
 func _ready():
@@ -21,9 +25,31 @@ func _ready():
 		update_ui()
 
 
+func _unhandled_input(event):
+	if event.is_action_pressed("esc"):
+		if get_tree().paused:
+			close_pause_menu()
+		else:
+			open_pause_menu()
+
+
+func open_pause_menu():
+	get_tree().paused = true
+
+	pause_menu = PAUSE_MENU.instantiate()
+	add_child(pause_menu)
+
+
+func close_pause_menu():
+	if pause_menu:
+		pause_menu.queue_free()
+		pause_menu = null
+
+	get_tree().paused = false
+
+
 func _process(_delta):
 	if !Global.ui_on:
-		
 		health_bar.visible = false
 		ammo_label.visible = false
 		potion_label.visible = false
@@ -43,6 +69,7 @@ func _process(_delta):
 		health.visible = true
 		lantern.visible = true
 		key.visible = true
+
 	if player == null or not is_instance_valid(player):
 		player = get_tree().get_first_node_in_group("player")
 
