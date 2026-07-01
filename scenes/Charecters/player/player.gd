@@ -62,6 +62,8 @@ func load_sfx(sfx_to_load):
 		%sfx_player.stream = sfx_to_load
 
 func _process(delta):
+	
+	
 	if Input.is_action_just_pressed("Heal"):
 		use_HealthPotions()
 

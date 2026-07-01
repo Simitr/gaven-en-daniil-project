@@ -18,5 +18,5 @@ static func movement_input() -> Vector2:
 		
 	if Input.is_action_just_pressed("armed"):
 		Global.armed = !Global.armed
-
+		
 	return dir.normalized()
