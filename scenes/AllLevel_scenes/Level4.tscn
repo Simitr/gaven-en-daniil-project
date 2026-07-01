@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="7_sa74c"]
 [ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/ItemPickup.tscn" id="8_om287"]
 [ext_resource type="PackedScene" uid="uid://dr8xdkft5th33" path="res://scenes/Charecters/Enemy's/Enemy2.tscn" id="11_pq8lm"]
+[ext_resource type="PackedScene" uid="uid://5t7iyiaih35k" path="res://Sprites/EnemyAsset/enemy_spawner.tscn" id="13_pdqal"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_om287"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -1127,7 +1128,7 @@ y_sort_enabled = true
 
 [node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_l7ukn")]
 z_index = 1
-position = Vector2(38, 110)
+position = Vector2(1092, 687)
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("4_dsk3o")]
 y_sort_enabled = true
@@ -1200,8 +1201,15 @@ script = ExtResource("3_wio24")
 
 [node name="LootPopup" parent="." unique_id=1514084314 instance=ExtResource("6_458l2")]
 
-[node name="Enemy2" parent="." unique_id=435413124 instance=ExtResource("11_pq8lm")]
-position = Vector2(46, 654)
+[node name="Node2D" parent="." unique_id=237879362 instance=ExtResource("13_pdqal")]
+position = Vector2(96, 182)
+enemy_scene = ExtResource("11_pq8lm")
+
+[node name="Marker2D2" type="Marker2D" parent="Node2D" unique_id=221460799]
+position = Vector2(517, -73)
+
+[node name="Marker2D3" type="Marker2D" parent="Node2D" unique_id=1076094114]
+position = Vector2(-48, 487)
 
 [connection signal="body_entered" from="Doors/DoortoRoom2" to="Doors/DoortoRoom2" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/DoortoRoom3" to="Doors/DoortoRoom3" method="_on_body_entered"]
