@@ -12,7 +12,7 @@ func _on_timer_timeout():
 		
 
 func _ready():
-	if GameState.interact_triggered:
+	if Global.interact_triggered:
 		$WorldObjects/interactTrigger/CollisionShape2D.set_disabled(true)
 	var timer := Timer.new()
 	timer.wait_time = 2.0

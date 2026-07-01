@@ -24,3 +24,5 @@ var monster_dead := false
 
 var ui_on = false
 var move = false
+
+var interact_triggered := false 
