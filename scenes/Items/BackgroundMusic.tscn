@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://cpc1f0eufxs42" path="res://assets/game/prologue_texture/Character/fe43b1e0b32fbaf.mp3" id="1_vy084"]
 [ext_resource type="AudioStream" uid="uid://bcjjamoh7v5x3" path="res://assets/game/prologue_texture/Character/screem3.mp3" id="2_jtm3t"]
 [ext_resource type="AudioStream" uid="uid://dn70tc3dfgnoy" path="res://assets/game/prologue_texture/Character/mixkit-terror-transition-2484.mp3" id="3_jtm3t"]
+[ext_resource type="AudioStream" uid="uid://b7wjya1fbf76p" path="res://assets/game/prologue_texture/Character/screamer.mp3" id="4_nqy0o"]
 
 [node name="BackgroundMusic" type="Node2D" unique_id=417443573]
 
@@ -12,8 +13,11 @@ bus = &"ReverbBus"
 parameters/looping = true
 
 [node name="screem" type="AudioStreamPlayer2D" parent="." unique_id=1784717414]
-stream = ExtResource("2_jtm3t")
+stream = ExtResource("4_nqy0o")
 bus = &"ReverbBus"
 
 [node name="transition" type="AudioStreamPlayer2D" parent="." unique_id=1681128476]
 stream = ExtResource("3_jtm3t")
+
+[node name="screemAtack" type="AudioStreamPlayer2D" parent="." unique_id=932145405]
+stream = ExtResource("2_jtm3t")

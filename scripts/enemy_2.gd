@@ -78,6 +78,7 @@ func _ready():
 func add_hp(damage):
 	# damage отрицательный при уроне
 	Global.monster_hp += damage
+	BackgroundMusic.get_node("screemAtack").play()
 	_vanish()
 
 
@@ -103,7 +104,6 @@ func _vanish():
 	if dead:
 		return
 	dead = true
-	BackgroundMusic.get_node("screem").play()
 	# АНИМАЦИЯ: анимация исчезновения
 	if sprite.sprite_frames and sprite.sprite_frames.has_animation("vanish"):
 		sprite.play("vanish")
@@ -257,7 +257,7 @@ func _process_flee():
 
 func _process_attack():
 	velocity = Vector2.ZERO
-
+	BackgroundMusic.get_node("screem").play()
 	if can_attack:
 		can_attack = false
 

@@ -195,7 +195,7 @@ func _get_fixed_spawn_position() -> Variant:
 
 	var point = Vector2(630, 330)
 
-	var pos = Vector2(1100, 700)
+	var pos = Vector2(550, 550)
 
 	if check_walls_for_fixed_point and not _is_position_free(pos):
 		push_warning("EnemySpawner: фиксированная точка спауна пересекает стену!")

@@ -17,7 +17,7 @@ var armed := false
 var rage := false
 
 var torch_pickup = false
-var key_pickup = true
+var key_pickup = false
 
 var monster_hp := 100.0
 var monster_dead := false
@@ -30,3 +30,5 @@ var interact_triggered := false
 var saved_player_position: Vector2 = Vector2.ZERO
 var has_saved_position: bool = false
 var save : bool = true
+
+var light_states: Dictionary = {}

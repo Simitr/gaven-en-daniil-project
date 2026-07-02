@@ -1088,6 +1088,7 @@ position = Vector2(-121, 164)
 shape = SubResource("SegmentShape2D_pgoe3")
 
 [node name="LightTexture" type="PointLight2D" parent="WorldObjects" unique_id=1863987101]
+visible = false
 y_sort_enabled = true
 position = Vector2(-110.99998, 168)
 scale = Vector2(0.11364066, 0.08320313)
@@ -1125,6 +1126,7 @@ shape = SubResource("RectangleShape2D_ey6jb")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1818539965]
 position = Vector2(1, 0)
 script = ExtResource("6_ij5e7")
+dark_color = Color(0.002087362, 0.002087352, 0.0026099042, 1)
 
 [node name="SpawnRight" type="Marker2D" parent="." unique_id=672166369]
 position = Vector2(343, 300)

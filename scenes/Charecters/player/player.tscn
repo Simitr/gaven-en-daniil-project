@@ -624,11 +624,8 @@ bus = &"ReverbBus"
 
 [node name="light" type="Node2D" parent="." unique_id=1934264724]
 script = ExtResource("3_y2dap")
-stable_duration = 5.0
-flicker_duration = null
-flicker_speed_min = null
-flicker_speed_max = null
-blackout_duration = null
+stable_duration_min = 5.0
+stable_duration_max = 10.0
 
 [node name="flashlight2" type="PointLight2D" parent="light" unique_id=1627306792]
 z_index = -2

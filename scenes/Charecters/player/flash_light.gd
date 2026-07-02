@@ -3,7 +3,7 @@ extends Node2D
 @onready var light: PointLight2D =  $flashlight2
 @onready var area: Area2D = $flashlight2/Area2D
 
-@export var stable_duration: float = 20.0
+@export var stable_duration: float = 15.0
 @export var flicker_duration: float = 2.0
 @export var flicker_speed_min: float = 0.05
 @export var flicker_speed_max: float = 0.15
