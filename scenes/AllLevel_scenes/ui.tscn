@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1btker455gcy" path="res://scenes/AllLevel_scenes/Scipts/ui.gd" id="1_yn0fj"]
 [ext_resource type="Texture2D" uid="uid://cd3yalow8kh8" path="res://Sprites/InventoryAsset/Retro Inventory/Scaled 2x/HealthBar.png" id="2_vio35"]
+[ext_resource type="Script" uid="uid://exqxlic1anom" path="res://scenes/AllLevel_scenes/health_bar.gd" id="4_kduof"]
 [ext_resource type="Texture2D" uid="uid://d1o2384lahi3j" path="res://Sprites/InventoryAsset/Retro Inventory/Scaled 2x/HealthBarProgress.png" id="4_lb3l4"]
 [ext_resource type="Texture2D" uid="uid://bxppxekjknman" path="res://Sprites/InventoryAsset/Retro Inventory/Original/Ammunition.png" id="4_yn0fj"]
 [ext_resource type="Texture2D" uid="uid://cprjhkubpubhk" path="res://Sprites/InventoryAsset/Retro Inventory/Original/CooldownUI.png" id="6_lb3l4"]
@@ -27,6 +28,7 @@ value = 100.0
 texture_under = ExtResource("2_vio35")
 texture_progress = ExtResource("4_lb3l4")
 texture_progress_offset = Vector2(30, 10)
+script = ExtResource("4_kduof")
 
 [node name="Ammo" type="TextureProgressBar" parent="." unique_id=639194103]
 offset_left = 24.0

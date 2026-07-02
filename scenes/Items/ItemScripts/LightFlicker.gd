@@ -32,7 +32,9 @@ func _ready():
 		$AnimatedSprite2D.animation = "default"
 
 	$AnimatedSprite2D.play()
-	
+
+
+
 
 
 func _process(delta):

@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://b48c6ffbbbnl" path="res://music/sounds/steps/Steps_carpet-004.ogg" id="8_1poww"]
 [ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/ItemPickup.tscn" id="8_om287"]
 [ext_resource type="AudioStream" uid="uid://dyxcj3g7lestx" path="res://music/sounds/steps/Steps_carpet-005.ogg" id="9_qqq7n"]
-[ext_resource type="Script" path="res://Sprites/EnemyAsset/enemy_spawner2.gd" id="10_pdqal"]
+[ext_resource type="Script" uid="uid://g5sk0n56bts6" path="res://Sprites/EnemyAsset/enemy_spawner2.gd" id="10_pdqal"]
 [ext_resource type="AudioStream" uid="uid://dsbf6tcamvta3" path="res://music/sounds/steps/Steps_carpet-006.ogg" id="10_qf6fb"]
 [ext_resource type="PackedScene" uid="uid://xmqmlt3sslmg" path="res://enemy_3.tscn" id="11_3oj0v"]
 [ext_resource type="AudioStream" uid="uid://brqb872ftq7p1" path="res://music/sounds/steps/Steps_carpet-007.ogg" id="11_wb681"]
@@ -1176,6 +1176,14 @@ position = Vector2(375, 66)
 y_sort_enabled = true
 position = Vector2(69, 20)
 
+[node name="HealthPickup" parent="WorldObjects" unique_id=1556862671 instance=ExtResource("8_om287")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(553, 680)
+pickup_id = null
+type = 1
+amount = null
+
 [node name="Chest" parent="WorldObjects" unique_id=1601119934 node_paths=PackedStringArray("popup") groups=["loot_popup"] instance=ExtResource("5_sa74c")]
 z_index = 1
 y_sort_enabled = true
@@ -1183,7 +1191,7 @@ position = Vector2(40, 31)
 popup = NodePath("../../LootPopup")
 key_texture = ExtResource("6_mbd1d")
 
-[node name="AmmoPickup" parent="WorldObjects" unique_id=1556862671 instance=ExtResource("8_om287")]
+[node name="AmmoPickup" parent="WorldObjects" unique_id=618712307 instance=ExtResource("8_om287")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(386, 267)
