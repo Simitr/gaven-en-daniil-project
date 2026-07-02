@@ -17,7 +17,7 @@ func update(delta):
 		if dir == Vector2.ZERO:
 			fsm.change_state("Idle")
 			return
-
+		$"../../AnimatedSprite2D2".play("walking")
 		if dir.x < 0:
 			animated_sprite.play("walkingback")
 		elif dir.x > 0:

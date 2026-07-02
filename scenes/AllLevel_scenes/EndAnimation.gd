@@ -12,11 +12,10 @@ func _on_body_entered(body):
 
 	if not body.is_in_group("player"):
 		return
-
+	BackgroundMusic.get_node("transition").play()
 	triggered = true
 	Global.ui_on = false
 	sprite.play("Cutscene")
-	
 	body.visible = false
 	body.set_physics_process(false)
 	body.set_process(false)

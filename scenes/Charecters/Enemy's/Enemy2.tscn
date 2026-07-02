@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bnmqfk8mtpvns" path="res://assets/game/prologue_texture/Character/enemy/2fall.png" id="8_15utx"]
 [ext_resource type="Texture2D" uid="uid://vlvkd7p2c861" path="res://assets/game/prologue_texture/Character/enemy/1fall.png" id="9_5j36i"]
 [ext_resource type="AudioStream" uid="uid://cjjalune51xyi" path="res://assets/game/prologue_texture/Character/giant-monster-footstep-fx_G_minor.wav" id="10_f4fpk"]
-[ext_resource type="AudioStream" uid="uid://cr2vyksiq5dqd" path="res://assets/game/prologue_texture/Character/horror-scream_D_minor.wav" id="11_r66ij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie7wm"]
 size = Vector2(26, 57)
@@ -85,6 +84,10 @@ animations = [{
 
 [node name="Enemy2" type="CharacterBody2D" unique_id=435413124 groups=["enemy"]]
 script = ExtResource("1_i1eqr")
+footstep_sounds = Array[AudioStream]([ExtResource("10_f4fpk")])
+footstep_interval = 0.6
+footstep_max_volume_db = -10.0
+footstep_min_volume_db = -40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239150159]
 position = Vector2(1, 0.5)
@@ -110,11 +113,10 @@ target_desired_distance = 3.0
 path_postprocessing = 1
 debug_use_custom = true
 
-[node name="steps" type="AudioStreamPlayer2D" parent="." unique_id=242313915]
+[node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=242313915]
 stream = ExtResource("10_f4fpk")
-
-[node name="screem" type="AudioStreamPlayer2D" parent="." unique_id=1606346137]
-stream = ExtResource("11_r66ij")
+volume_db = -10.0
+bus = &"ReverbBus"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

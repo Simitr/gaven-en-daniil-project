@@ -39,7 +39,7 @@ var knockback_decay := 8.0   # насколько быстро гасится (�
 var damage_flash_timer := 0.0
 var damage_flash_duration := 0.4
 
-var footstep_frames : Array = [1, 3]
+var footstep_frames : Array = [0, 2]
 var footstepUp_frames : Array = [4]
 
 
@@ -121,10 +121,10 @@ func update_flashlight():
 		targetPosition = get_global_mouse_position()
 		flashlight2.look_at(get_global_mouse_position())
 		flashlight2.enabled = true
-		$flashlight2/Area2D/CollisionShape2D2.disabled = false
+		$light/flashlight2/Area2D/CollisionShape2D2.disabled = false
 	else:
 		flashlight2.enabled = false
-		$flashlight2/Area2D/CollisionShape2D2.disabled = true
+		$light/flashlight2/Area2D/CollisionShape2D2.disabled = true
 
 
 # ─────────────────────────────────────────────
@@ -243,20 +243,11 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	if area.is_in_group("enemyarea"):
 		print(area)
 		print(area.get_groups())
+	
+	
 
-
-func _on_animated_sprite_2d_frame_changed() -> void:
-	if $AnimatedSprite2D.animation == "idle"  : return
-	if $AnimatedSprite2D.animation == "idleDown"  : return
-	if $AnimatedSprite2D.animation == "idleDownGun"  : return
-	if $AnimatedSprite2D.animation == "idleGun"  : return
-	if $AnimatedSprite2D.animation == "idleLeft"  : return
-	if $AnimatedSprite2D.animation == "idleLeftGun"  : return
-	if $AnimatedSprite2D.animation == "idleUp"  : return
-	if $AnimatedSprite2D.animation == "idleUpGun"  : return
+ 
+func _on_animated_sprite_2d_2_frame_changed() -> void:
+	if $AnimatedSprite2D2.animation == "idle"  : return
 	load_sfx(footstep_sounds)
-	if $AnimatedSprite2D.animation == "walkingDownGun" or $AnimatedSprite2D.animation == "walkingUpLeftGun" or $AnimatedSprite2D.animation == "walkingUpRightGun":
-		if $AnimatedSprite2D.frame in footstepUp_frames: %sfx_player.play()
-	elif $AnimatedSprite2D.frame in footstep_frames: %sfx_player.play()
-	
-	
+	if $AnimatedSprite2D2.frame in footstep_frames: %sfx_player.play()

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bwaob4v6tnegi" path="res://scenes/Charecters/player/player.gd" id="1_7h4xu"]
 [ext_resource type="AudioStream" uid="uid://dws817s6374gy" path="res://music/sounds/steps/Steps_carpet-001.ogg" id="2_1vx8p"]
 [ext_resource type="Texture2D" uid="uid://bwmowgb4ogsy1" path="res://Sprites/Items/Light.png" id="3_flheb"]
+[ext_resource type="Script" uid="uid://ccar6pruh7kdj" path="res://scenes/Charecters/player/flash_light.gd" id="3_y2dap"]
 [ext_resource type="Texture2D" uid="uid://d1dd0lfj7b432" path="res://assets/game/prologue_texture/Character/idleAnimation1.png" id="6_0db3b"]
 [ext_resource type="Texture2D" uid="uid://5rddffsij2jq" path="res://assets/game/prologue_texture/Character/idleAnimation2.png" id="7_sk4vv"]
 [ext_resource type="Texture2D" uid="uid://ce503svoquqmd" path="res://assets/game/prologue_texture/Character/widle.png" id="8_2jlw7"]
@@ -75,7 +76,6 @@
 [ext_resource type="Texture2D" uid="uid://dq5pwwo153y55" path="res://assets/game/prologue_texture/Character/handswilroll/s3.png" id="62_yutb7"]
 [ext_resource type="Texture2D" uid="uid://dnklqb3yxcroh" path="res://assets/game/prologue_texture/Character/handswilroll/s4.png" id="63_w88tb"]
 [ext_resource type="AudioStream" uid="uid://b4yxekl3i48c1" path="res://music/sounds/steps/Steps_carpet-002.ogg" id="75_d0tpk"]
-[ext_resource type="AudioStream" uid="uid://cpc1f0eufxs42" path="res://assets/game/prologue_texture/Character/fe43b1e0b32fbaf.mp3" id="76_14rie"]
 [ext_resource type="AudioStream" uid="uid://cog1mk8ivguld" path="res://music/sounds/steps/Steps_carpet-003.ogg" id="76_mace0"]
 [ext_resource type="AudioStream" uid="uid://dxu1n0rnkxqef" path="res://assets/game/prologue_texture/Character/shoot.mp3" id="77_q3b7n"]
 [ext_resource type="AudioStream" uid="uid://b48c6ffbbbnl" path="res://music/sounds/steps/Steps_carpet-004.ogg" id="77_y2dap"]
@@ -83,10 +83,8 @@
 [ext_resource type="AudioStream" uid="uid://dyxcj3g7lestx" path="res://music/sounds/steps/Steps_carpet-005.ogg" id="79_chvkh"]
 [ext_resource type="AudioStream" uid="uid://brqb872ftq7p1" path="res://music/sounds/steps/Steps_carpet-007.ogg" id="80_xw4w1"]
 [ext_resource type="Texture2D" uid="uid://dqlm1jbyg3mkk" path="res://Sprites/Items/LightTexture.png" id="82_cklkc"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqqwl"]
-radius = 11.37
-height = 60.66667
+[ext_resource type="AudioStream" uid="uid://cr2vyksiq5dqd" path="res://assets/game/prologue_texture/Character/horror-scream_D_minor.wav" id="83_d0tpk"]
+[ext_resource type="Script" uid="uid://clikkjcha6erk" path="res://scenes/Charecters/player/animated_sprite_2d_2.gd" id="84_mace0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d66dv"]
 animations = [{
@@ -468,35 +466,48 @@ stream_4/stream = ExtResource("78_tw6t5")
 stream_5/stream = ExtResource("79_chvkh")
 stream_6/stream = ExtResource("80_xw4w1")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_y2dap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_0db3b")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_undu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ke6lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4ut4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_uqc0y")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 4.5
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqqwl"]
+radius = 11.37
+height = 60.66667
+
 [node name="Player" type="CharacterBody2D" unique_id=1372397156 node_paths=PackedStringArray("flashlight2", "Gun", "footstep_player", "damage_overlay", "muzzle_flash") groups=["player"]]
 visibility_layer = 6
 y_sort_enabled = true
 script = ExtResource("1_7h4xu")
-flashlight2 = NodePath("flashlight2")
+flashlight2 = NodePath("light/flashlight2")
 Gun = NodePath("CollisionShape2D/Gun")
 footstep_player = NodePath("sfx_player")
 footstep_sounds = ExtResource("2_1vx8p")
 damage_overlay = NodePath("ColorRect")
 muzzle_flash = NodePath("PointLight2D")
-
-[node name="flashlight2" type="PointLight2D" parent="." unique_id=1627306792]
-z_index = -2
-position = Vector2(-2, -12)
-color = Color(0.9607843, 0.6784314, 0.38039216, 1)
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("3_flheb")
-offset = Vector2(120, 0)
-texture_scale = 0.25
-
-[node name="Area2D" type="Area2D" parent="flashlight2" unique_id=242439233 groups=["light"]]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="flashlight2/Area2D" unique_id=210965413]
-position = Vector2(122.00001, 0)
-rotation = 1.5707964
-scale = Vector2(3, 3)
-shape = SubResource("CapsuleShape2D_aqqwl")
-debug_color = Color(0.84393924, 0.0010532934, 0.9154825, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2030178958]
 visibility_layer = 6
@@ -504,7 +515,7 @@ z_index = 1
 z_as_relative = false
 position = Vector2(-2, -15)
 sprite_frames = SubResource("SpriteFrames_d66dv")
-animation = &"walkingDownGun"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985997954]
@@ -576,7 +587,7 @@ autoplay = "LampRightWalkingDown"
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_6fgjs")
 volume_db = -8.75
-bus = &"BusWalking"
+bus = &"ReverbBus"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1876237282]
 position = Vector2(-2, -12)
@@ -596,13 +607,48 @@ offset_right = 367.0
 offset_bottom = 228.0
 color = Color(0.6901961, 0, 0, 0.89411765)
 
-[node name="sfx_player_music" type="AudioStreamPlayer2D" parent="." unique_id=1401496551]
-stream = ExtResource("76_14rie")
-autoplay = true
+[node name="screem" type="AudioStreamPlayer2D" parent="." unique_id=1929319174]
+stream = ExtResource("83_d0tpk")
 
-[node name="sfx_palyer_shoot" type="AudioStreamPlayer2D" parent="." unique_id=1736947557]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=675357800]
+visible = false
+sprite_frames = SubResource("SpriteFrames_y2dap")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("84_mace0")
+
+[node name="sfx_palyer_shoot" type="AudioStreamPlayer2D" parent="." unique_id=405809613]
 stream = ExtResource("77_q3b7n")
 volume_db = -5.0
+bus = &"ReverbBus"
 
-[connection signal="area_shape_entered" from="flashlight2/Area2D" to="." method="_on_area_2d_area_shape_entered"]
-[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[node name="light" type="Node2D" parent="." unique_id=1934264724]
+script = ExtResource("3_y2dap")
+stable_duration = 5.0
+flicker_duration = null
+flicker_speed_min = null
+flicker_speed_max = null
+blackout_duration = null
+
+[node name="flashlight2" type="PointLight2D" parent="light" unique_id=1627306792]
+z_index = -2
+position = Vector2(-2, -12)
+scale = Vector2(0.75, 0.75)
+color = Color(0.9607843, 0.6784314, 0.38039216, 1)
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("3_flheb")
+offset = Vector2(120, 0)
+texture_scale = 0.25
+
+[node name="Area2D" type="Area2D" parent="light/flashlight2" unique_id=242439233 groups=["light"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="light/flashlight2/Area2D" unique_id=210965413]
+position = Vector2(122.00001, 0)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_aqqwl")
+debug_color = Color(0.84393924, 0.0010532934, 0.9154825, 0.41960785)
+
+[connection signal="frame_changed" from="AnimatedSprite2D2" to="." method="_on_animated_sprite_2d_2_frame_changed"]
+[connection signal="area_shape_entered" from="light/flashlight2/Area2D" to="." method="_on_area_2d_area_shape_entered"]

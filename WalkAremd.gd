@@ -39,7 +39,7 @@ func update(delta):
 
 		fsm.change_state("Walk")
 		return
-
+	$"../../AnimatedSprite2D2".play("walking")
 	character.velocity = dir * speed
 	character.move_and_slide()
 

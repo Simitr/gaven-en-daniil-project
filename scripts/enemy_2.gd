@@ -14,6 +14,17 @@ enum State { CHASE, FLEE, WAIT, ATTACK, PHASE_THROUGH }
 @export var corner_check_radius = 60.0
 @export var phase_speed = 160.0
 
+@export var footstep_sounds: Array[AudioStream] = []
+@export var footstep_interval := 0.4      # базовый интервал между шагами
+@export var footstep_max_distance := 500.0 # дальше — шагов не слышно
+@export var footstep_min_distance := 30.0  # ближе — максимальная громкость
+@export var footstep_max_volume_db := 0.0  # громкость вплотную
+@export var footstep_min_volume_db := -30.0 # громкость на максимальной дистанции
+
+@onready var footstep_player: AudioStreamPlayer2D = $FootstepPlayer
+
+var footstep_timer := 0.0
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area: Area2D = $Area2D
 
@@ -68,15 +79,13 @@ func add_hp(damage):
 	# damage отрицательный при уроне
 	Global.monster_hp += damage
 	_vanish()
-	if Global.monster_hp <= 0 and not dead:
-		_die()
 
 
 # Вызывается снаружи при нанесении урона врагу
 func take_damage(damage: int):
 	if dead:
 		return
-
+	
 	# АНИМАЦИЯ: анимация получения урона
 	# if sprite.sprite_frames and sprite.sprite_frames.has_animation("hurt"):
 	#     sprite.play("hurt")
@@ -88,24 +97,13 @@ func take_damage(damage: int):
 		_vanish()
 
 
-func _die():
-	dead = true
-	Global.monster_dead = true
-
-	# АНИМАЦИЯ: анимация смерти
-	# if sprite.sprite_frames and sprite.sprite_frames.has_animation("death"):
-	#     sprite.play("death")
-	# await sprite.animation_finished
-
-	queue_free()
-
 
 # Враг "растворяется" — исчезает и уведомляет спаунер о повторном появлении
 func _vanish():
 	if dead:
 		return
 	dead = true
-
+	BackgroundMusic.get_node("screem").play()
 	# АНИМАЦИЯ: анимация исчезновения
 	if sprite.sprite_frames and sprite.sprite_frames.has_animation("vanish"):
 		sprite.play("vanish")
@@ -131,7 +129,8 @@ func _physics_process(delta):
 		State.FLEE:          _process_flee()
 		State.WAIT:          velocity = Vector2.ZERO
 		State.ATTACK:        _process_attack()
-		State.PHASE_THROUGH: _process_phase_through(delta)
+
+	_process_footsteps(delta)
 
 	move_and_slide()
 
@@ -142,6 +141,39 @@ func _is_in_light() -> bool:
 			return true
 	return false
 
+func _process_footsteps(delta: float) -> void:
+	if footstep_sounds.is_empty():
+		return
+
+	# Шаги играем только когда монстр реально двигается
+	if velocity.length() < 5.0:
+		return
+
+	var dist = global_position.distance_to(player.global_position)
+
+	# Если слишком далеко — не тикаем таймер и не играем
+	if dist > footstep_max_distance:
+		return
+
+	footstep_timer -= delta
+	if footstep_timer <= 0.0:
+		_play_footstep(dist)
+		# чем ближе/быстрее монстр, тем чаще шаги
+		var speed_factor = clamp(velocity.length() / speed, 0.5, 2.0)
+		footstep_timer = footstep_interval / speed_factor
+
+
+func _play_footstep(dist: float) -> void:
+	var t = clamp(
+		(dist - footstep_min_distance) / (footstep_max_distance - footstep_min_distance),
+		0.0, 1.0
+	)
+	# t = 0 -> вплотную (громко), t = 1 -> далеко (тихо)
+	var volume = lerp(footstep_max_volume_db, footstep_min_volume_db, t)
+
+	footstep_player.volume_db = volume
+	footstep_player.stream = footstep_sounds.pick_random()
+	footstep_player.play()
 
 func _get_light_areas() -> Array:
 	var lights = []
@@ -234,10 +266,9 @@ func _process_attack():
 		#     sprite.play("attack")
 
 		attack_timer.start()
-
+		
 		if player and player.has_method("take_damage"):
 			player.take_damage(attack_damage)
-			$screem.play()
 		if player and player.has_method("apply_knockback"):
 			player.apply_knockback((player.global_position - global_position).normalized() * knockback_force)
 
@@ -249,44 +280,7 @@ func _process_attack():
 		state = State.CHASE
 
 
-# ── PHASE THROUGH ──────────────────────────────
-
-#func _is_cornered() -> bool:
-	#var space = get_world_2d().direct_space_state
-	#var blocked = 0
-	#for d in [Vector2.RIGHT, Vector2.LEFT, Vector2.UP, Vector2.DOWN]:
-		#var q = PhysicsRayQueryParameters2D.create(
-		#	global_position, global_position + d * corner_check_radius, collision_mask)
-		##if space.intersect_ray(q):
-		#	blocked += 1
-#	return blocked >= 3
-
-
-#func _enter_phase_through():
-	#state = State.PHASE_THROUGH
-	#phase_cooldown_timer = phase_cooldown
-	#phase_timer = phase_duration
-	#phase_direction = (global_position - player.global_position).normalized()
-	#set_collision_mask_value(1, false)
-	#modulate = Color(1, 1, 1, 0.4)
-
-	# АНИМАЦИЯ: анимация прохождения сквозь стены
-	# if sprite.sprite_frames and sprite.sprite_frames.has_animation("scared"):
-	#     sprite.play("scared")
-
-
-func _process_phase_through(delta):
-	phase_timer -= delta
-	velocity = phase_direction * phase_speed
-
-	if phase_timer <= 0:
-		set_collision_mask_value(1, true)
-		modulate = Color(1, 1, 1, 1.0)
-		if _is_in_light():
-			_enter_flee_state()
-		else:
-			state = State.WAIT
-			wait_timer.start()
+ 
 
 
 # ── WAIT таймер ────────────────────────────────

@@ -7,6 +7,7 @@ var time_reduced := false
 var timer := Timer.new()
 
 func _ready():
+	BackgroundMusic.get_node("AudioStreamPlayer2D").play()
 	Global.ui_on = false
 	timer.wait_time = 3.0        # 10 секунд
 	timer.one_shot = true         # сработает один раз

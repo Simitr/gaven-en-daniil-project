@@ -7,10 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://dr8xdkft5th33" path="res://scenes/Charecters/Enemy's/Enemy2.tscn" id="4_nhyqi"]
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="4_nnq0f"]
 [ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Scipts/Door.gd" id="4_sa74c"]
+[ext_resource type="AudioStream" uid="uid://dws817s6374gy" path="res://music/sounds/steps/Steps_carpet-001.ogg" id="5_5peqm"]
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="5_458l2"]
 [ext_resource type="PackedScene" uid="uid://dl6e5oub5qqrq" path="res://scenes/Items/BossDoor.tscn" id="6_0h4ax"]
+[ext_resource type="AudioStream" uid="uid://b4yxekl3i48c1" path="res://music/sounds/steps/Steps_carpet-002.ogg" id="6_6r72i"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="7_0h4ax"]
+[ext_resource type="AudioStream" uid="uid://cog1mk8ivguld" path="res://music/sounds/steps/Steps_carpet-003.ogg" id="7_skmoo"]
+[ext_resource type="AudioStream" uid="uid://b48c6ffbbbnl" path="res://music/sounds/steps/Steps_carpet-004.ogg" id="8_mscfp"]
 [ext_resource type="PackedScene" uid="uid://brr6k13ob4p8x" path="res://scenes/Items/KeyPopup.tscn" id="9_sede1"]
+[ext_resource type="AudioStream" uid="uid://dyxcj3g7lestx" path="res://music/sounds/steps/Steps_carpet-005.ogg" id="9_x0w4q"]
+[ext_resource type="AudioStream" uid="uid://dsbf6tcamvta3" path="res://music/sounds/steps/Steps_carpet-006.ogg" id="10_6kag6"]
+[ext_resource type="AudioStream" uid="uid://brqb872ftq7p1" path="res://music/sounds/steps/Steps_carpet-007.ogg" id="11_hs53d"]
 [ext_resource type="PackedScene" uid="uid://5t7iyiaih35k" path="res://Sprites/EnemyAsset/enemy_spawner.tscn" id="12_nhyqi"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dluoc"]
@@ -1079,6 +1086,16 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_veiaw")
 sources/1 = SubResource("TileSetAtlasSource_a6xly")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_56qwu"]
+streams_count = 7
+stream_0/stream = ExtResource("5_5peqm")
+stream_1/stream = ExtResource("6_6r72i")
+stream_2/stream = ExtResource("7_skmoo")
+stream_3/stream = ExtResource("8_mscfp")
+stream_4/stream = ExtResource("9_x0w4q")
+stream_5/stream = ExtResource("10_6kag6")
+stream_6/stream = ExtResource("11_hs53d")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ml3pu"]
 size = Vector2(62, 62.5)
 
@@ -1130,7 +1147,7 @@ y_sort_enabled = true
 [node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("3_dsk3o")]
 z_index = 1
 position = Vector2(325, 117)
-footstep_sounds = null
+footstep_sounds = SubResource("AudioStreamRandomizer_56qwu")
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("4_nnq0f")]
 y_sort_enabled = true

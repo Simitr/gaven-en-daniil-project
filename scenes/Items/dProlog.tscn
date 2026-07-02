@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dpqhaxtejpi0u"]
+
+[ext_resource type="Script" uid="uid://qwjxq7r1oras" path="res://scenes/Items/d_prolog.gd" id="1_k4yup"]
+[ext_resource type="Texture2D" uid="uid://4e8i5hericm1" path="res://assets/game/prologue_texture/Character/d.png" id="2_5gpv8"]
+[ext_resource type="Texture2D" uid="uid://bv3sm5tmiems1" path="res://assets/game/prologue_texture/Character/move.png" id="3_mcy8a"]
+[ext_resource type="Texture2D" uid="uid://bjavevkor6emy" path="res://assets/game/prologue_texture/Character/black.png" id="4_ty8ul"]
+
+[node name="DProlog" type="Node2D" unique_id=1560120022]
+script = ExtResource("1_k4yup")
+
+[node name="d" type="Sprite2D" parent="." unique_id=1378702333]
+z_index = 19
+position = Vector2(249.64063, 196)
+texture = ExtResource("2_5gpv8")
+
+[node name="Move" type="Sprite2D" parent="." unique_id=497486825]
+z_index = 17
+position = Vector2(320.64063, 193)
+texture = ExtResource("3_mcy8a")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1438335175]
+position = Vector2(458.00003, 279)
+scale = Vector2(-664.9982, 415.5)
+texture = ExtResource("4_ty8ul")

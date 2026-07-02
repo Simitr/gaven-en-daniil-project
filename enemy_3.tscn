@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bcdhh0sr4cmpu" path="res://assets/game/prologue_texture/Character/handswilroll/6eb7e6f39df33c5.png" id="1_3tot4"]
 [ext_resource type="Script" uid="uid://msbdwa3wumwi" path="res://scripts/enemy_2.gd" id="1_j66hg"]
+[ext_resource type="AudioStream" uid="uid://cjjalune51xyi" path="res://assets/game/prologue_texture/Character/giant-monster-footstep-fx_G_minor.wav" id="2_4c84r"]
 [ext_resource type="Texture2D" uid="uid://lyvq158r0eyg" path="res://Sprites/EnemyAsset/GuardMutantEnemy.png" id="2_j66hg"]
 [ext_resource type="Texture2D" uid="uid://bqg6ntnxt44oc" path="res://assets/game/prologue_texture/Character/enemy/6fall.png" id="3_4c84r"]
 [ext_resource type="Texture2D" uid="uid://dnjhwn8q4q5xr" path="res://assets/game/prologue_texture/Character/enemy/5fall.png" id="4_0okr3"]
@@ -84,6 +85,9 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1586252449]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_j66hg")
+footstep_sounds = Array[AudioStream]([ExtResource("2_4c84r")])
+footstep_max_volume_db = -10.0
+footstep_min_volume_db = -40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=802896782]
 position = Vector2(0, 7.1428566)
@@ -109,6 +113,11 @@ path_desired_distance = 3.0
 target_desired_distance = 3.0
 path_postprocessing = 1
 debug_use_custom = true
+
+[node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1403751039]
+stream = ExtResource("2_4c84r")
+volume_db = -10.0
+bus = &"ReverbBus"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

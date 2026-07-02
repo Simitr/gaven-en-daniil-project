@@ -7,13 +7,20 @@
 [ext_resource type="Script" uid="uid://bbie7s8obk5v0" path="res://scenes/AllLevel_scenes/Scipts/global.gd" id="3_wio24"]
 [ext_resource type="Script" uid="uid://253delxb3hxc" path="res://scenes/AllLevel_scenes/Scipts/Door.gd" id="3_wugqc"]
 [ext_resource type="PackedScene" uid="uid://do0nv0bqiolh7" path="res://scenes/Items/Torch.tscn" id="4_dsk3o"]
+[ext_resource type="AudioStream" uid="uid://dws817s6374gy" path="res://music/sounds/steps/Steps_carpet-001.ogg" id="5_hecrf"]
 [ext_resource type="PackedScene" uid="uid://coigycwnsgwuk" path="res://scenes/Items/KeyChest.tscn" id="5_sa74c"]
 [ext_resource type="PackedScene" uid="uid://brr6k13ob4p8x" path="res://scenes/Items/KeyPopup.tscn" id="6_458l2"]
 [ext_resource type="Texture2D" uid="uid://dhrg3g5l52cbl" path="res://Sprites/Items/Key.png" id="6_mbd1d"]
+[ext_resource type="AudioStream" uid="uid://b4yxekl3i48c1" path="res://music/sounds/steps/Steps_carpet-002.ogg" id="6_njsum"]
+[ext_resource type="AudioStream" uid="uid://cog1mk8ivguld" path="res://music/sounds/steps/Steps_carpet-003.ogg" id="7_pwf3t"]
 [ext_resource type="Script" uid="uid://b4oql03ifwbyy" path="res://scenes/AllLevel_scenes/Scipts/CanvasModulate.gd" id="7_sa74c"]
+[ext_resource type="AudioStream" uid="uid://b48c6ffbbbnl" path="res://music/sounds/steps/Steps_carpet-004.ogg" id="8_1poww"]
 [ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/ItemPickup.tscn" id="8_om287"]
+[ext_resource type="AudioStream" uid="uid://dyxcj3g7lestx" path="res://music/sounds/steps/Steps_carpet-005.ogg" id="9_qqq7n"]
 [ext_resource type="Script" uid="uid://g5sk0n56bts6" path="res://Sprites/EnemyAsset/enemy_spawner2.gd" id="10_pdqal"]
+[ext_resource type="AudioStream" uid="uid://dsbf6tcamvta3" path="res://music/sounds/steps/Steps_carpet-006.ogg" id="10_qf6fb"]
 [ext_resource type="PackedScene" uid="uid://xmqmlt3sslmg" path="res://enemy_3.tscn" id="11_3oj0v"]
+[ext_resource type="AudioStream" uid="uid://brqb872ftq7p1" path="res://music/sounds/steps/Steps_carpet-007.ogg" id="11_wb681"]
 [ext_resource type="PackedScene" uid="uid://5t7iyiaih35k" path="res://Sprites/EnemyAsset/enemy_spawner.tscn" id="13_pdqal"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_om287"]
@@ -1086,6 +1093,16 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_veiaw")
 sources/1 = SubResource("TileSetAtlasSource_oluvo")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o2imr"]
+streams_count = 7
+stream_0/stream = ExtResource("5_hecrf")
+stream_1/stream = ExtResource("6_njsum")
+stream_2/stream = ExtResource("7_pwf3t")
+stream_3/stream = ExtResource("8_1poww")
+stream_4/stream = ExtResource("9_qqq7n")
+stream_5/stream = ExtResource("10_qf6fb")
+stream_6/stream = ExtResource("11_wb681")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li3ca"]
 size = Vector2(65.75, 79.5)
 
@@ -1137,6 +1154,7 @@ y_sort_enabled = true
 [node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_l7ukn")]
 z_index = 1
 position = Vector2(1089, 693)
+footstep_sounds = SubResource("AudioStreamRandomizer_o2imr")
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("4_dsk3o")]
 y_sort_enabled = true

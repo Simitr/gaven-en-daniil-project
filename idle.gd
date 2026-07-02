@@ -24,7 +24,7 @@ func enter():
 	lamp_r.visible = false
 	hands_animation.visible = false
 	character.step_timer = character.step_interval
-
+	$"../../AnimatedSprite2D2".play("idle")
 	if animated_sprite.animation == "walking":
 		animated_sprite.play("idle")
 	elif animated_sprite.animation == "walkingback":

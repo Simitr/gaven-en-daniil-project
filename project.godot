@@ -24,7 +24,8 @@ buses/default_bus_layout="uid://evuuxwlcp0ko"
 Global="*uid://bbie7s8obk5v0"
 TransitionLayer="*uid://t50fjkox2y4y"
 Ui="*uid://bxkro1qbvgf6d"
-GameState="*uid://cr4008v2ive5j"
+BackgroundMusic="*uid://dr2yjib8ixeji"
+GameStateC="*uid://c0m63ai46mb5o"
 
 [display]
 

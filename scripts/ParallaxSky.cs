@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Threading;
+using static Godot.WebSocketPeer;
 using static System.Net.Mime.MediaTypeNames;
 
 public partial class ParallaxSky : Node
@@ -25,35 +26,50 @@ public partial class ParallaxSky : Node
 	[Export] public float GrassMaxSpeed = 50f;
 	[Export] public float BackMaxSpeed = 15f;
 	[Export] public Sprite2D trap;
-    [Export] public Sprite2D PressD;
-    [Export] public Sprite2D PressD2;
-    private bool isMoving = false;
+ 
+   
 	public string state = "";
 	public bool isatrap = false;
 	public bool end = false;
-	public bool zalupa = false;
 
-	public override void _Ready()
+
+    private GameStateC _state;
+    public override void _Ready()
 	{
-		
-		timer.Timeout += OnTimerTimeout;
-		horseAudio.Play();
-		var tween = CreateTween();
-		tween.TweenProperty(blackBackground, "modulate:a", 0f, 2.0f);
-        PressD.Modulate = new Color(1, 1, 1, 0);
-        PressD2.Modulate = new Color(1, 1, 1, 0);
+        _state = GetNode<GameStateC>("/root/GameStateC");
+ 
 
+        if (_state.IsMoving)
+        {
+            Player.Position = new Vector2(160, Player.Position.Y);
+            animatieCharacter.Play("idle");
+            music.Play();
 
+            // восстанавливаем логику таймера, которая раньше срабатывала
+            // автоматически через 1 секунду после входа в idle
+            timer.WaitTime = 1f;
+            state = "start";
+            timer.Start();
+        }
+        else
+        {
+            horseAudio.Play();
+        }
+
+        timer.Timeout += OnTimerTimeout;
+        var tween = CreateTween();
+        tween.TweenProperty(blackBackground, "modulate:a", 0f, 2.0f);
 
     }
 
 	public override void _Process(double delta)
 	{
 
+        if (!IsInsideTree())
+            return;
 
 
-
-		if (!isMoving)
+        if (!_state.IsMoving)
 		{
 
 
@@ -69,7 +85,7 @@ public partial class ParallaxSky : Node
 			{
 				animatieCharacter.Play("idle");
 				horseAudio.Stop();
-				isMoving = true;
+                _state.IsMoving = true;
 				music.Play();
 			}
 
@@ -79,14 +95,16 @@ public partial class ParallaxSky : Node
 		}
 		if (!end)
 		{
-			if (isMoving)
+			if (_state.IsMoving)
 			{
-				if (zalupa)
+				if (!_state.Zalupa)
 				{
+					GetTree().ChangeSceneToFile("res://scenes/Items/dProlog.tscn");
+                    _state.Zalupa = true;
+                    return;
+                }
                     var twee = CreateTween();
                     twee.TweenProperty(blackBackground, "modulate:a", 0f, 0.2f);
-                    PressD.Modulate = new Color(1, 1, 1, 0);
-                    PressD2.Modulate = new Color(1, 1, 1, 0);
                     var tweenmusic = CreateTween();
 					tweenmusic.TweenProperty(music, "volume_db", -10, 2f);
 
@@ -174,19 +192,8 @@ public partial class ParallaxSky : Node
 						state = "start";
 						timer.Start();
 					}
-				}
-				else
-				{
-					var tween = CreateTween();
-					tween.TweenProperty(blackBackground, "modulate:a", 0.7f, 0.2f);
-					PressD.Modulate = new Color(1, 1, 1, 1);
-				    PressD2.Modulate = new Color(1, 1, 1, 1);
-
-                    if (Input.IsActionPressed("walkRight"))
-					{
-						zalupa = true;
-					}
-				}
+				
+				
                 }
 			
 
@@ -213,13 +220,15 @@ public partial class ParallaxSky : Node
 			else if (animatieCharacter.Frame == 6)
 			{
                 GetTree().ChangeSceneToFile("res://scenes/AllLevel_scenes/Level1.tscn");
+ 
             }
         }
 
 	}
 	private void OnTimerTimeout()
 	{
-		switch (state)
+        GD.Print("Привет, мир!");
+        switch (state)
 		{
 			case "start":
 				isatrap = true;
