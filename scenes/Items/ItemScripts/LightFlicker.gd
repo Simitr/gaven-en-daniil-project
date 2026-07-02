@@ -61,7 +61,7 @@ func toggle_torch():
 		# Small light
 		target_energy = 0.1
 		collision.shape.radius = 64
-		flicker_speed = randf_range(2.0, 4.0)
+		flicker_speed = randf_range(1.0, 4.0)
 
 	else:
 

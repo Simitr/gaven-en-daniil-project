@@ -23,7 +23,7 @@ var monster_hp := 100.0
 var monster_dead := false
 
 var ui_on = false
-var move = false
+var move = true
 var shoottutorial = false
 
 var interact_triggered := false 

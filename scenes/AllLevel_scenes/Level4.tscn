@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://b48c6ffbbbnl" path="res://music/sounds/steps/Steps_carpet-004.ogg" id="8_1poww"]
 [ext_resource type="PackedScene" uid="uid://cx7i1iqyhaa0c" path="res://scenes/Items/ItemPickup.tscn" id="8_om287"]
 [ext_resource type="AudioStream" uid="uid://dyxcj3g7lestx" path="res://music/sounds/steps/Steps_carpet-005.ogg" id="9_qqq7n"]
-[ext_resource type="Script" uid="uid://g5sk0n56bts6" path="res://Sprites/EnemyAsset/enemy_spawner2.gd" id="10_pdqal"]
+[ext_resource type="Script" path="res://Sprites/EnemyAsset/enemy_spawner2.gd" id="10_pdqal"]
 [ext_resource type="AudioStream" uid="uid://dsbf6tcamvta3" path="res://music/sounds/steps/Steps_carpet-006.ogg" id="10_qf6fb"]
 [ext_resource type="PackedScene" uid="uid://xmqmlt3sslmg" path="res://enemy_3.tscn" id="11_3oj0v"]
 [ext_resource type="AudioStream" uid="uid://brqb872ftq7p1" path="res://music/sounds/steps/Steps_carpet-007.ogg" id="11_wb681"]
@@ -1153,7 +1153,7 @@ y_sort_enabled = true
 
 [node name="Player" parent="WorldObjects" unique_id=1372397156 instance=ExtResource("2_l7ukn")]
 z_index = 1
-position = Vector2(1121, 158)
+position = Vector2(55, 119)
 footstep_sounds = SubResource("AudioStreamRandomizer_o2imr")
 
 [node name="Torch" parent="WorldObjects" unique_id=1800784889 instance=ExtResource("4_dsk3o")]
