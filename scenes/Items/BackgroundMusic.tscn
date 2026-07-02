@@ -7,6 +7,7 @@
 [node name="BackgroundMusic" type="Node2D" unique_id=417443573]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1360963887]
+visible = false
 stream = ExtResource("1_vy084")
 bus = &"ReverbBus"
 parameters/looping = true
