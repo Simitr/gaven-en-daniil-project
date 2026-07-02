@@ -7,54 +7,42 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eigfu"]
 
-[node name="pause_menu" type="Node2D" unique_id=496654756]
+[node name="PausMenu" type="CanvasLayer" unique_id=7428252]
+process_mode = 2
 script = ExtResource("1_6wrik")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1215124307]
-anchors_preset = 8
+[node name="BackGame" type="Button" parent="." unique_id=1471436275]
+z_index = 1
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -213.0
-offset_top = -121.0
-offset_right = 215.0
-offset_bottom = 120.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_top = -262.0
+offset_right = 254.0
+offset_bottom = -224.0
 grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1948472173]
-zoom = Vector2(1.5, 1.5)
-
-[node name="QuitGame" type="Button" parent="." unique_id=463346148]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -256.0
-offset_top = -18.0
-offset_right = 256.0
-offset_bottom = 20.0
-grow_horizontal = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_ypwr7")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_gav2n")
-text = "Quit Game
-
+text = "Back to Game
 
 "
 
-[node name="BackDesktop" type="Button" parent="." unique_id=1423978161]
+[node name="BackDesktop" type="Button" parent="." unique_id=774878371]
+z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -256.0
-offset_top = 21.0
-offset_right = 256.0
-offset_bottom = 56.0
+offset_left = -260.0
+offset_top = 204.0
+offset_right = 252.0
+offset_bottom = 244.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -68,28 +56,36 @@ text = "Back to Desktop
 
 "
 
-[node name="BackGame" type="Button" parent="." unique_id=1077776]
-anchors_preset = 7
+[node name="QuitGame" type="Button" parent="." unique_id=2015147339]
+z_index = 1
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -256.0
-offset_top = -55.0
-offset_right = 256.0
-offset_bottom = -17.0
+offset_left = -260.0
+offset_top = 151.0
+offset_right = 252.0
+offset_bottom = 189.0
 grow_horizontal = 2
-grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_ypwr7")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_gav2n")
-text = "Back to Game
+text = "Quit Game
+
 
 "
 
-[connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]
-[connection signal="pressed" from="BackDesktop" to="." method="_on_back_desktop_pressed"]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=165899743]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="BackGame" to="." method="_on_back_game_pressed"]
+[connection signal="pressed" from="BackDesktop" to="." method="_on_back_desktop_pressed"]
+[connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]

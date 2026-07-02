@@ -1201,7 +1201,7 @@ shape = SubResource("RectangleShape2D_li3ca")
 
 [node name="BossDoor" parent="Doors" unique_id=1728167937 node_paths=PackedStringArray("popup") instance=ExtResource("6_0h4ax")]
 z_index = 2
-position = Vector2(208, 412)
+position = Vector2(208, 408)
 popup = NodePath("../../LootPopup")
 next_scene = "uid://1r51ss5ljpd2"
 target_spawn = "SpawnTop"

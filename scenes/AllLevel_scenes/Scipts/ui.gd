@@ -27,13 +27,16 @@ func _ready():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("esc"):
-		if get_tree().paused:
+		if pause_menu:
 			close_pause_menu()
 		else:
 			open_pause_menu()
 
 
 func open_pause_menu():
+	if pause_menu:
+		return
+		
 	get_tree().paused = true
 
 	pause_menu = PAUSE_MENU.instantiate()
