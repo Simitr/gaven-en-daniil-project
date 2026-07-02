@@ -77,10 +77,9 @@ size = Vector2(20, 34)
 [node name="PlayerHorse" type="CharacterBody2D" unique_id=1861779202]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864297161]
-visible = false
 position = Vector2(114, 51)
 sprite_frames = SubResource("SpriteFrames_wv0uv")
-animation = &"walking"
+animation = &"idle"
 autoplay = "walking"
 
 [node name="Node" type="Node" parent="." unique_id=1964660053]
