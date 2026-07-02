@@ -18,6 +18,7 @@ bus = &"ReverbBus"
 
 [node name="transition" type="AudioStreamPlayer2D" parent="." unique_id=1681128476]
 stream = ExtResource("3_jtm3t")
+volume_db = -10.0
 
 [node name="screemAtack" type="AudioStreamPlayer2D" parent="." unique_id=932145405]
 stream = ExtResource("2_jtm3t")

@@ -1094,6 +1094,7 @@ next_scene = "uid://cm6rjfxd2faev"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1625130651]
 script = ExtResource("7_getvy")
+dark_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
 
 [node name="SpawnTop" type="Marker2D" parent="." unique_id=1172747839]
 position = Vector2(224, 66)
